@@ -1,8 +1,10 @@
 import { Github, Linkedin, Mail, Phone, MapPin } from 'lucide-react'
 
-import { GITHUB, EMAIL, LINKEDIN, PHONE } from '../data/contact'
+import { GITHUB, EMAIL, LINKEDIN, PHONE, SUBSTACK, MEDIUM } from '../data/contact'
 import { SUMMARY } from '../data/summary'
 import schorts from '../assets/images/schorts.webp'
+import substack from '../assets/images/substack.png'
+import medium from '../assets/images/medium.png'
 
 export default function Presentation() {
   const scrollToContact = () => {
@@ -127,6 +129,35 @@ export default function Presentation() {
                       className="p-2 bg-blue-50 text-blue-600 rounded-lg hover:bg-blue-100 transition-colors"
                     >
                       <Linkedin size={20} />
+                    </a>
+                    <a
+                      href={SUBSTACK}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      title="Substack"
+                      className="flex items-center px-1 bg-orange-50 rounded-lg hover:bg-orange-100 transition-colors"
+                    >
+                      <img
+                        className="h-7"
+                        src={substack}
+                        draggable="false"
+                      />
+                    </a>
+                    <a
+                      href={MEDIUM}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      title="Medium"
+                      className="flex items-center px-1 bg-slate-50 rounded-lg hover:bg-slate-100 transition-colors"
+                    >
+                      <img
+                        className="h-7"
+                        src={medium}
+                        draggable="false"
+                        style={{
+                          filter: 'sepia(100%) saturate(0.15) hue-rotate(257deg) brightness(0.3) contrast(0.3)',
+                        }}
+                      />
                     </a>
                     <a
                       href={GITHUB}

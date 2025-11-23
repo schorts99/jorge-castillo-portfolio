@@ -30,11 +30,11 @@ export const SKILLS = [
   },
   {
     category: "Frontend",
-    technologies: ["ReactJS", "VueJS", "NextJS", "React Native", "Redux", "Vuex", "Tailwind CSS", "Material UI", "Bootstrap"],
+    technologies: ["ReactJS", "VueJS", "NextJS", "React Native", "Angular", "Svelte", "Redux", "Vuex", "Tailwind CSS", "Material UI", "Bootstrap"],
   },
   {
     category: "Backend",
-    technologies: ["Ruby on Rails", "Express", "Flask", "GraphQL", "Sidekiq", "API REST", "JSON API"],
+    technologies: ["Ruby on Rails", "NestJS", "Express", "Flask", "GraphQL", "Sidekiq", "API REST", "JSON API"],
   },
   {
     category: "Databases",

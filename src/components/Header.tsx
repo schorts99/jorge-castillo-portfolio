@@ -1,7 +1,9 @@
 import { useState } from 'react'
 import { Menu, X, Github, Linkedin, Mail } from 'lucide-react'
 
-import { EMAIL, LINKEDIN, GITHUB } from '../data/contact';
+import { EMAIL, LINKEDIN, GITHUB, MEDIUM, SUBSTACK } from '../data/contact'
+import substack from '../assets/images/substack.png'
+import medium from '../assets/images/medium.png'
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -130,6 +132,38 @@ function MobileNavigation({ scrollToSection }: { scrollToSection: (sectionID: st
             <Linkedin size={20} />
           </a>
           <a
+            href={SUBSTACK}
+            target="_blank"
+            rel="noopener noreferrer"
+            title="Substack"
+            style={{ marginLeft: '-7px' }}
+          >
+            <img
+              className="h-7"
+              src={substack}
+              draggable="false"
+              style={{
+                filter: 'hue-rotate(227deg) saturate(0.15) brightness(0.7) contrast(1.2)',
+              }}
+            />
+          </a>
+          <a
+            href={MEDIUM}
+            target="_blank"
+            rel="noopener noreferrer"
+            title="Medium"
+            style={{ marginLeft: '-7px' }}
+          >
+            <img
+              className="h-7"
+              src={medium}
+              draggable="false"
+              style={{
+                filter: 'sepia(100%) saturate(0.15) hue-rotate(257deg) brightness(0.3) contrast(0.3)',
+              }}
+            />
+          </a>
+          <a
             href={GITHUB}
             target="_blank"
             rel="noopener noreferrer"
@@ -162,6 +196,38 @@ function DesktopContactIcons() {
         title="LinkedIn"
       >
         <Linkedin size={20} />
+      </a>
+      <a
+        href={SUBSTACK}
+        target="_blank"
+        rel="noopener noreferrer"
+        title="Substack"
+        style={{ marginLeft: '-7px' }}
+      >
+        <img
+          className="h-7"
+          src={substack}
+          draggable="false"
+          style={{
+            filter: 'hue-rotate(227deg) saturate(0.15) brightness(0.7) contrast(1.2)',
+          }}
+        />
+      </a>
+      <a
+        href={MEDIUM}
+        target="_blank"
+        rel="noopener noreferrer"
+        title="Medium"
+        style={{ marginLeft: '-7px' }}
+      >
+        <img
+          className="h-7"
+          src={medium}
+          draggable="false"
+          style={{
+            filter: 'sepia(100%) saturate(0.15) hue-rotate(257deg) brightness(0.3) contrast(0.3)',
+          }}
+        />
       </a>
       <a
         href={GITHUB}

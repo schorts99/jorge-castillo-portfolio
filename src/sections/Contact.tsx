@@ -1,7 +1,9 @@
 import { useState, FormEvent, ChangeEvent } from 'react'
 import { Mail, Phone, Github, Linkedin, MapPin, Send } from 'lucide-react'
 
-import { EMAIL, PHONE, LINKEDIN, GITHUB } from '@/data/contact'
+import { EMAIL, PHONE, LINKEDIN, GITHUB, MEDIUM, SUBSTACK } from '@/data/contact'
+import substack from '../assets/images/substack.png'
+import medium from '../assets/images/medium.png'
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -112,6 +114,35 @@ export default function Contact() {
                   className="p-3 bg-blue-50 text-blue-600 rounded-lg hover:bg-blue-600 hover:text-white transition-colors"
                 >
                   <Linkedin size={20} />
+                </a>
+                <a
+                  href={SUBSTACK}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  title="Substack"
+                  className="flex items-center px-2 bg-orange-50 rounded-lg hover:bg-orange-100 transition-colors"
+                >
+                  <img
+                    className="h-7"
+                    src={substack}
+                    draggable="false"
+                  />
+                </a>
+                <a
+                  href={MEDIUM}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  title="Medium"
+                  className="flex items-center px-2 bg-slate-50 rounded-lg hover:bg-slate-100 transition-colors"
+                >
+                  <img
+                    className="h-7"
+                    src={medium}
+                    draggable="false"
+                    style={{
+                      filter: 'sepia(100%) saturate(0.15) hue-rotate(257deg) brightness(0.3) contrast(0.3)',
+                    }}
+                  />
                 </a>
                 <a
                   href={GITHUB}

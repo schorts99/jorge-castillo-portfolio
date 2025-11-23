@@ -1,6 +1,8 @@
 import { Github, Linkedin, Mail, Heart } from 'lucide-react'
 
-import { EMAIL, GITHUB, LINKEDIN } from '../data/contact'
+import { EMAIL, GITHUB, LINKEDIN, MEDIUM, SUBSTACK } from '../data/contact'
+import substack from '../assets/images/substack.png'
+import medium from '../assets/images/medium.png'
 
 export default function Footer() {
   return (
@@ -62,6 +64,34 @@ export default function Footer() {
                 className="p-2 bg-slate-800 rounded-lg hover:bg-slate-700 transition-colors"
               >
                 <Linkedin size={20} />
+              </a>
+              <a
+                href={SUBSTACK}
+                target="_blank"
+                rel="noopener noreferrer"
+                title="Substack"
+                className="flex items-center px-1 bg-slate-800 rounded-lg hover:bg-slate-700 transition-colors"
+              >
+                <img
+                  className="h-7"
+                  src={substack}
+                  draggable="false"
+                  style={{ filter: 'brightness(10)' }}
+                />
+              </a>
+              <a
+                href={MEDIUM}
+                target="_blank"
+                rel="noopener noreferrer"
+                title="Medium"
+                className="flex items-center px-1 bg-slate-800 rounded-lg hover:bg-slate-700 transition-colors"
+              >
+                <img
+                  className="h-7"
+                  src={medium}
+                  draggable="false"
+                  style={{ filter: 'brightness(10) invert(1)' }}
+                />
               </a>
               <a
                 href={GITHUB}

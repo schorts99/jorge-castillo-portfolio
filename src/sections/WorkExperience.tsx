@@ -42,7 +42,7 @@ export default function WorkExperience() {
                             </a>
                           )}
                         </div>
-                        <p className="text-lg font-semibold text-blue-600 mb-1">
+                        <p className="text-lg font-semibold text-blue-600 mb-1 text-left">
                           {job.position}
                         </p>
                         <div className="flex items-center gap-2 text-slate-600">

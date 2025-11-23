@@ -1,7 +1,13 @@
 {
   "name": "jorge-castillo",
+  "version": "1.0.1",
   "private": true,
   "type": "module",
+  "author": {
+    "name": "Jorge Castillo",
+    "email": "schorts@outlook.com",
+    "url": "https://schorts.netlify.app"
+  },
   "scripts": {
     "dev": "vite dev --port 3000",
     "start": "node .output/server/index.mjs",

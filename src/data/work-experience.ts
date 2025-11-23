@@ -1,9 +1,22 @@
 export const WORKS = [
   {
+    company: "Rankmi",
+    position: "Software Developer",
+    period: "Nov 2025 - Present",
+    website: "https://www.rankmi.com",
+    projects: [
+      {
+        name: "Learning Management System",
+        period: "Nov 2025 - Present",
+        highlights: [],
+      }
+    ],
+  },
+  {
     company: "Goods & Services",
     position: "Software Engineer II",
     period: "Jul 2022 – March 2025",
-    website: "https://www.goodsandservices.com/",
+    website: "https://www.goodsandservices.com",
     projects: [
       {
         name: "Beckton Dickinson",
@@ -30,7 +43,7 @@ export const WORKS = [
     company: "Columbus",
     position: "Frontend Lead",
     period: "Jul 2021 – Jul 2022",
-    website: "https://columbus.mx/",
+    website: "https://columbus.mx",
     projects: [
       {
         name: "Columbus Digital",
@@ -58,7 +71,7 @@ export const WORKS = [
     company: "Michelada",
     position: "Ruby on Rails Developer",
     period: "March 2021 – Jul 2021",
-    website: "https://www.michelada.io/",
+    website: "https://www.michelada.io",
     projects: [
       {
         name: "Diagnostikare",
