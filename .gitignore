@@ -1,4 +1,9 @@
+# Dependencies
 node_modules
 
 # Local Netlify folder
 .netlify
+
+# Build
+dist
+.tanstack
