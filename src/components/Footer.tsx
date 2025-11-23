@@ -5,6 +5,14 @@ import substack from '../assets/images/substack.png'
 import medium from '../assets/images/medium.png'
 
 export default function Footer() {
+  const scrollToSection = (sectionID: string) => {
+    const element = document.getElementById(sectionID)
+
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' })
+    }
+  };
+
   return (
     <footer className="bg-slate-900 text-white py-12">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -25,29 +33,49 @@ export default function Footer() {
             </h4>
             <ul className="space-y-2 text-slate-300">
               <li>
-                <a href="#about" className="hover:text-white transition-colors">
+                <button
+                  className="cursor-pointer hover:text-white transition-colors"
+                  type="button"
+                  onClick={() => scrollToSection('about')}
+                >
                   About
-                </a>
+                </button>
               </li>
               <li>
-                <a href="#skills" className="hover:text-white transition-colors">
+                <button
+                  className="cursor-pointer hover:text-white transition-colors"
+                  type="button"
+                  onClick={() => scrollToSection('skills')}
+                >
                   Skills
-                </a>
+                </button>
               </li>
               <li>
-                <a href="#experience" className="hover:text-white transition-colors">
+                <button
+                  className="cursor-pointer hover:text-white transition-colors"
+                  type="button"
+                  onClick={() => scrollToSection('experience')}
+                >
                   Experience
-                </a>
+                </button>
               </li>
               <li>
-                <a href="#projects" className="hover:text-white transition-colors">
+                <button
+                  className="cursor-pointer hover:text-white transition-colors"
+                  type="button"
+                  onClick={() => scrollToSection('projects')}
+                >
                   Projects
-                </a>
+                </button>
               </li>
               <li>
-                <a href="#contact" className="hover:text-white transition-colors">
+                <button
+                  className="cursor-pointer hover:text-white transition-colors"
+                  type="button"
+                  onClick={() => scrollToSection('contact')}
+                >
                   Contact
-                </a>
+                </button>
               </li>
             </ul>
           </div>
