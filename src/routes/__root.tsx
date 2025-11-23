@@ -1,8 +1,9 @@
+import appCss from '../styles.css?url'
+
 import { HeadContent, Scripts, createRootRoute } from '@tanstack/react-router'
 import { TanStackRouterDevtoolsPanel } from '@tanstack/react-router-devtools'
 import { TanstackDevtools } from '@tanstack/react-devtools'
 
-import appCss from '../styles.css?url'
 import MainLayout from '@/layouts/MainLayout'
 
 export const Route = createRootRoute({
@@ -20,11 +21,6 @@ export const Route = createRootRoute({
       },
     ],
     links: [
-      {
-        rel: 'preload',
-        href: appCss,
-        as: 'style',
-      },
       {
         rel: 'stylesheet',
         href: appCss,
