@@ -1,1 +1,9 @@
 @import "tailwindcss";
+
+html {
+  overflow: auto;
+}
+
+body {
+  overflow: clip;
+}
