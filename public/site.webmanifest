@@ -19,6 +19,52 @@
       "purpose": "maskable"
     }
   ],
+  "shortcuts": [
+    {
+      "name": "About",
+      "url": "/#about",
+      "icons": [
+        {
+          "src": "/icons/about.png",
+          "type": "image/png",
+          "sizes": "96x96"
+        }
+      ]
+    },
+    {
+      "name": "Experience",
+      "url": "/#experience",
+      "icons": [
+        {
+          "src": "/icons/experience.png",
+          "type": "image/png",
+          "sizes": "96x96"
+        }
+      ]
+    },
+    {
+      "name": "Projects",
+      "url": "/#projects",
+      "icons": [
+        {
+          "src": "/icons/projects.png",
+          "type": "image/png",
+          "sizes": "96x96"
+        }
+      ]
+    },
+    {
+      "name": "Contact",
+      "url": "/#contact",
+      "icons": [
+        {
+          "src": "/icons/contact.png",
+          "type": "image/png",
+          "sizes": "96x96"
+        }
+      ]
+    }
+  ],
   "theme_color": "#ffffff",
   "background_color": "#ffffff",
   "display": "standalone"
