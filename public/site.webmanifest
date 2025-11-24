@@ -21,17 +21,6 @@
   ],
   "shortcuts": [
     {
-      "name": "About",
-      "url": "/#about",
-      "icons": [
-        {
-          "src": "/icons/about.png",
-          "type": "image/png",
-          "sizes": "96x96"
-        }
-      ]
-    },
-    {
       "name": "Experience",
       "url": "/#experience",
       "icons": [
