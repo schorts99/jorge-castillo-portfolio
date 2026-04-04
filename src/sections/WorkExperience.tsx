@@ -66,7 +66,7 @@ export default function WorkExperience() {
                             </div>
                             <ul className="space-y-2">
                               {project.highlights.map((highlight, highlightIndex) => (
-                                <li key={highlightIndex} className="text-slate-700 text-sm leading-relaxed flex items-start gap-2">
+                                <li key={highlightIndex} className="text-slate-700 text-sm leading-relaxed flex items-start gap-2 text-left">
                                   <span className="w-1.5 h-1.5 bg-blue-600 rounded-full mt-2 flex-shrink-0" />
                                   {highlight}
                                 </li>

@@ -42,10 +42,10 @@ export const SKILLS = [
   },
   {
     category: "Cloud & Services",
-    technologies: ["Firebase", "AWS", "GCP", "Stripe", "Twilio", "RabbitMQ", "EnviaYa!", "SendGrid", "Wompi"],
+    technologies: ["Firebase", "AWS", "GCP", "Stripe", "Twilio", "RabbitMQ", "EnviaYa!", "SendGrid", "Wompi", "MailerSend", "Pusher"],
   },
   {
     category: "Testing & Tools",
-    technologies: ["Jest", "RSpec", "PyTest", "K6", "Git", "Docker"],
+    technologies: ["Jest", "RSpec", "PyTest", "K6", "Git", "Docker", "Jenkins", "Terraform"],
   },
 ]

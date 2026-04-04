@@ -27,7 +27,7 @@ export default function Presentation() {
                 </span>
               </h1>
               <h2 className="text-xl sm:text-2xl text-slate-600 font-medium">
-                Software Engineer
+                Sr Software Engineer
               </h2>
             </div>
 
@@ -98,7 +98,7 @@ export default function Presentation() {
                       Jorge Castillo
                     </h3>
                     <p className="text-slate-600">
-                      Software Engineer
+                      Sr Software Engineer
                     </p>
                   </div>
 

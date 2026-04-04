@@ -16,7 +16,7 @@ export const Route = createRootRoute({
         content: 'width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover',
       },
       {
-        title: 'Jorge Castillo - Software Engineer',
+        title: 'Jorge Castillo - Sr Software Engineer',
       },
     ],
     links: [

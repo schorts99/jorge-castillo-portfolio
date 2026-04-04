@@ -23,6 +23,8 @@ export const PROJECTS = [
       'Netlify',
       'TailwindCSS',
       'Google Analytics',
+      'Jenkins',
+      'Terraform',
     ],
   },
   {
@@ -79,5 +81,6 @@ export const PROJECTS = [
     ],
     technologies: ['JavaScript', 'ReactJS', 'Google Optimize'],
   },
-]
-export const FEATURED_PROJECTS = PROJECTS.filter((project) => project.featured)
+];
+
+export const FEATURED_PROJECTS = PROJECTS.filter((project) => project.featured);
