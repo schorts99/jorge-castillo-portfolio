@@ -44,6 +44,9 @@ importers:
       tailwindcss:
         specifier: ^4.0.6
         version: 4.2.2
+      tanstack-router-ga4:
+        specifier: ^1.6.0
+        version: 1.6.0(@tanstack/react-router@1.168.10(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)
       vite-tsconfig-paths:
         specifier: ^5.1.4
         version: 5.1.4(typescript@5.9.3)(vite@7.3.1(@types/node@22.19.17)(jiti@2.6.1)(lightningcss@1.32.0)(tsx@4.21.0)(yaml@2.8.3))
@@ -4532,6 +4535,12 @@ packages:
   tailwindcss@4.2.2:
     resolution: {integrity: sha512-KWBIxs1Xb6NoLdMVqhbhgwZf2PGBpPEiwOqgI4pFIYbNTfBXiKYyWoTsXgBQ9WFg/OlhnvHaY+AEpW7wSmFo2Q==}
 
+  tanstack-router-ga4@1.6.0:
+    resolution: {integrity: sha512-H9SUSFvDtDH68CNmwKISeVASPKr2DmKFs3ZlfFrmWrjFLDbujMbJxhJHaSHdKcY8dFTP8qoWJSIGP0jBa6vr6Q==}
+    peerDependencies:
+      '@tanstack/react-router': '>=1'
+      react: '>=18'
+
   tapable@2.3.2:
     resolution: {integrity: sha512-1MOpMXuhGzGL5TTCZFItxCc0AARf1EZFQkGqMm7ERKj8+Hgr5oLvJOVFcC+lRmR8hCe2S3jC4T5D7Vg/d7/fhA==}
     engines: {node: '>=6'}
@@ -4634,6 +4643,7 @@ packages:
   tsconfck@3.1.6:
     resolution: {integrity: sha512-ks6Vjr/jEw0P1gmOVwutM3B7fWxoWBL2KRDb1JfqGVawBmO5UsvmWOQFGHBPl5yxYz4eERr19E6L7NMv+Fej4w==}
     engines: {node: ^18 || >=20}
+    deprecated: unmaintained
     hasBin: true
     peerDependencies:
       typescript: ^5.0.0
@@ -9973,6 +9983,11 @@ snapshots:
   symbol-tree@3.2.4: {}
 
   tailwindcss@4.2.2: {}
+
+  tanstack-router-ga4@1.6.0(@tanstack/react-router@1.168.10(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4):
+    dependencies:
+      '@tanstack/react-router': 1.168.10(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      react: 19.2.4
 
   tapable@2.3.2: {}
 

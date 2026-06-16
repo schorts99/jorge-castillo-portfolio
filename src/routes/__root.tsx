@@ -1,6 +1,7 @@
 import { HeadContent, Scripts, createRootRoute } from '@tanstack/react-router'
 import { TanStackRouterDevtoolsPanel } from '@tanstack/react-router-devtools'
 import { TanstackDevtools } from '@tanstack/react-devtools'
+import { GoogleAnalytics } from 'tanstack-router-ga4'
 
 import appCss from '../styles.css?url'
 import MainLayout from '@/layouts/MainLayout'
@@ -16,7 +17,7 @@ export const Route = createRootRoute({
         content: 'width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover',
       },
       {
-        title: 'Jorge Castillo - Sr Software Engineer',
+        title: 'Jorge Castillo - Sr. Full-Stack Engineer',
       },
     ],
     links: [
@@ -46,6 +47,7 @@ function RootDocument({ children }: { children: React.ReactNode }) {
         <HeadContent />
       </head>
       <body className='scroll-smooth'>
+        <GoogleAnalytics measurementId={import.meta.env.VITE_GOOGLE_ANALYTICS_MEASUREMENT_ID} />
         <MainLayout>
           {children}
         </MainLayout>
