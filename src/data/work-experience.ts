@@ -2,7 +2,7 @@ export const WORKS = [
   {
     company: "Rankmi",
     position: "Software Developer",
-    period: "Nov 2025 - March",
+    period: "Nov 2025 - March 2026",
     website: "https://www.rankmi.com",
     projects: [
       {

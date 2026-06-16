@@ -5,6 +5,10 @@ import { EMAIL, LINKEDIN, GITHUB, MEDIUM, SUBSTACK } from '../data/contact'
 import substack from '../assets/images/substack.png'
 import medium from '../assets/images/medium.png'
 
+interface NavigationProps {
+  scrollToSection: (sectionID: string) => void;
+}
+
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
@@ -18,21 +22,27 @@ export default function Header() {
   };
 
   return (
-    <header className="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-sm z-50 border-b border-slate-200">
+    <header className="fixed top-0 left-0 right-0 bg-white/90 backdrop-blur-md z-50 border-b border-slate-200/60 selection:bg-blue-500 selection:text-white">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
-          <div className="text-xl font-bold text-slate-900">
-            Jorge Castillo
+          <div className="flex items-center gap-2">
+            <span className="text-base font-extrabold text-slate-900 tracking-tight">
+              Jorge Castillo
+            </span>
+            {/* <span className="hidden sm:inline-block text-[10px] font-bold uppercase tracking-wider text-slate-400 bg-slate-50 border border-slate-100 px-1.5 py-0.5 rounded">
+              Architect
+            </span> */}
           </div>
 
           <DesktopNavigation scrollToSection={scrollToSection} />
           <DesktopContactIcons />
 
           <button
-            className="md:hidden text-slate-600 hover:text-slate-900"
+            className="md:hidden text-slate-600 hover:text-slate-900 p-1"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
+            aria-label="Toggle navigation menu"
           >
-            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            {isMenuOpen ? <X size={20} /> : <Menu size={20} />}
           </button>
         </div>
 
@@ -42,202 +52,156 @@ export default function Header() {
   )
 }
 
-function DesktopNavigation({ scrollToSection }: { scrollToSection: (sectionID: string) => void }) {
+function DesktopNavigation({ scrollToSection }: NavigationProps) {
+  const links = ['about', 'skills', 'experience', 'projects', 'contact'];
+  
   return (
-    <nav className="hidden md:flex items-center space-x-8">
-      <button
-        className="text-slate-600 hover:text-blue-600 transition-colors cursor-pointer"
-        onClick={() => scrollToSection('about')}
-      >
-        About
-      </button>
-      <button 
-        onClick={() => scrollToSection('skills')}
-        className="text-slate-600 hover:text-blue-600 transition-colors cursor-pointer"
-      >
-        Skills
-      </button>
-      <button 
-        onClick={() => scrollToSection('experience')}
-        className="text-slate-600 hover:text-blue-600 transition-colors cursor-pointer"
-      >
-        Experience
-      </button>
-      <button 
-        onClick={() => scrollToSection('projects')}
-        className="text-slate-600 hover:text-blue-600 transition-colors cursor-pointer"
-      >
-        Projects
-      </button>
-      <button 
-        onClick={() => scrollToSection('contact')}
-        className="text-slate-600 hover:text-blue-600 transition-colors cursor-pointer"
-      >
-        Contact
-      </button>
+    <nav className="hidden md:flex items-center space-x-6">
+      {links.map((link) => (
+        <button
+          key={link}
+          className="text-xs font-semibold text-slate-600 hover:text-slate-900 capitalize tracking-wide transition-colors cursor-pointer"
+          onClick={() => scrollToSection(link)}
+        >
+          {link}
+        </button>
+      ))}
     </nav>
-  );
-}
-
-function MobileNavigation({ scrollToSection }: { scrollToSection: (sectionID: string) => void }) {
-  return (
-    <div className="md:hidden py-4">
-      <nav className="flex flex-col space-y-4">
-        <button 
-          onClick={() => scrollToSection('about')}
-          className="text-slate-600 hover:text-blue-600 transition-colors text-left"
-        >
-          About
-        </button>
-        <button 
-          onClick={() => scrollToSection('skills')}
-          className="text-slate-600 hover:text-blue-600 transition-colors text-left"
-        >
-          Skills
-        </button>
-        <button 
-          onClick={() => scrollToSection('experience')}
-          className="text-slate-600 hover:text-blue-600 transition-colors text-left"
-        >
-          Experience
-        </button>
-        <button 
-          onClick={() => scrollToSection('projects')}
-          className="text-slate-600 hover:text-blue-600 transition-colors text-left"
-        >
-          Projects
-        </button>
-        <button 
-          onClick={() => scrollToSection('contact')}
-          className="text-slate-600 hover:text-blue-600 transition-colors text-left"
-        >
-          Contact
-        </button>
-        
-        <div className="flex items-center space-x-4 pt-4 border-t border-slate-200">
-          <a
-            href={`mailto:${EMAIL}`}
-            className="text-slate-600 hover:text-blue-600 transition-colors"
-            title="Email"
-          >
-            <Mail size={20} />
-          </a>
-          <a
-            href={LINKEDIN}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-slate-600 hover:text-blue-600 transition-colors"
-            title="LinkedIn"
-          >
-            <Linkedin size={20} />
-          </a>
-          <a
-            href={SUBSTACK}
-            target="_blank"
-            rel="noopener noreferrer"
-            title="Substack"
-            style={{ marginLeft: '-7px' }}
-          >
-            <img
-              className="h-7"
-              src={substack}
-              draggable="false"
-              style={{
-                filter: 'hue-rotate(227deg) saturate(0.15) brightness(0.7) contrast(1.2)',
-              }}
-            />
-          </a>
-          <a
-            href={MEDIUM}
-            target="_blank"
-            rel="noopener noreferrer"
-            title="Medium"
-            style={{ marginLeft: '-7px' }}
-          >
-            <img
-              className="h-7"
-              src={medium}
-              draggable="false"
-              style={{
-                filter: 'sepia(100%) saturate(0.15) hue-rotate(257deg) brightness(0.3) contrast(0.3)',
-              }}
-            />
-          </a>
-          <a
-            href={GITHUB}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-slate-600 hover:text-blue-600 transition-colors"
-            title="GitHub"
-          >
-            <Github size={20} />
-          </a>
-        </div>
-      </nav>
-    </div>
   );
 }
 
 function DesktopContactIcons() {
   return (
-    <div className="hidden md:flex items-center space-x-4">
+    <div className="hidden md:flex items-center space-x-3.5 border-l border-slate-200 pl-5">
       <a
         href={`mailto:${EMAIL}`}
-        className="text-slate-600 hover:text-blue-600 transition-colors"
-        title="Email"
+        className="text-slate-400 hover:text-slate-900 transition-colors"
+        title="Email Direct"
       >
-        <Mail size={20} />
+        <Mail size={16} />
       </a>
       <a
         href={LINKEDIN}
         target="_blank"
         rel="noopener noreferrer"
-        className="text-slate-600 hover:text-blue-600 transition-colors"
-        title="LinkedIn"
+        className="text-slate-400 hover:text-slate-900 transition-colors"
+        title="LinkedIn Profile"
       >
-        <Linkedin size={20} />
+        <Linkedin size={16} />
       </a>
       <a
         href={SUBSTACK}
         target="_blank"
         rel="noopener noreferrer"
-        title="Substack"
-        style={{ marginLeft: '-7px' }}
+        className="flex items-center group"
+        title="Substack Architecture Articles"
       >
         <img
-          className="h-7"
+          className="h-4 w-4 object-contain grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 transition-all"
           src={substack}
+          alt=""
           draggable="false"
-          style={{
-            filter: 'hue-rotate(227deg) saturate(0.15) brightness(0.7) contrast(1.2)',
-          }}
         />
       </a>
       <a
         href={MEDIUM}
         target="_blank"
         rel="noopener noreferrer"
-        title="Medium"
-        style={{ marginLeft: '-7px' }}
+        className="flex items-center group"
+        title="Medium Documentation"
       >
         <img
-          className="h-7"
+          className="h-4 w-4 object-contain grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 transition-all"
           src={medium}
+          alt=""
           draggable="false"
-          style={{
-            filter: 'sepia(100%) saturate(0.15) hue-rotate(257deg) brightness(0.3) contrast(0.3)',
-          }}
         />
       </a>
       <a
         href={GITHUB}
         target="_blank"
         rel="noopener noreferrer"
-        className="text-slate-600 hover:text-blue-600 transition-colors"
-        title="GitHub"
+        className="text-slate-400 hover:text-slate-900 transition-colors"
+        title="GitHub Infrastructure Repos"
       >
-        <Github size={20} />
+        <Github size={16} />
       </a>
+    </div>
+  );
+}
+
+function MobileNavigation({ scrollToSection }: NavigationProps) {
+  const links = ['about', 'skills', 'experience', 'projects', 'contact'];
+
+  return (
+    <div className="md:hidden py-4 border-t border-slate-100 animation-slide-down">
+      <nav className="flex flex-col space-y-3.5">
+        {links.map((link) => (
+          <button 
+            key={link}
+            onClick={() => scrollToSection(link)}
+            className="text-sm font-medium text-slate-600 hover:text-slate-900 capitalize text-left py-0.5"
+          >
+            {link}
+          </button>
+        ))}
+
+        <div className="flex items-center space-x-4 pt-4 border-t border-slate-100">
+          <a
+            href={`mailto:${EMAIL}`}
+            className="text-slate-400 hover:text-slate-900 transition-colors"
+            title="Email"
+          >
+            <Mail size={18} />
+          </a>
+          <a
+            href={LINKEDIN}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-slate-400 hover:text-slate-900 transition-colors"
+            title="LinkedIn"
+          >
+            <Linkedin size={18} />
+          </a>
+          <a
+            href={SUBSTACK}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center"
+            title="Substack"
+          >
+            <img
+              className="h-4 w-4 object-contain grayscale opacity-70"
+              src={substack}
+              alt=""
+              draggable="false"
+            />
+          </a>
+          <a
+            href={MEDIUM}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center"
+            title="Medium"
+          >
+            <img
+              className="h-4 w-4 object-contain grayscale opacity-70"
+              src={medium}
+              alt=""
+              draggable="false"
+            />
+          </a>
+          <a
+            href={GITHUB}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-slate-400 hover:text-slate-900 transition-colors"
+            title="GitHub"
+          >
+            <Github size={18} />
+          </a>
+        </div>
+      </nav>
     </div>
   );
 }

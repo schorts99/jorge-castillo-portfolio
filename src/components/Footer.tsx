@@ -13,138 +13,114 @@ export default function Footer() {
     }
   };
 
+  const links = ['about', 'skills', 'experience', 'projects', 'contact'];
+
   return (
-    <footer className="bg-slate-900 text-white py-12">
+    <footer className="bg-slate-900 text-white py-16 border-t border-slate-800 selection:bg-blue-500 selection:text-white">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid md:grid-cols-3 gap-8">
-          <div>
-            <h3 className="text-xl font-bold mb-4">
-              Jorge Castillo
-            </h3>
-            <p className="text-slate-300 leading-relaxed">
-              Software Engineer passionate about creating scalable, 
-              efficient solutions that make a real impact.
+        <div className="grid md:grid-cols-12 gap-10">
+          <div className="md:col-span-5 space-y-4">
+            <div className="flex items-center gap-2">
+              <h3 className="text-lg font-bold tracking-tight text-white">
+                Jorge Castillo
+              </h3>
+              <span className="text-[9px] font-bold uppercase tracking-wider text-slate-400 bg-slate-800 border border-slate-700 px-1.5 py-0.5 rounded">
+                Sr. Full-Stack Engineer
+              </span>
+            </div>
+            <p className="text-sm text-slate-400 leading-relaxed max-w-sm">
+              Focused on designing decouple architectures, building expressive core primitives, and implementing domain-driven design structures.
             </p>
           </div>
 
-          <div>
-            <h4 className="font-semibold mb-4">
-              Quick Links
+          <div className="md:col-span-3 md:col-start-7 space-y-4">
+            <h4 className="text-xs font-bold text-slate-400 uppercase tracking-wider">
+              Navigation
             </h4>
-            <ul className="space-y-2 text-slate-300">
-              <li>
-                <button
-                  className="cursor-pointer hover:text-white transition-colors"
-                  type="button"
-                  onClick={() => scrollToSection('about')}
-                >
-                  About
-                </button>
-              </li>
-              <li>
-                <button
-                  className="cursor-pointer hover:text-white transition-colors"
-                  type="button"
-                  onClick={() => scrollToSection('skills')}
-                >
-                  Skills
-                </button>
-              </li>
-              <li>
-                <button
-                  className="cursor-pointer hover:text-white transition-colors"
-                  type="button"
-                  onClick={() => scrollToSection('experience')}
-                >
-                  Experience
-                </button>
-              </li>
-              <li>
-                <button
-                  className="cursor-pointer hover:text-white transition-colors"
-                  type="button"
-                  onClick={() => scrollToSection('projects')}
-                >
-                  Projects
-                </button>
-              </li>
-              <li>
-                <button
-                  className="cursor-pointer hover:text-white transition-colors"
-                  type="button"
-                  onClick={() => scrollToSection('contact')}
-                >
-                  Contact
-                </button>
-              </li>
+            <ul className="space-y-2 text-sm text-slate-400">
+              {links.map((link) => (
+                <li key={link}>
+                  <button
+                    className="cursor-pointer hover:text-white capitalize transition-colors text-left"
+                    type="button"
+                    onClick={() => scrollToSection(link)}
+                  >
+                    {link}
+                  </button>
+                </li>
+              ))}
             </ul>
           </div>
 
-          <div>
-            <h4 className="font-semibold mb-4">
-              Connect
+          <div className="md:col-span-3 space-y-4">
+            <h4 className="text-xs font-bold text-slate-400 uppercase tracking-wider">
+              Connections
             </h4>
-            <div className="flex space-x-4 mb-4">
+            <div className="flex flex-wrap gap-2">
               <a
                 href={LINKEDIN}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 bg-slate-800 rounded-lg hover:bg-slate-700 transition-colors"
+                className="p-2 bg-slate-800 border border-slate-700/50 rounded-xl text-slate-300 hover:text-white hover:bg-slate-700 transition-colors"
+                title="LinkedIn Profile"
               >
-                <Linkedin size={20} />
+                <Linkedin size={16} />
               </a>
               <a
                 href={SUBSTACK}
                 target="_blank"
                 rel="noopener noreferrer"
-                title="Substack"
-                className="flex items-center px-1 bg-slate-800 rounded-lg hover:bg-slate-700 transition-colors"
+                className="flex items-center p-2 bg-slate-800 border border-slate-700/50 rounded-xl hover:bg-slate-700 transition-colors group"
+                title="Substack Newsletter"
               >
                 <img
-                  className="h-7"
+                  className="h-4 w-4 object-contain invert brightness-0 opacity-70 group-hover:opacity-100 transition-opacity"
                   src={substack}
+                  alt=""
                   draggable="false"
-                  style={{ filter: 'brightness(10)' }}
                 />
               </a>
               <a
                 href={MEDIUM}
                 target="_blank"
                 rel="noopener noreferrer"
-                title="Medium"
-                className="flex items-center px-1 bg-slate-800 rounded-lg hover:bg-slate-700 transition-colors"
+                className="flex items-center p-2 bg-slate-800 border border-slate-700/50 rounded-xl hover:bg-slate-700 transition-colors group"
+                title="Medium Publication"
               >
                 <img
-                  className="h-7"
+                  className="h-4 w-4 object-contain invert brightness-0 opacity-70 group-hover:opacity-100 transition-opacity"
                   src={medium}
+                  alt=""
                   draggable="false"
-                  style={{ filter: 'brightness(10) invert(1)' }}
                 />
               </a>
               <a
                 href={GITHUB}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 bg-slate-800 rounded-lg hover:bg-slate-700 transition-colors"
+                className="p-2 bg-slate-800 border border-slate-700/50 rounded-xl text-slate-300 hover:text-white hover:bg-slate-700 transition-colors"
+                title="GitHub Repositories"
               >
-                <Github size={20} />
+                <Github size={16} />
               </a>
               <a
                 href={`mailto:${EMAIL}`}
-                className="p-2 bg-slate-800 rounded-lg hover:bg-slate-700 transition-colors"
+                className="p-2 bg-slate-800 border border-slate-700/50 rounded-xl text-slate-300 hover:text-white hover:bg-slate-700 transition-colors"
+                title="Email Communication"
               >
-                <Mail size={20} />
+                <Mail size={16} />
               </a>
             </div>
-            <p className="text-slate-300 text-sm">
+            <div className="text-xs text-slate-500 font-medium tracking-wide truncate">
               {EMAIL}
-            </p>
+            </div>
           </div>
         </div>
 
-        <div className="border-t border-slate-800 mt-8 pt-8 text-center">
-          <p className="text-slate-400 flex items-center justify-center gap-2">
-            Made with <Heart className="text-red-500" size={16} /> by Jorge Castillo © 2025
+        <div className="border-t border-slate-800/80 mt-12 pt-8 text-center flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500 font-medium">
+          <p>© {new Date().getFullYear()} Jorge Castillo Díaz. All rights reserved.</p>
+          <p className="flex items-center gap-1.5 bg-slate-950 px-3 py-1.5 border border-slate-800 rounded-lg">
+            Engineered with <Heart className="text-rose-500 fill-rose-500 animate-pulse" size={12} /> for resilient systems
           </p>
         </div>
       </div>

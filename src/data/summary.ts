@@ -1,51 +1,41 @@
-import { Code, Zap, Users, Target } from 'lucide-react'
+import { Layers, Zap, ShieldAlert, GitBranch } from 'lucide-react'
 
-export const SUMMARY = 'Highly skilled and results-oriented Software Engineer with a proven track record of designing, developing, and deploying robust and scalable web and mobile applications. Proficient in a wide range of programming languages, frameworks, and tools, with extensive experience in fullstack development, API design, database optimization, and leading technical teams.'
+export const SUMMARY = 'Senior Full-Stack Engineer and Architect specializing in building decoupled, resilient, and highly maintainable distributed systems. With over 9 years of experience leading engineering initiatives, my focus is on replacing monolithic complexity with clean architectural boundaries. I treat architecture not just as code organization, but as a mechanism to scale team velocity and guarantee structural safety under heavy production loads.'
+
 export const HIGHLIGHTS = [
   {
-    icon: Code,
-    title: "Full-Stack Expertise",
-    description: "Proficient in modern web and mobile technologies, from React and Vue.js frontends to Ruby on Rails and Python backends."
+    icon: Layers,
+    title: "Architectural Integrity",
+    description: "Deep expertise implementing Domain-Driven Design (DDD), Hexagonal Architecture (Ports & Adapters), and clean boundary separation to prevent code decay."
   },
   {
     icon: Zap,
-    title: "Performance Focused",
-    description: "Specialized in optimizing system performance, database queries, and implementing efficient architectural solutions."
+    title: "Event-Driven Streams",
+    description: "Specialized in designing asynchronous pipelines, managing concurrent real-time transactions, and implementing high-throughput webhooks."
   },
   {
-    icon: Users,
-    title: "Team Leadership",
-    description: "Experienced in leading technical teams, establishing processes, and mentoring developers in best practices."
+    icon: GitBranch,
+    title: "Engineering Leadership",
+    description: "Former Frontend Lead and Architect. Passionate about establishing technical culture through Design Docs, rigorous RFCs, and collaborative code reviews."
   },
   {
-    icon: Target,
-    title: "Business Impact",
-    description: "Proven track record of delivering scalable solutions that drive business growth and enhance user experience."
+    icon: ShieldAlert,
+    title: "Performance & Safety",
+    description: "Focused on system bottlenecks, optimizing relational and NoSQL databases, processing high-frequency data buffers, and preventing race conditions."
   }
 ]
+
 export const SKILLS = [
   {
-    category: "Languages",
-    technologies: ["JavaScript", "TypeScript", "Ruby", "Python", "HTML", "CSS"],
+    category: "Core Stack Mastery",
+    technologies: ["TypeScript", "NestJS", "Node.js", "React", "Ruby on Rails", "Vue.js", "PostgreSQL"],
   },
   {
-    category: "Frontend",
-    technologies: ["ReactJS", "VueJS", "NextJS", "React Native", "Angular", "Svelte", "Redux", "Vuex", "Tailwind CSS", "Material UI", "Bootstrap"],
+    category: "Architecture & Data",
+    technologies: ["Domain-Driven Design (DDD)", "Ports & Adapters", "Event-Driven Patterns", "Cloud Firestore", "Redis", "RabbitMQ", "GraphQL"],
   },
   {
-    category: "Backend",
-    technologies: ["Ruby on Rails", "NestJS", "Express", "Flask", "GraphQL", "Sidekiq", "API REST", "JSON API"],
-  },
-  {
-    category: "Databases",
-    technologies: ["PostgreSQL", "MongoDB", "Redis", "Firestore", "DynamoDB"],
-  },
-  {
-    category: "Cloud & Services",
-    technologies: ["Firebase", "AWS", "GCP", "Stripe", "Twilio", "RabbitMQ", "EnviaYa!", "SendGrid", "Wompi", "MailerSend", "Pusher"],
-  },
-  {
-    category: "Testing & Tools",
-    technologies: ["Jest", "RSpec", "PyTest", "K6", "Git", "Docker", "Jenkins", "Terraform"],
-  },
+    category: "DevOps & Tooling",
+    technologies: ["AWS (Lambda/RDS/S3)", "Docker", "GitHub Actions", "Firebase", "Jest", "RSpec", "Neovim / Lua"],
+  }
 ]
