@@ -1,6 +1,6 @@
 import { Layers, Zap, ShieldAlert, GitBranch } from 'lucide-react'
 
-export const SUMMARY = 'Senior Full-Stack Engineer and Architect specializing in building decoupled, resilient, and highly maintainable distributed systems. With over 9 years of experience leading engineering initiatives, my focus is on replacing monolithic complexity with clean architectural boundaries. I treat architecture not just as code organization, but as a mechanism to scale team velocity and guarantee structural safety under heavy production loads.'
+export const SUMMARY = 'Senior Full-Stack Engineer specializing in building decoupled, resilient, and highly maintainable distributed systems. With over 9 years of experience leading engineering initiatives, my focus is on replacing monolithic complexity with clean architectural boundaries. I treat architecture not just as code organization, but as a mechanism to scale team velocity and guarantee structural safety under heavy production loads.'
 
 export const HIGHLIGHTS = [
   {
