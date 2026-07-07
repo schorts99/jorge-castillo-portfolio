@@ -118,7 +118,7 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-slate-800/80 mt-12 pt-8 text-center flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500 font-medium">
-          <p>© {new Date().getFullYear()} Jorge Castillo Díaz. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Jorge Castillo. All rights reserved.</p>
           <p className="flex items-center gap-1.5 bg-slate-950 px-3 py-1.5 border border-slate-800 rounded-lg">
             Engineered with <Heart className="text-rose-500 fill-rose-500 animate-pulse" size={12} /> for resilient systems
           </p>

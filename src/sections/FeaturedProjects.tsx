@@ -68,7 +68,9 @@ export default function FeaturedProjects() {
 
         <div className="grid md:grid-cols-2 gap-8 min-h-[400px] transition-all duration-300">
           {filteredProjects.map((project) => {
-            const isNpmPackage = project.website.includes('npmjs.com');
+            const isNpmPackage =
+              project.website.includes('npmjs.com') ||
+              project.website.includes('github.com')
 
             return (
               <div 
@@ -110,7 +112,6 @@ export default function FeaturedProjects() {
                     {project.description}
                   </p>
 
-                  {/* Impact Highlights Bullet Lists */}
                   <ul className="space-y-3 mb-6">
                     {project.highlights.map((highlight, index) => (
                       <li key={index} className="text-xs leading-relaxed text-slate-600 flex items-start gap-2.5">
