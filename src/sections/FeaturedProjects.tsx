@@ -1,31 +1,85 @@
 import { useState } from 'react'
-import { ExternalLink, Layers, Terminal, ArrowRight, Github } from 'lucide-react'
+import {
+  ExternalLink,
+  Layers,
+  Terminal,
+  ArrowRight,
+  Github,
+} from 'lucide-react'
 import { FEATURED_PROJECTS } from '@/data/projects'
 
+type ProjectType = 'CLI' | 'TOOL' | 'WEB' | 'MOBILE' | 'PACKAGE' | 'DESKTOP'
+
+const PROJECT_TYPE_CONFIG: Record<
+  ProjectType,
+  { label: string; className: string }
+> = {
+  PACKAGE: {
+    label: 'Open Source Package',
+    className: 'bg-rose-50 text-rose-700 border border-rose-100',
+  },
+  CLI: {
+    label: 'CLI Tool',
+    className: 'bg-violet-50 text-violet-700 border border-violet-100',
+  },
+  TOOL: {
+    label: 'Developer Tool',
+    className: 'bg-cyan-50 text-cyan-700 border border-cyan-100',
+  },
+  MOBILE: {
+    label: 'Mobile Application',
+    className: 'bg-amber-50 text-amber-700 border border-amber-100',
+  },
+  WEB: {
+    label: 'Web Application',
+    className: 'bg-emerald-50 text-emerald-700 border border-emerald-100',
+  },
+  DESKTOP: {
+    label: 'Desktop Application',
+    className: 'bg-orange-50 text-orange-700 border border-orange-100',
+  },
+}
+
 export default function FeaturedProjects() {
-  const [activeTab, setActiveTab] = useState<'all' | 'architecture' | 'applications'>('all')
+  const [activeTab, setActiveTab] = useState<
+    'all' | 'architecture' | 'applications'
+  >('all')
+
   const filteredProjects = FEATURED_PROJECTS.filter((project) => {
     if (activeTab === 'all') return true
 
-    const isPackage = project.technologies.includes('NPM Package') || 
-                      project.technologies.includes('Architecture') ||
-                      project.name.includes('Kernel')
-                      
-    if (activeTab === 'architecture') return isPackage
-    if (activeTab === 'applications') return !isPackage
+    if (activeTab === 'architecture') {
+      return (
+        project.type === 'PACKAGE' ||
+        project.type === 'CLI' ||
+        project.type === 'TOOL'
+      )
+    }
+
+    if (activeTab === 'applications') {
+      return (
+        project.type === 'WEB' ||
+        project.type === 'MOBILE' ||
+        project.type === 'DESKTOP'
+      )
+    }
 
     return true
   })
 
   return (
-    <section id="projects" className="py-20 bg-slate-50/60 selection:bg-blue-500 selection:text-white">
+    <section
+      id="projects"
+      className="py-20 bg-slate-50/60 selection:bg-blue-500 selection:text-white"
+    >
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight mb-4">
             Engineering Showcases
           </h2>
           <p className="text-lg text-slate-500 max-w-2xl mx-auto font-normal">
-            Deep-dives into domain primitives, open-source decoupling abstractions, and production-grade applications.
+            Deep-dives into domain primitives, open-source decoupling
+            abstractions, and production-grade applications.
           </p>
         </div>
 
@@ -68,12 +122,10 @@ export default function FeaturedProjects() {
 
         <div className="grid md:grid-cols-2 gap-8 min-h-[400px] transition-all duration-300">
           {filteredProjects.map((project) => {
-            const isNpmPackage =
-              project.website.includes('npmjs.com') ||
-              project.website.includes('github.com')
+            const typeConfig = PROJECT_TYPE_CONFIG[project.type as ProjectType]
 
             return (
-              <div 
+              <div
                 key={project.name}
                 className="group bg-white rounded-2xl p-6 md:p-8 border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between"
               >
@@ -82,12 +134,10 @@ export default function FeaturedProjects() {
                     <span className="text-xs font-semibold text-blue-600 bg-blue-50 px-2.5 py-1 rounded-md tracking-wide">
                       {project.role}
                     </span>
-                    <span className={`text-xs font-bold px-2.5 py-1 rounded-md uppercase tracking-wider ${
-                      isNpmPackage 
-                        ? 'bg-rose-50 text-rose-700 border border-rose-100' 
-                        : 'bg-emerald-50 text-emerald-700 border border-emerald-100'
-                    }`}>
-                      {isNpmPackage ? 'Open Source Package' : 'Cloud Native App'}
+                    <span
+                      className={`text-xs font-bold px-2.5 py-1 rounded-md uppercase tracking-wider ${typeConfig.className}`}
+                    >
+                      {typeConfig.label}
                     </span>
                   </div>
 
@@ -96,10 +146,10 @@ export default function FeaturedProjects() {
                       {project.name}
                     </h3>
                     {project.website && (
-                      <a 
-                        href={project.website} 
-                        target="_blank" 
-                        rel="noopener noreferrer" 
+                      <a
+                        href={project.website}
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className="text-slate-400 hover:text-blue-600 transition-colors p-1"
                         aria-label={`Visit ${project.name}`}
                       >
@@ -114,7 +164,10 @@ export default function FeaturedProjects() {
 
                   <ul className="space-y-3 mb-6">
                     {project.highlights.map((highlight, index) => (
-                      <li key={index} className="text-xs leading-relaxed text-slate-600 flex items-start gap-2.5">
+                      <li
+                        key={index}
+                        className="text-xs leading-relaxed text-slate-600 flex items-start gap-2.5"
+                      >
                         <span className="w-1.5 h-1.5 bg-slate-300 rounded-full mt-1.5 flex-shrink-0 group-hover:bg-blue-500 transition-colors duration-300" />
                         <span className="flex-1">{highlight}</span>
                       </li>
@@ -125,8 +178,8 @@ export default function FeaturedProjects() {
                 <div>
                   <div className="flex flex-wrap gap-1.5 pt-4 border-t border-slate-50">
                     {project.technologies.map((tech) => (
-                      <span 
-                        key={tech} 
+                      <span
+                        key={tech}
                         className="text-[11px] font-medium text-slate-500 bg-slate-100/80 px-2 py-0.5 rounded"
                       >
                         {tech}
@@ -134,7 +187,6 @@ export default function FeaturedProjects() {
                     ))}
                   </div>
                 </div>
-
               </div>
             )
           })}
@@ -145,7 +197,8 @@ export default function FeaturedProjects() {
             Looking for more architectural patterns?
           </h4>
           <p className="text-sm text-slate-500 mb-6 max-w-lg mx-auto">
-            My source repositories include sandbox experiments exploring distributed setups, state machines, and environment configs.
+            My source repositories include sandbox experiments exploring
+            distributed setups, state machines, and environment configs.
           </p>
           <div className="flex flex-col sm:flex-row gap-3.5 justify-center items-center">
             <a
@@ -166,7 +219,6 @@ export default function FeaturedProjects() {
             </a>
           </div>
         </div>
-
       </div>
     </section>
   )
