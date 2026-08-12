@@ -87,7 +87,7 @@ export default function Presentation() {
                       draggable="false"
                       alt="Jorge Castillo Profile Portrait"
                     />
-                    <span className="absolute bottom-1 right-1 w-4 h-4 bg-emerald-500 border-2 border-white rounded-full" title="Available for architecture & engineering roles"></span>
+                    <span className="absolute bottom-2 right-2 w-4 h-4 bg-emerald-500 border-2 border-white rounded-full" title="Available for architecture & engineering roles"></span>
                   </div>
                   <h3 className="text-xl font-bold text-slate-900 tracking-tight">
                     Jorge Castillo

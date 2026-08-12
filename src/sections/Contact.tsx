@@ -1,7 +1,7 @@
 import { useState, FormEvent, ChangeEvent } from 'react'
 import { Mail, Phone, Github, Linkedin, MapPin, Send, ArrowUpRight } from 'lucide-react'
 
-import { EMAIL, PHONE, LINKEDIN, GITHUB, MEDIUM, SUBSTACK } from '@/data/contact'
+import { EMAIL, PHONE, RAW_PHONE, LINKEDIN, GITHUB, MEDIUM, SUBSTACK } from '@/data/contact'
 import substack from '../assets/images/substack.png'
 import medium from '../assets/images/medium.png'
 
@@ -81,8 +81,11 @@ export default function Contact() {
                 </div>
               </a>
 
-              <div className="flex items-center gap-4 p-4 bg-slate-50 border border-slate-100 rounded-xl">
-                <div className="w-10 h-10 bg-emerald-50 text-emerald-600 rounded-lg flex items-center justify-center flex-shrink-0">
+              <a
+                href={`tel:${RAW_PHONE}`}
+                className="flex items-center gap-4 p-4 bg-slate-50 border border-slate-100 rounded-xl hover:bg-slate-100/80 hover:border-slate-200 transition-all duration-200 group"
+              >
+                <div className="w-10 h-10 bg-emerald-50 text-emerald-600 rounded-lg flex items-center justify-center group-hover:bg-emerald-600 group-hover:text-white transition-colors  flex-shrink-0">
                   <Phone size={18} />
                 </div>
                 <div>
@@ -93,7 +96,7 @@ export default function Contact() {
                     {PHONE}
                   </div>
                 </div>
-              </div>
+              </a>
 
               <div className="flex items-center gap-4 p-4 bg-slate-50 border border-slate-100 rounded-xl">
                 <div className="w-10 h-10 bg-purple-50 text-purple-600 rounded-lg flex items-center justify-center flex-shrink-0">
