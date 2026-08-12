@@ -31,14 +31,20 @@ export default function Contact() {
   }
 
   return (
-    <section id="contact" className="py-20 bg-white selection:bg-blue-500 selection:text-white">
+    <section
+      id="contact"
+      className="py-20 bg-white selection:bg-blue-500 selection:text-white"
+    >
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight mb-4">
-            Initiate a Collaboration
+            Let’s Build Something Solid
           </h2>
           <p className="text-lg text-slate-500 max-w-2xl mx-auto font-normal">
-            Whether you are looking to audit an existing platform architecture, introduce clean domain primitives, or scale up a team, let's talk strategy.
+            Whether you need an architecture review, help shaping a
+            domain-driven system, or support with a complex engineering
+            initiative, I’d be happy to discuss your goals and explore how I can
+            help.
           </p>
         </div>
 
@@ -46,10 +52,14 @@ export default function Contact() {
           <div className="lg:col-span-5 space-y-8">
             <div>
               <h3 className="text-xl font-bold text-slate-900 mb-4 tracking-tight">
-                Technical Consultation
+                Architecture & Engineering Consulting
               </h3>
               <p className="text-slate-600 text-sm leading-relaxed">
-                I assist engineering organizations in modernizing their architectural layers, moving towards bounded contexts, and configuring optimal developer workspaces. Drop a line to discuss roles, advisory positions, or project delivery goals.
+                I help engineering teams design and evolve maintainable software
+                systems—from architecture and domain modeling to developer
+                experience and technical strategy. Get in touch to discuss a
+                project, consulting engagement, advisory role, or engineering
+                opportunity.
               </p>
             </div>
 
@@ -62,8 +72,12 @@ export default function Contact() {
                   <Mail size={18} />
                 </div>
                 <div className="overflow-hidden">
-                  <div className="text-xs font-bold text-slate-400 uppercase tracking-wider">Direct Mail</div>
-                  <div className="text-slate-700 text-sm font-medium truncate">{EMAIL}</div>
+                  <div className="text-xs font-bold text-slate-400 uppercase tracking-wider">
+                    Email
+                  </div>
+                  <div className="text-slate-700 text-sm font-medium truncate">
+                    {EMAIL}
+                  </div>
                 </div>
               </a>
 
@@ -72,8 +86,12 @@ export default function Contact() {
                   <Phone size={18} />
                 </div>
                 <div>
-                  <div className="text-xs font-bold text-slate-400 uppercase tracking-wider">Secure Comms</div>
-                  <div className="text-slate-700 text-sm font-medium">{PHONE}</div>
+                  <div className="text-xs font-bold text-slate-400 uppercase tracking-wider">
+                    Phone
+                  </div>
+                  <div className="text-slate-700 text-sm font-medium">
+                    {PHONE}
+                  </div>
                 </div>
               </div>
 
@@ -82,15 +100,19 @@ export default function Contact() {
                   <MapPin size={18} />
                 </div>
                 <div>
-                  <div className="text-xs font-bold text-slate-400 uppercase tracking-wider">HQ Location</div>
-                  <div className="text-slate-700 text-sm font-medium">Oaxaca, Mexico</div>
+                  <div className="text-xs font-bold text-slate-400 uppercase tracking-wider">
+                    Based In
+                  </div>
+                  <div className="text-slate-700 text-sm font-medium">
+                    Oaxaca, Mexico
+                  </div>
                 </div>
               </div>
             </div>
 
             <div className="pt-6 border-t border-slate-100">
               <h4 className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-4">
-                Engineering Writing & Profiles
+                Find Me Online
               </h4>
               <div className="flex flex-wrap gap-2.5">
                 <a
@@ -102,7 +124,7 @@ export default function Contact() {
                 >
                   <Linkedin size={18} />
                 </a>
-                
+
                 <a
                   href={GITHUB}
                   target="_blank"
@@ -120,9 +142,18 @@ export default function Contact() {
                   className="flex items-center gap-2 px-3 py-1.5 bg-slate-50 hover:bg-orange-50/50 border border-slate-200/60 rounded-xl transition-all duration-200 group"
                   title="Substack Newsletter"
                 >
-                  <img className="h-4 w-4 object-contain grayscale group-hover:grayscale-0 transition-all" src={substack} alt="" />
-                  <span className="text-xs font-semibold text-slate-600 group-hover:text-slate-900">Substack</span>
-                  <ArrowUpRight size={12} className="text-slate-400 group-hover:text-slate-600" />
+                  <img
+                    className="h-4 w-4 object-contain grayscale group-hover:grayscale-0 transition-all"
+                    src={substack}
+                    alt=""
+                  />
+                  <span className="text-xs font-semibold text-slate-600 group-hover:text-slate-900">
+                    Substack
+                  </span>
+                  <ArrowUpRight
+                    size={12}
+                    className="text-slate-400 group-hover:text-slate-600"
+                  />
                 </a>
 
                 <a
@@ -132,9 +163,18 @@ export default function Contact() {
                   className="flex items-center gap-2 px-3 py-1.5 bg-slate-50 hover:bg-slate-100 border border-slate-200/60 rounded-xl transition-all duration-200 group"
                   title="Medium Articles"
                 >
-                  <img className="h-4 w-4 object-contain grayscale group-hover:grayscale-0 transition-all" src={medium} alt="" />
-                  <span className="text-xs font-semibold text-slate-600 group-hover:text-slate-900">Medium</span>
-                  <ArrowUpRight size={12} className="text-slate-400 group-hover:text-slate-600" />
+                  <img
+                    className="h-4 w-4 object-contain grayscale group-hover:grayscale-0 transition-all"
+                    src={medium}
+                    alt=""
+                  />
+                  <span className="text-xs font-semibold text-slate-600 group-hover:text-slate-900">
+                    Medium
+                  </span>
+                  <ArrowUpRight
+                    size={12}
+                    className="text-slate-400 group-hover:text-slate-600"
+                  />
                 </a>
               </div>
             </div>
@@ -142,13 +182,16 @@ export default function Contact() {
 
           <div className="lg:col-span-7 bg-slate-50/70 border border-slate-100 rounded-2xl p-6 md:p-8">
             <h3 className="text-lg font-bold text-slate-900 mb-6 tracking-tight">
-              Send an Inbound Message
+              Start a Conversation
             </h3>
             <form onSubmit={handleSubmit} className="space-y-5">
               <div className="grid md:grid-cols-2 gap-4">
                 <div>
-                  <label htmlFor="name" className="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">
-                    Name
+                  <label
+                    htmlFor="name"
+                    className="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-2"
+                  >
+                    Your Name
                   </label>
                   <input
                     type="text"
@@ -158,12 +201,15 @@ export default function Contact() {
                     value={formData.name}
                     onChange={handleInputChange}
                     className="w-full text-sm px-4 py-3 bg-white border border-slate-200 rounded-xl focus:outline-none focus:border-slate-900 focus:ring-4 focus:ring-slate-900/5 transition-all text-slate-800"
-                    placeholder="Alex Mercer"
+                    placeholder="Jane Doe"
                   />
                 </div>
                 <div>
-                  <label htmlFor="email" className="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">
-                    Email Address
+                  <label
+                    htmlFor="email"
+                    className="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-2"
+                  >
+                    Email
                   </label>
                   <input
                     type="email"
@@ -173,14 +219,17 @@ export default function Contact() {
                     value={formData.email}
                     onChange={handleInputChange}
                     className="w-full text-sm px-4 py-3 bg-white border border-slate-200 rounded-xl focus:outline-none focus:border-slate-900 focus:ring-4 focus:ring-slate-900/5 transition-all text-slate-800"
-                    placeholder="alex@company.com"
+                    placeholder="you@company.com"
                   />
                 </div>
               </div>
 
               <div>
-                <label htmlFor="subject" className="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">
-                  Subject Context
+                <label
+                  htmlFor="subject"
+                  className="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-2"
+                >
+                  Subject
                 </label>
                 <input
                   type="text"
@@ -190,13 +239,16 @@ export default function Contact() {
                   value={formData.subject}
                   onChange={handleInputChange}
                   className="w-full text-sm px-4 py-3 bg-white border border-slate-200 rounded-xl focus:outline-none focus:border-slate-900 focus:ring-4 focus:ring-slate-900/5 transition-all text-slate-800"
-                  placeholder="Architecture Review / Core Library Advisory"
+                  placeholder="How can I help?"
                 />
               </div>
 
               <div>
-                <label htmlFor="message" className="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">
-                  Scope Outline
+                <label
+                  htmlFor="message"
+                  className="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-2"
+                >
+                  Message
                 </label>
                 <textarea
                   id="message"
@@ -206,7 +258,7 @@ export default function Contact() {
                   value={formData.message}
                   onChange={handleInputChange}
                   className="w-full text-sm px-4 py-3 bg-white border border-slate-200 rounded-xl focus:outline-none focus:border-slate-900 focus:ring-4 focus:ring-slate-900/5 transition-all text-slate-800 resize-none"
-                  placeholder="Outline your tech infrastructure goals or engineering role specifications..."
+                  placeholder="Tell me a little about your project, challenge, or opportunity..."
                 ></textarea>
               </div>
 
@@ -215,11 +267,10 @@ export default function Contact() {
                 className="w-full bg-slate-900 hover:bg-slate-800 text-white px-6 py-3 rounded-xl transition-all duration-200 font-semibold text-sm flex items-center justify-center gap-2 shadow-sm cursor-pointer"
               >
                 <Send size={14} />
-                Dispatch Mailto Router
+                Send Message
               </button>
             </form>
           </div>
-
         </div>
       </div>
     </section>
