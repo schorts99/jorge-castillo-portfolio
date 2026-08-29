@@ -5,37 +5,69 @@ export const SUMMARY = 'Senior Full-Stack Engineer specializing in building deco
 export const HIGHLIGHTS = [
   {
     icon: Layers,
-    title: "Architectural Integrity",
-    description: "Deep expertise implementing Domain-Driven Design (DDD), Hexagonal Architecture (Ports & Adapters), and clean boundary separation to prevent code decay."
+    title: 'Architectural Integrity',
+    description:
+      'Deep expertise in Clean Architecture, Domain-Driven Design (DDD), Hexagonal (Ports & Adapters), CQRS, and strict dependency inversion to keep domain logic independent of frameworks and infrastructure.',
   },
   {
     icon: Zap,
-    title: "Event-Driven Streams",
-    description: "Specialized in designing asynchronous pipelines, managing concurrent real-time transactions, and implementing high-throughput webhooks."
+    title: 'Event-Driven Streams',
+    description:
+      'Specialized in asynchronous pipelines, high-concurrency systems, real-time notifications, and resilient event buses with retries and dead-letter handling.',
   },
   {
     icon: GitBranch,
-    title: "Engineering Leadership",
-    description: "Former Frontend Lead and Architect. Passionate about establishing technical culture through Design Docs, rigorous RFCs, and collaborative code reviews."
+    title: 'Engineering Leadership',
+    description:
+      'Former Frontend Lead and Architect. Passionate about establishing technical culture through Design Docs, rigorous RFCs, and collaborative code reviews.',
   },
   {
     icon: ShieldAlert,
-    title: "Performance & Safety",
-    description: "Focused on system bottlenecks, optimizing relational and NoSQL databases, processing high-frequency data buffers, and preventing race conditions."
-  }
+    title: 'Performance & Safety',
+    description:
+      'Focused on eliminating bottlenecks, optimizing relational and NoSQL data access, safe schema evolution, and preventing race conditions under heavy production loads.',
+  },
 ]
 
 export const SKILLS = [
   {
-    category: "Core Stack Mastery",
-    technologies: ["TypeScript", "NestJS", "Node.js", "React", "Ruby on Rails", "Vue.js", "PostgreSQL"],
+    category: 'Core Stack Mastery',
+    technologies: [
+      'TypeScript',
+      'NestJS',
+      'Node.js',
+      'React',
+      'Next.js',
+      'Ruby on Rails',
+      'Vue.js',
+      'PostgreSQL',
+    ],
   },
   {
-    category: "Architecture & Data",
-    technologies: ["Domain-Driven Design (DDD)", "Ports & Adapters", "Event-Driven Patterns", "Cloud Firestore", "Redis", "RabbitMQ", "GraphQL"],
+    category: 'Architecture & Data',
+    technologies: [
+      'Clean Architecture',
+      'Domain-Driven Design (DDD)',
+      'Hexagonal / Ports & Adapters',
+      'CQRS',
+      'Event-Driven',
+      'Cloud Firestore',
+      'IndexedDB',
+      'Redis',
+      'RabbitMQ',
+      'GraphQL',
+    ],
   },
   {
-    category: "DevOps & Tooling",
-    technologies: ["AWS (Lambda/RDS/S3)", "Docker", "GitHub Actions", "Firebase", "Jest", "RSpec", "Neovim / Lua"],
-  }
+    category: 'DevOps & Tooling',
+    technologies: [
+      'AWS (Lambda/S3/Cognito)',
+      'GCP / Firebase',
+      'Docker',
+      'GitHub Actions',
+      'Jest',
+      'RSpec',
+      'Neovim',
+    ],
+  },
 ]

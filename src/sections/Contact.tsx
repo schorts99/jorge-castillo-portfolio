@@ -16,11 +16,9 @@ export default function Contact() {
   const handleSubmit = (formEvent: FormEvent) => {
     formEvent.preventDefault()
 
-    const mailtoLink = `mailto:${EMAIL}?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(
-      `Hi Jorge,\n\nMy name is ${formData.name}.\n\n${formData.message}\n\nBest regards,\n${formData.name}\n${formData.email}`
+    window.location.href = `mailto:${EMAIL}?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(
+      `Hi Jorge,\n\nMy name is ${formData.name}.\n\n${formData.message}\n\nBest regards,\n${formData.name}\n${formData.email}`,
     )}`
-
-    window.location.href = mailtoLink;
   };
 
   const handleInputChange = (changeEvent: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {

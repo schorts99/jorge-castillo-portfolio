@@ -1,6 +1,33 @@
 export const PROJECTS = [
   {
     featured: true,
+    name: 'React Clean Architecture',
+    role: 'Creator',
+    period: '2025 – Present',
+    type: 'WEB',
+    website: 'https://github.com/schorts99/react-clean-architecture',
+    description:
+      'Modular Clean Architecture + Domain-Driven Design reference implementation for React and TypeScript that keeps domain, application, infrastructure, and presentation independently replaceable.',
+    highlights: [
+      'Built a full reference application demonstrating strict dependency inversion, CQRS (commands/queries + buses), application-owned ports, and replaceable infrastructure adapters (IndexedDB).',
+      'Implemented domain entities and value objects, DTOs, application-level caching with tag-based invalidation, browser/server composition roots, and Docker support while enforcing clear architectural boundaries.',
+      'Delivered a production-oriented learning and starter project that shows how to evolve frontend systems without coupling business rules to React, persistence, or transport details.',
+    ],
+    technologies: [
+      'TypeScript',
+      'React',
+      'React Router',
+      'Clean Architecture',
+      'DDD',
+      'CQRS',
+      'IndexedDB',
+      'Inversify',
+      'Vite',
+      'Docker',
+    ],
+  },
+  {
+    featured: true,
     name: 'Firestore Migrator',
     role: 'Creator',
     period: 'Aug 2026 – Present',
@@ -66,7 +93,7 @@ export const PROJECTS = [
     technologies: ['Bash', 'CLI', 'AI Tooling'],
   },
   {
-    featured: true,
+    featured: false,
     name: 'Schorts CLI',
     role: 'Creator',
     type: 'CLI',
