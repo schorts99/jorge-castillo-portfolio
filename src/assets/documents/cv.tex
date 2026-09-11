@@ -1,116 +1,309 @@
-\documentclass[11pt,a4paper]{article}
+%─────────────────────────────────────────────────────────────────────────────
+%  Jorge Castillo — Curriculum Vitae
+%─────────────────────────────────────────────────────────────────────────────
+\documentclass[10.5pt,a4paper]{article}
+
+%─── Encoding & fonts ────────────────────────────────────────────────────────
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
-\usepackage[margin=0.75in]{geometry}
+\usepackage{lmodern}           % crisper Latin Modern vector fonts
+\usepackage{microtype}         % better inter-word spacing & hyphenation
+
+%─── Page layout ─────────────────────────────────────────────────────────────
+\usepackage[
+  top=0.65in, bottom=0.65in,
+  left=0.70in, right=0.70in
+]{geometry}
+
+%─── Lists ───────────────────────────────────────────────────────────────────
 \usepackage{enumitem}
-\usepackage{hyperref}
-\usepackage{titlesec}
-\usepackage{fancyhdr}
+\setlist[itemize]{
+  leftmargin=1.4em,
+  itemsep=1pt,
+  topsep=3pt,
+  parsep=0pt
+}
+
+%─── Colors ──────────────────────────────────────────────────────────────────
 \usepackage{xcolor}
+\definecolor{accent}{RGB}{0,90,185}      % primary accent (section titles)
+\definecolor{muted}{RGB}{90,90,100}      % muted text (dates, locations)
+\definecolor{linkcolor}{RGB}{0,90,185}   % hyperlinks
 
-\definecolor{blue}{RGB}{0,102,204}
+%─── Hyperlinks ──────────────────────────────────────────────────────────────
+\usepackage[
+  colorlinks=true,
+  urlcolor=linkcolor,
+  linkcolor=linkcolor,
+  hidelinks
+]{hyperref}
 
-\titleformat{\section}{\large\bfseries\color{blue}}{}{0em}{}[\titlerule]
+%─── Section & subsection formatting ─────────────────────────────────────────
+\usepackage{titlesec}
+
+% Section: SKILLS / EXPERIENCE / … — colored + full-width rule
+\titleformat{\section}
+  {\large\bfseries\color{accent}}  % format
+  {}                               % label
+  {0em}                            % sep
+  {}                               % before-code
+  [\vspace{1pt}\color{accent!40}\titlerule] % after-code
+
+\titlespacing{\section}{0pt}{10pt}{5pt}
+
+% Subsection: not used directly — see \jobtitle helper below
 \titleformat{\subsection}{\bfseries}{}{0em}{}
+\titlespacing{\subsection}{0pt}{7pt}{1pt}
 
+%─── Header / footer ─────────────────────────────────────────────────────────
+\usepackage{fancyhdr}
 \pagestyle{fancy}
 \fancyhf{}
-\rfoot{\thepage}
+\renewcommand{\headrulewidth}{0pt}
+\lfoot{\small\color{muted}Jorge Castillo}
+\rfoot{\small\color{muted}\thepage}
 
+%─── Helpers ─────────────────────────────────────────────────────────────────
+\usepackage{tabularx}    % full-width table for job headers
+\usepackage{booktabs}    % (optional, for \toprule if ever needed)
+
+% \jobtitle{Company | Role}{Period | Location}
+\newcommand{\jobtitle}[2]{%
+  \noindent
+  \begin{tabularx}{\linewidth}{@{}X r@{}}
+    \textbf{#1} & \textit{\small\color{muted}#2}
+  \end{tabularx}\vspace{1pt}%
+}
+
+%─────────────────────────────────────────────────────────────────────────────
 \begin{document}
 
+%═══ HEADER ══════════════════════════════════════════════════════════════════
 \begin{center}
-    {\LARGE \bfseries Jorge Castillo} \\[5pt]
-    {\large Senior Full-Stack Engineer \& Software Architect} \\[8pt]
-    Oaxaca, Mexico \quad | \quad
-    \href{mailto:schorts@outlook.com}{schorts@outlook.com} \quad | \quad
-    \href{tel:+525644647235}{+52 564 464 7235} \\[4pt]
-    \href{https://www.linkedin.com/in/schorts}{LinkedIn} \quad | \quad
-    \href{https://github.com/schorts99}{GitHub} \quad | \quad
-    \href{https://schorts.netlify.app}{Portfolio}
+  {\LARGE\bfseries Jorge Castillo}\\[4pt]
+  {\normalsize\color{muted} Senior Full-Stack Engineer \& Software Architect}\\[6pt]
+  {\small
+    Oaxaca, Mexico
+    \enspace\textcolor{accent!60}{$\cdot$}\enspace
+    \href{mailto:schorts@outlook.com}{schorts@outlook.com}
+    \enspace\textcolor{accent!60}{$\cdot$}\enspace
+    \href{tel:+525644647235}{+52 564 464 7235}
+    \enspace\textcolor{accent!60}{$\cdot$}\enspace
+    \href{https://www.linkedin.com/in/schorts}{linkedin.com/in/schorts}
+    \enspace\textcolor{accent!60}{$\cdot$}\enspace
+    \href{https://github.com/schorts99}{github.com/schorts99}
+    \enspace\textcolor{accent!60}{$\cdot$}\enspace
+    \href{https://schorts.netlify.app}{schorts.netlify.app}
+  }
 \end{center}
 
-\vspace{0.5cm}
+\vspace{4pt}
+{\color{accent!35}\hrule}
+\vspace{8pt}
 
+%═══ PROFESSIONAL SUMMARY ════════════════════════════════════════════════════
 \section{Professional Summary}
-Senior Full-Stack Engineer and Architect with 9+ years of experience designing, scaling, and leading complex web and mobile applications. Expert in TypeScript ecosystems (Next.js, NestJS, React) and Ruby on Rails. Proven ability to architect enterprise-grade systems using Domain-Driven Design (DDD), Hexagonal Architecture, Event-Driven systems, and microservices. Author of production-grade open-source libraries for DDD primitives, Firestore/IndexedDB persistence, declarative schema migrations, and a full Clean Architecture + DDD reference implementation for React. Specialized in legacy modernization, performance optimization, and mentoring high-performing engineering teams.
 
+Senior Full-Stack Engineer and Architect with 9\raisebox{0.3ex}{+} years of experience designing,
+scaling, and leading complex web and mobile applications. Expert in the TypeScript ecosystem
+(Next.js, NestJS, React) and Ruby on Rails. Proven ability to architect enterprise-grade systems
+using Domain-Driven Design (DDD), Hexagonal Architecture, Event-Driven systems, and
+microservices. Author of production-grade open-source libraries covering DDD primitives,
+Firestore/IndexedDB persistence, declarative schema migrations, and a full Clean Architecture
++ DDD reference for React. Specialized in legacy modernization, performance optimization, and
+mentoring high-performing engineering teams.
+
+%═══ TECHNICAL SKILLS ════════════════════════════════════════════════════════
 \section{Technical Skills}
-\begin{itemize}[leftmargin=*, noitemsep]
-    \item \textbf{Architecture \& Design}: Domain-Driven Design (DDD), Hexagonal (Ports \& Adapters), Event-Driven Architecture, Unit of Work, Repository \& Criteria Patterns, Value Objects
-    \item \textbf{Languages \& Frameworks}: TypeScript, NestJS, Node.js, React, Next.js, Ruby on Rails, Python (Flask), Go
-    \item \textbf{Frontend \& Mobile}: React, Next.js, Vue.js, Tailwind CSS, React Native, Svelte, Electron, Gatsby
-    \item \textbf{Databases \& Messaging}: PostgreSQL, Firestore, Redis, RabbitMQ, MongoDB, GraphQL
-    \item \textbf{Cloud \& DevOps}: GCP (Firebase, Cloud Functions), AWS (S3, Lambda, Cognito), Docker, CI/CD, Bash Scripting
-    \item \textbf{Integrations \& Quality}: Stripe, Mercado Pago, Wompi, Jest, RSpec, K6, Twilio
-\end{itemize}
 
+\begin{tabularx}{\linewidth}{@{} l X @{}}
+  \textbf{Architecture \& Design}   & Domain-Driven Design, Hexagonal (Ports \& Adapters), Event-Driven,
+                                       Unit of Work, Repository \& Criteria Patterns, CQRS, Value Objects \\[2pt]
+  \textbf{Languages \& Frameworks}  & TypeScript, NestJS, Node.js, React, Next.js, Ruby on Rails, Python (Flask), Go \\[2pt]
+  \textbf{Frontend \& Mobile}       & React, Next.js, Vue.js, Tailwind CSS, React Native, Svelte, Electron, Gatsby \\[2pt]
+  \textbf{Databases \& Messaging}   & PostgreSQL, Firestore, Redis, RabbitMQ, MongoDB, GraphQL \\[2pt]
+  \textbf{Cloud \& DevOps}          & GCP (Firebase, Cloud Functions), AWS (S3, Lambda, Cognito), Docker, CI/CD, Bash \\[2pt]
+  \textbf{Integrations \& Testing}  & Stripe, Mercado Pago, Wompi, Twilio, Jest, RSpec, K6 \\
+\end{tabularx}
+
+%═══ PROFESSIONAL EXPERIENCE ═════════════════════════════════════════════════
 \section{Professional Experience}
 
-\subsection{Simply POS | Senior Full-Stack Architect (Independent Venture)}
-\textit{June 2025 -- Present | Oaxaca, Mexico}
-\begin{itemize}[leftmargin=*, noitemsep]
-    \item Architected and led development of a scalable, cloud-native multi-tenant POS and restaurant management platform using Hexagonal Architecture, isolating core business logic from infrastructure concerns.
-    \item Designed and implemented high-performance NestJS backend with Firestore, declarative Criteria pattern, and fully type-safe DAO layer.
-    \item Integrated Mercado Pago payments and hardware printing services, resulting in 30\% faster service times and 25\% reduction in kitchen errors.
-    \item Implemented granular RBAC, real-time notifications, and cross-location inventory synchronization across multiple instances.
+\jobtitle{Simply POS \textnormal{---} Senior Full-Stack Architect \textnormal{(Independent Venture)}}
+         {Jun 2025 -- Present\enspace|\enspace Oaxaca, Mexico}
+\begin{itemize}
+  \item Architected and led development of a scalable, cloud-native multi-tenant POS and restaurant
+        management platform using Hexagonal Architecture, fully isolating core business logic from
+        infrastructure concerns.
+  \item Designed a high-performance NestJS backend with Firestore, a declarative Criteria pattern,
+        and a fully type-safe DAO layer.
+  \item Integrated Mercado Pago payments and hardware printing services, delivering 30\% faster
+        service times and a 25\% reduction in kitchen errors.
+  \item Implemented granular RBAC, real-time notifications, and cross-location inventory
+        synchronization across multiple instances.
 \end{itemize}
 
-\subsection{Rankmi | Software Developer}
-\textit{November 2025 -- March 2026 | Remote}
-\begin{itemize}[leftmargin=*, noitemsep]
-    \item Developed and published shared internal libraries that reduced code duplication by 40\% and significantly accelerated feature delivery across teams.
-    \item Architected high-concurrency features for enterprise employee management systems with optimized database queries and caching strategies.
-    \item Refactored legacy subsystems, substantially reducing production incidents and downtime.
-    \item Authored technical design documents and established architectural standards to improve team alignment.
+\jobtitle{Rankmi \textnormal{---} Software Developer}
+         {Nov 2024 -- Mar 2025\enspace|\enspace Remote}
+\begin{itemize}
+  \item Developed and published shared internal libraries that reduced code duplication by 40\%
+        and significantly accelerated feature delivery across teams.
+  \item Architected high-concurrency features for enterprise employee-management systems with
+        optimized database queries and caching strategies.
+  \item Refactored legacy subsystems, substantially reducing production incidents and downtime.
+  \item Authored technical design documents and established architectural standards to improve
+        team alignment.
 \end{itemize}
 
-\subsection{Goods \& Services | Software Engineer}
-\textit{July 2022 -- March 2025 | Remote}
-\begin{itemize}[leftmargin=*, noitemsep]
-    \item Optimized rendering performance of a data-intensive React application for Becton Dickinson, achieving 20\% faster page loads and 35\% reduction in re-renders.
-    \item Designed and implemented unified REST API V3 with Ruby on Rails for EverFi, enforcing consistent domain abstractions across microservices.
-    \item Established comprehensive automated testing frameworks (Jest + RSpec), improving code coverage and CI/CD pipeline reliability.
+\jobtitle{Goods \& Services \textnormal{---} Software Engineer}
+         {Jul 2022 -- Mar 2025\enspace|\enspace Remote}
+\begin{itemize}
+  \item Optimized rendering performance of a data-intensive React application for Becton Dickinson,
+        achieving 20\% faster page loads and a 35\% reduction in unnecessary re-renders.
+  \item Designed and implemented a unified REST API V3 with Ruby on Rails for EverFi, enforcing
+        consistent domain abstractions across microservices.
+  \item Established comprehensive automated testing frameworks (Jest + RSpec), improving code
+        coverage and CI/CD pipeline reliability.
 \end{itemize}
 
-\subsection{Columbus | Frontend Lead}
-\textit{July 2021 -- July 2022 | Remote}
-\begin{itemize}[leftmargin=*, noitemsep]
-    \item Introduced Hexagonal Architecture patterns to enterprise frontend codebase, greatly improving modularity and maintainability.
-    \item Designed, load-tested, and deployed a Node.js WebSocket microservice capable of handling 30,000 concurrent connections.
-    \item Led security remediation efforts and migrated critical systems to Event-Driven Architecture using RabbitMQ.
-    \item Mentored distributed team through rigorous code reviews and development of an atomic UI design system.
+\jobtitle{Columbus \textnormal{---} Frontend Lead}
+         {Jul 2021 -- Jul 2022\enspace|\enspace Remote}
+\begin{itemize}
+  \item Introduced Hexagonal Architecture patterns to an enterprise frontend codebase, greatly
+        improving modularity and long-term maintainability.
+  \item Designed, load-tested, and deployed a Node.js WebSocket microservice capable of handling
+        30{,}000 concurrent connections.
+  \item Led security remediation efforts and migrated critical systems to Event-Driven Architecture
+        using RabbitMQ.
+  \item Mentored a distributed team through rigorous code reviews and developed an atomic UI design
+        system.
 \end{itemize}
 
-\subsection{Michelada | Software Engineer}
-\textit{March 2021 -- July 2021 | Remote}
-\begin{itemize}[leftmargin=*, noitemsep]
-    \item Resolved critical latency issues in telehealth platform’s Amazon Chime video streaming, significantly improving user experience.
-    \item Performed major refactoring that enhanced code readability, maintainability, and runtime performance.
+\jobtitle{Michelada \textnormal{---} Software Engineer}
+         {Mar 2021 -- Jul 2021\enspace|\enspace Remote}
+\begin{itemize}
+  \item Resolved critical latency issues in a telehealth platform's Amazon Chime video-streaming
+        pipeline, significantly improving end-user experience.
+  \item Performed a major refactor that enhanced code readability, maintainability, and runtime
+        performance.
 \end{itemize}
 
-\subsection{Independent Software Consultant / Freelance Engineer}
-\textit{February 2017 -- March 2021 | Remote}
-\begin{itemize}[leftmargin=*, noitemsep]
-    \item Architected end-to-end on-demand delivery platform (Domit Express) using Ruby on Rails backend and React Native mobile apps with Wompi payments.
-    \item Built decoupled Python microservice for video compression in an e-learning platform.
-    \item Delivered multiple high-quality e-commerce solutions with Next.js/Gatsby, Firebase, Stripe, and automated logistics.
-    \item Led successful legacy system rescues, PostgreSQL migrations, and performance optimizations.
-    \item Developed cross-platform mobile applications using React Native and .NET MAUI.
+\jobtitle{Independent Software Consultant \textnormal{/} Freelance Engineer}
+         {Feb 2017 -- Mar 2021\enspace|\enspace Remote}
+\begin{itemize}
+  \item Architected an end-to-end on-demand delivery platform (Domit Express) using a Ruby on
+        Rails backend and React Native mobile apps with Wompi payment integration.
+  \item Built a decoupled Python microservice for video transcoding in an e-learning platform.
+  \item Delivered multiple e-commerce solutions with Next.js/Gatsby, Firebase, Stripe, and
+        automated logistics integrations.
+  \item Led legacy system rescues, PostgreSQL migrations, and targeted performance optimizations.
+  \item Developed cross-platform mobile applications with React Native and .NET MAUI.
 \end{itemize}
 
+%═══ OPEN SOURCE ═════════════════════════════════════════════════════════════
 \section{Open Source Contributions}
-\begin{itemize}[leftmargin=*, noitemsep]
-    \item \textbf{@schorts/shared-kernel} (Author): Modular TypeScript DDD foundation providing Entities, Value Objects, Aggregates, CQRS buses, Unit of Work, Criteria, RBAC/ABAC, domain events, and framework-agnostic primitives used across the ecosystem.
-    \item \textbf{React Clean Architecture} (Author): Production-ready Clean Architecture + DDD reference implementation for React/TypeScript featuring CQRS, application-owned ports, replaceable infrastructure (IndexedDB), tag-based cache invalidation, and strict dependency inversion.
-    \item \textbf{@schorts/firestore-migrator} (Author): Declarative CLI migration tool for Cloud Firestore supporting field add/remove/transform operations, dry-run, rollback, and automatic schema inference to \texttt{firestore.schema.json}.
-    \item \textbf{@schorts/firestore-admin-dao} \& \textbf{@schorts/indexed-db-dao} (Author): Type-safe, domain-driven DAO layers for Firestore (server) and IndexedDB (client) that integrate with shared-kernel Entity/Criteria/UnitOfWork patterns for consistent offline and online persistence.
+
+% ── Core ecosystem ──────────────────────────────────────────────────────────
+\noindent\textit{\small\color{muted}TypeScript / Node.js}\vspace{3pt}
+
+\begin{itemize}
+  \item \textbf{@schorts/shared-kernel}
+        \href{https://www.npmjs.com/package/@schorts/shared-kernel}{\small\color{muted}[npm]}
+        --- Modular DDD foundation with Aggregates, Entities, Value Objects, Domain Events,
+        Result types, CQRS buses, Sagas, Event Bus (retries + dead-letter), RBAC/ABAC,
+        Unit of Work, Criteria builder, and framework-agnostic interfaces for Auth, DAO,
+        HTTP, Pub-Sub, i18n, state management, guided tours, and structured logging.
+        \textit{Sep 2025 -- Present.}
+
+  \item \textbf{React Clean Architecture}
+        \href{https://github.com/schorts99/react-clean-architecture}{\small\color{muted}[github]}
+        --- Production-ready Clean Architecture + DDD reference implementation for
+        React/TypeScript featuring CQRS, application-owned ports, replaceable infrastructure
+        (IndexedDB), tag-based cache invalidation, and strict dependency inversion.
+        \textit{2025 -- Present.}
+
+  \item \textbf{@schorts/firestore-admin-dao}
+        \href{https://www.npmjs.com/package/@schorts/firestore-admin-dao}{\small\color{muted}[npm]}
+        --- Type-safe server-side DAO for Cloud Firestore (Firebase Admin SDK) with full
+        CRUD, Criteria-based querying, and toPrimitives/fromPrimitives entity mapping.
+        \textit{Oct 2025 -- Jul 2026.}
+
+  \item \textbf{@schorts/indexed-db-dao}
+        \href{https://www.npmjs.com/package/@schorts/indexed-db-dao}{\small\color{muted}[npm]}
+        --- Type-safe, domain-driven IndexedDB abstraction with Criteria querying and Unit
+        of Work transactions for offline-first browser applications.
+        \textit{Apr 2026 -- Aug 2026.}
+
+  \item \textbf{@schorts/browser-cache}
+        \href{https://www.npmjs.com/package/@schorts/browser-cache}{\small\color{muted}[npm]}
+        --- Browser Cache API adapter implementing the shared-kernel \texttt{Cache<T>}
+        interface with TTL, tag-based invalidation, and an IdempotencyStore for safe retries.
+        \textit{Apr 2026 -- Jul 2026.}
+
+  \item \textbf{@schorts/pub-sub-window}
+        \href{https://www.npmjs.com/package/@schorts/pub-sub-window}{\small\color{muted}[npm]}
+        --- Lightweight browser Pub/Sub built on \texttt{window.dispatchEvent} implementing
+        shared-kernel Subscription/Publisher interfaces for decoupled cross-component events.
+        \textit{Oct 2025 -- May 2026.}
+
+  \item \textbf{@schorts/driver-tour-guide}
+        \href{https://www.npmjs.com/package/@schorts/driver-tour-guide}{\small\color{muted}[npm]}
+        --- Framework-agnostic guided-tour adapter built on driver.js, implementing the
+        shared-kernel TourGuide interface. Works with React, Vue, Svelte, or vanilla JS.
+        \textit{Oct 2025 -- Nov 2025.}
 \end{itemize}
 
-\section{Languages \& Leadership}
-\begin{itemize}[leftmargin=*, noitemsep]
-    \item \textbf{Languages}: Spanish (Native), English (Professional Working Proficiency)
-    \item \textbf{Leadership}: Experienced in mentoring engineers, establishing CI/CD practices, architectural governance, and design system standards.
+\vspace{4pt}
+% ── CLI & Tooling ────────────────────────────────────────────────────────────
+\noindent\textit{\small\color{muted}CLI \& Tooling}\vspace{3pt}
+
+\begin{itemize}
+  \item \textbf{@schorts/firestore-migrator}
+        \href{https://github.com/schorts99/firestore-migrator}{\small\color{muted}[github]}
+        --- Declarative CLI migration tool for Cloud Firestore supporting field
+        add/remove/transform operations, dry-run previews, status tracking, batched writes,
+        and safe rollbacks. \textit{Aug 2026 -- Present.}
+
+  \item \textbf{Schorts CLI}
+        \href{https://github.com/schorts99/schorts-cli}{\small\color{muted}[github]}
+        --- Template-driven Bash CLI that generates TypeScript DDD boilerplate (CQRS
+        commands/queries/handlers, aggregates, entities, value objects, domain events,
+        criteria, exceptions) with bounded-context and TOML-based config support.
+        \textit{Jul 2026 -- Present.}
+
+  \item \textbf{Simply CLI}
+        \href{https://github.com/schorts99/simply-cli}{\small\color{muted}[github]}
+        --- Shell-based CLI for bootstrapping and syncing AI project files (rules, skills,
+        AGENTS.md) across environments, with diagnostic commands and Makefile targets.
+        \textit{Aug 2026 -- Present.}
 \end{itemize}
+
+\vspace{4pt}
+% ── PHP ecosystem ────────────────────────────────────────────────────────────
+\noindent\textit{\small\color{muted}PHP}\vspace{3pt}
+
+\begin{itemize}
+  \item \textbf{schorts/shared-kernel}
+        \href{https://packagist.org/packages/schorts/shared-kernel}{\small\color{muted}[packagist]}
+        --- PHP DDD shared kernel with immutable Value Objects, Domain Events, Aggregate
+        Roots, CQRS Query bus (InMemory with caching/logging/metrics middleware), DAO
+        contracts, Unit of Work, and i18n interfaces. \textit{2026 -- Present.}
+
+  \item \textbf{schorts/firestore-dao}
+        \href{https://packagist.org/packages/schorts/firestore-dao}{\small\color{muted}[packagist]}
+        --- Domain-driven Firestore DAO for PHP with Criteria queries, geospatial
+        Vincenty-distance support, soft/hard deletes, restore, and transaction-aware
+        Unit of Work. \textit{2026 -- Present.}
+\end{itemize}
+
+%═══ LANGUAGES & LEADERSHIP ══════════════════════════════════════════════════
+\section{Languages \& Leadership}
+
+\begin{tabularx}{\linewidth}{@{} l X @{}}
+  \textbf{Languages}  & Spanish (Native)\enspace\textcolor{muted}{$\cdot$}\enspace
+                        English (Professional Working Proficiency) \\[2pt]
+  \textbf{Leadership} & Mentoring engineers, establishing CI/CD practices,
+                        architectural governance, and design-system standards. \\
+\end{tabularx}
 
 \end{document}
