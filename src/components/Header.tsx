@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { Menu, X, Github, Linkedin, Mail } from 'lucide-react'
 
 import { EMAIL, LINKEDIN, GITHUB, MEDIUM, SUBSTACK } from '../data/contact'
@@ -11,6 +11,7 @@ interface NavigationProps {
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const headerRef = useRef<HTMLElement>(null)
 
   const scrollToSection = (sectionID: string) => {
     const element = document.getElementById(sectionID)
@@ -21,8 +22,31 @@ export default function Header() {
     }
   };
 
+  // Close on scroll
+  useEffect(() => {
+    if (!isMenuOpen) return
+
+    const handleScroll = () => setIsMenuOpen(false)
+    window.addEventListener('scroll', handleScroll, { passive: true })
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [isMenuOpen])
+
+  // Close on outside click
+  useEffect(() => {
+    if (!isMenuOpen) return
+
+    const handlePointerDown = (e: PointerEvent) => {
+      if (headerRef.current && !headerRef.current.contains(e.target as Node)) {
+        setIsMenuOpen(false)
+      }
+    }
+
+    document.addEventListener('pointerdown', handlePointerDown)
+    return () => document.removeEventListener('pointerdown', handlePointerDown)
+  }, [isMenuOpen])
+
   return (
-    <header className="fixed top-0 left-0 right-0 bg-white/90 backdrop-blur-md z-50 border-b border-slate-200/60 shadow-sm selection:bg-blue-500 selection:text-white">
+    <header ref={headerRef} className="fixed top-0 left-0 right-0 bg-white/90 backdrop-blur-md z-50 border-b border-slate-200/60 shadow-sm selection:bg-blue-500 selection:text-white">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
           <div className="flex items-center gap-2">
