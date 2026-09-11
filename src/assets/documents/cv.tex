@@ -1,0 +1,116 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[margin=0.75in]{geometry}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+\usepackage{xcolor}
+
+\definecolor{blue}{RGB}{0,102,204}
+
+\titleformat{\section}{\large\bfseries\color{blue}}{}{0em}{}[\titlerule]
+\titleformat{\subsection}{\bfseries}{}{0em}{}
+
+\pagestyle{fancy}
+\fancyhf{}
+\rfoot{\thepage}
+
+\begin{document}
+
+\begin{center}
+    {\LARGE \bfseries Jorge Castillo} \\[5pt]
+    {\large Senior Full-Stack Engineer \& Software Architect} \\[8pt]
+    Oaxaca, Mexico \quad | \quad
+    \href{mailto:schorts@outlook.com}{schorts@outlook.com} \quad | \quad
+    \href{tel:+525644647235}{+52 564 464 7235} \\[4pt]
+    \href{https://www.linkedin.com/in/schorts}{LinkedIn} \quad | \quad
+    \href{https://github.com/schorts99}{GitHub} \quad | \quad
+    \href{https://schorts.netlify.app}{Portfolio}
+\end{center}
+
+\vspace{0.5cm}
+
+\section{Professional Summary}
+Senior Full-Stack Engineer and Architect with 9+ years of experience designing, scaling, and leading complex web and mobile applications. Expert in TypeScript ecosystems (Next.js, NestJS, React) and Ruby on Rails. Proven ability to architect enterprise-grade systems using Domain-Driven Design (DDD), Hexagonal Architecture, Event-Driven systems, and microservices. Author of production-grade open-source libraries for DDD primitives, Firestore/IndexedDB persistence, declarative schema migrations, and a full Clean Architecture + DDD reference implementation for React. Specialized in legacy modernization, performance optimization, and mentoring high-performing engineering teams.
+
+\section{Technical Skills}
+\begin{itemize}[leftmargin=*, noitemsep]
+    \item \textbf{Architecture \& Design}: Domain-Driven Design (DDD), Hexagonal (Ports \& Adapters), Event-Driven Architecture, Unit of Work, Repository \& Criteria Patterns, Value Objects
+    \item \textbf{Languages \& Frameworks}: TypeScript, NestJS, Node.js, React, Next.js, Ruby on Rails, Python (Flask), Go
+    \item \textbf{Frontend \& Mobile}: React, Next.js, Vue.js, Tailwind CSS, React Native, Svelte, Electron, Gatsby
+    \item \textbf{Databases \& Messaging}: PostgreSQL, Firestore, Redis, RabbitMQ, MongoDB, GraphQL
+    \item \textbf{Cloud \& DevOps}: GCP (Firebase, Cloud Functions), AWS (S3, Lambda, Cognito), Docker, CI/CD, Bash Scripting
+    \item \textbf{Integrations \& Quality}: Stripe, Mercado Pago, Wompi, Jest, RSpec, K6, Twilio
+\end{itemize}
+
+\section{Professional Experience}
+
+\subsection{Simply POS | Senior Full-Stack Architect (Independent Venture)}
+\textit{June 2025 -- Present | Oaxaca, Mexico}
+\begin{itemize}[leftmargin=*, noitemsep]
+    \item Architected and led development of a scalable, cloud-native multi-tenant POS and restaurant management platform using Hexagonal Architecture, isolating core business logic from infrastructure concerns.
+    \item Designed and implemented high-performance NestJS backend with Firestore, declarative Criteria pattern, and fully type-safe DAO layer.
+    \item Integrated Mercado Pago payments and hardware printing services, resulting in 30\% faster service times and 25\% reduction in kitchen errors.
+    \item Implemented granular RBAC, real-time notifications, and cross-location inventory synchronization across multiple instances.
+\end{itemize}
+
+\subsection{Rankmi | Software Developer}
+\textit{November 2025 -- March 2026 | Remote}
+\begin{itemize}[leftmargin=*, noitemsep]
+    \item Developed and published shared internal libraries that reduced code duplication by 40\% and significantly accelerated feature delivery across teams.
+    \item Architected high-concurrency features for enterprise employee management systems with optimized database queries and caching strategies.
+    \item Refactored legacy subsystems, substantially reducing production incidents and downtime.
+    \item Authored technical design documents and established architectural standards to improve team alignment.
+\end{itemize}
+
+\subsection{Goods \& Services | Software Engineer}
+\textit{July 2022 -- March 2025 | Remote}
+\begin{itemize}[leftmargin=*, noitemsep]
+    \item Optimized rendering performance of a data-intensive React application for Becton Dickinson, achieving 20\% faster page loads and 35\% reduction in re-renders.
+    \item Designed and implemented unified REST API V3 with Ruby on Rails for EverFi, enforcing consistent domain abstractions across microservices.
+    \item Established comprehensive automated testing frameworks (Jest + RSpec), improving code coverage and CI/CD pipeline reliability.
+\end{itemize}
+
+\subsection{Columbus | Frontend Lead}
+\textit{July 2021 -- July 2022 | Remote}
+\begin{itemize}[leftmargin=*, noitemsep]
+    \item Introduced Hexagonal Architecture patterns to enterprise frontend codebase, greatly improving modularity and maintainability.
+    \item Designed, load-tested, and deployed a Node.js WebSocket microservice capable of handling 30,000 concurrent connections.
+    \item Led security remediation efforts and migrated critical systems to Event-Driven Architecture using RabbitMQ.
+    \item Mentored distributed team through rigorous code reviews and development of an atomic UI design system.
+\end{itemize}
+
+\subsection{Michelada | Software Engineer}
+\textit{March 2021 -- July 2021 | Remote}
+\begin{itemize}[leftmargin=*, noitemsep]
+    \item Resolved critical latency issues in telehealth platform’s Amazon Chime video streaming, significantly improving user experience.
+    \item Performed major refactoring that enhanced code readability, maintainability, and runtime performance.
+\end{itemize}
+
+\subsection{Independent Software Consultant / Freelance Engineer}
+\textit{February 2017 -- March 2021 | Remote}
+\begin{itemize}[leftmargin=*, noitemsep]
+    \item Architected end-to-end on-demand delivery platform (Domit Express) using Ruby on Rails backend and React Native mobile apps with Wompi payments.
+    \item Built decoupled Python microservice for video compression in an e-learning platform.
+    \item Delivered multiple high-quality e-commerce solutions with Next.js/Gatsby, Firebase, Stripe, and automated logistics.
+    \item Led successful legacy system rescues, PostgreSQL migrations, and performance optimizations.
+    \item Developed cross-platform mobile applications using React Native and .NET MAUI.
+\end{itemize}
+
+\section{Open Source Contributions}
+\begin{itemize}[leftmargin=*, noitemsep]
+    \item \textbf{@schorts/shared-kernel} (Author): Modular TypeScript DDD foundation providing Entities, Value Objects, Aggregates, CQRS buses, Unit of Work, Criteria, RBAC/ABAC, domain events, and framework-agnostic primitives used across the ecosystem.
+    \item \textbf{React Clean Architecture} (Author): Production-ready Clean Architecture + DDD reference implementation for React/TypeScript featuring CQRS, application-owned ports, replaceable infrastructure (IndexedDB), tag-based cache invalidation, and strict dependency inversion.
+    \item \textbf{@schorts/firestore-migrator} (Author): Declarative CLI migration tool for Cloud Firestore supporting field add/remove/transform operations, dry-run, rollback, and automatic schema inference to \texttt{firestore.schema.json}.
+    \item \textbf{@schorts/firestore-admin-dao} \& \textbf{@schorts/indexed-db-dao} (Author): Type-safe, domain-driven DAO layers for Firestore (server) and IndexedDB (client) that integrate with shared-kernel Entity/Criteria/UnitOfWork patterns for consistent offline and online persistence.
+\end{itemize}
+
+\section{Languages \& Leadership}
+\begin{itemize}[leftmargin=*, noitemsep]
+    \item \textbf{Languages}: Spanish (Native), English (Professional Working Proficiency)
+    \item \textbf{Leadership}: Experienced in mentoring engineers, establishing CI/CD practices, architectural governance, and design system standards.
+\end{itemize}
+
+\end{document}

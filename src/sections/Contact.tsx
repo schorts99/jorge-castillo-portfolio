@@ -35,9 +35,11 @@ export default function Contact() {
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight mb-4">
-            Let’s Build Something Solid
+          <span className="inline-block text-xs font-bold text-blue-600 uppercase tracking-widest mb-3">Get In Touch</span>
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight mb-0">
+            Let's Build Something Solid
           </h2>
+          <div className="flex justify-center mt-3 mb-4"><div className="h-1 w-16 bg-gradient-to-r from-blue-500 to-indigo-400 rounded-full"></div></div>
           <p className="text-lg text-slate-500 max-w-2xl mx-auto font-normal">
             Whether you need an architecture review, help shaping a
             domain-driven system, or support with a complex engineering
@@ -64,7 +66,7 @@ export default function Contact() {
             <div className="space-y-4">
               <a
                 href={`mailto:${EMAIL}`}
-                className="flex items-center gap-4 p-4 bg-slate-50 border border-slate-100 rounded-xl hover:bg-slate-100/80 hover:border-slate-200 transition-all duration-200 group"
+                className="flex items-center gap-4 p-4 bg-slate-50 border border-slate-100 rounded-xl hover:bg-slate-100/80 hover:border-slate-200 hover:-translate-y-0.5 transition-all duration-200 group"
               >
                 <div className="w-10 h-10 bg-blue-50 text-blue-600 rounded-lg flex items-center justify-center group-hover:bg-blue-600 group-hover:text-white transition-colors flex-shrink-0">
                   <Mail size={18} />
@@ -81,7 +83,7 @@ export default function Contact() {
 
               <a
                 href={`tel:${RAW_PHONE}`}
-                className="flex items-center gap-4 p-4 bg-slate-50 border border-slate-100 rounded-xl hover:bg-slate-100/80 hover:border-slate-200 transition-all duration-200 group"
+                className="flex items-center gap-4 p-4 bg-slate-50 border border-slate-100 rounded-xl hover:bg-slate-100/80 hover:border-slate-200 hover:-translate-y-0.5 transition-all duration-200 group"
               >
                 <div className="w-10 h-10 bg-emerald-50 text-emerald-600 rounded-lg flex items-center justify-center group-hover:bg-emerald-600 group-hover:text-white transition-colors  flex-shrink-0">
                   <Phone size={18} />
@@ -181,7 +183,7 @@ export default function Contact() {
             </div>
           </div>
 
-          <div className="lg:col-span-7 bg-slate-50/70 border border-slate-100 rounded-2xl p-6 md:p-8">
+          <div className="lg:col-span-7 bg-white border border-slate-200/60 shadow-sm rounded-2xl p-6 md:p-8">
             <h3 className="text-lg font-bold text-slate-900 mb-6 tracking-tight">
               Start a Conversation
             </h3>
@@ -201,7 +203,7 @@ export default function Contact() {
                     required
                     value={formData.name}
                     onChange={handleInputChange}
-                    className="w-full text-sm px-4 py-3 bg-white border border-slate-200 rounded-xl focus:outline-none focus:border-slate-900 focus:ring-4 focus:ring-slate-900/5 transition-all text-slate-800"
+                    className="w-full text-sm px-4 py-3 bg-white border border-slate-200 rounded-xl focus:outline-none focus:border-blue-500 focus:ring-4 focus:ring-blue-500/10 transition-all text-slate-800"
                     placeholder="Jane Doe"
                   />
                 </div>
@@ -219,7 +221,7 @@ export default function Contact() {
                     required
                     value={formData.email}
                     onChange={handleInputChange}
-                    className="w-full text-sm px-4 py-3 bg-white border border-slate-200 rounded-xl focus:outline-none focus:border-slate-900 focus:ring-4 focus:ring-slate-900/5 transition-all text-slate-800"
+                    className="w-full text-sm px-4 py-3 bg-white border border-slate-200 rounded-xl focus:outline-none focus:border-blue-500 focus:ring-4 focus:ring-blue-500/10 transition-all text-slate-800"
                     placeholder="you@company.com"
                   />
                 </div>
@@ -239,7 +241,7 @@ export default function Contact() {
                   required
                   value={formData.subject}
                   onChange={handleInputChange}
-                  className="w-full text-sm px-4 py-3 bg-white border border-slate-200 rounded-xl focus:outline-none focus:border-slate-900 focus:ring-4 focus:ring-slate-900/5 transition-all text-slate-800"
+                  className="w-full text-sm px-4 py-3 bg-white border border-slate-200 rounded-xl focus:outline-none focus:border-blue-500 focus:ring-4 focus:ring-blue-500/10 transition-all text-slate-800"
                   placeholder="How can I help?"
                 />
               </div>
@@ -258,14 +260,14 @@ export default function Contact() {
                   rows={5}
                   value={formData.message}
                   onChange={handleInputChange}
-                  className="w-full text-sm px-4 py-3 bg-white border border-slate-200 rounded-xl focus:outline-none focus:border-slate-900 focus:ring-4 focus:ring-slate-900/5 transition-all text-slate-800 resize-none"
+                  className="w-full text-sm px-4 py-3 bg-white border border-slate-200 rounded-xl focus:outline-none focus:border-blue-500 focus:ring-4 focus:ring-blue-500/10 transition-all text-slate-800 resize-none"
                   placeholder="Tell me a little about your project, challenge, or opportunity..."
                 ></textarea>
               </div>
 
               <button
                 type="submit"
-                className="w-full bg-slate-900 hover:bg-slate-800 text-white px-6 py-3 rounded-xl transition-all duration-200 font-semibold text-sm flex items-center justify-center gap-2 shadow-sm cursor-pointer"
+                className="w-full bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-xl transition-all duration-200 font-semibold text-sm flex items-center justify-center gap-2 shadow-sm cursor-pointer"
               >
                 <Send size={14} />
                 Send Message

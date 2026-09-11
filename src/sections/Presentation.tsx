@@ -1,4 +1,4 @@
-import { Github, Linkedin, Mail, MapPin, Code, Layers } from 'lucide-react'
+import { Github, Linkedin, Mail, MapPin, Code, Layers, ArrowRight } from 'lucide-react'
 
 import { GITHUB, EMAIL, LINKEDIN, SUBSTACK, MEDIUM } from '../data/contact'
 import { SUMMARY } from '../data/summary'
@@ -16,14 +16,21 @@ export default function Presentation() {
   }
 
   return (
-    <section className="min-h-screen pt-20 bg-linear-to-br from-slate-50 to-blue-50/50 flex items-center">
+    <section className="min-h-screen pt-20 bg-linear-to-br from-white via-slate-50/70 to-blue-50/60 flex items-center relative overflow-hidden">
+      <div className="absolute -top-40 -right-40 w-96 h-96 bg-blue-100/40 rounded-full blur-3xl pointer-events-none" aria-hidden="true"></div>
+      <div className="absolute -bottom-20 -left-20 w-64 h-64 bg-indigo-100/30 rounded-full blur-3xl pointer-events-none" aria-hidden="true"></div>
+
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
         <div className="grid lg:grid-cols-12 gap-12 lg:gap-8 items-center">
           <div className="space-y-8 lg:col-span-7 text-center md:text-left">
             <div className="space-y-4">
+              <span className="inline-flex items-center gap-2 text-xs font-semibold text-emerald-700 bg-emerald-50 border border-emerald-200 px-3 py-1 rounded-full mb-4">
+                <span className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></span>
+                Open to Opportunities
+              </span>
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight leading-tight">
                 Hi, I'm{' '}
-                <span className="text-blue-600 bg-clip-text">
+                <span className="bg-linear-to-r from-blue-600 to-indigo-500 bg-clip-text text-transparent">
                   Jorge Castillo
                 </span>
               </h1>
@@ -39,9 +46,10 @@ export default function Presentation() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
               <button
                 onClick={scrollToContact}
-                className="cursor-pointer bg-blue-600 text-white px-8 py-3.5 rounded-xl hover:bg-blue-700 active:scale-98 transition-all font-medium shadow-md shadow-blue-600/10"
+                className="cursor-pointer bg-blue-600 text-white px-8 py-3.5 rounded-xl hover:bg-blue-700 active:scale-98 transition-all font-medium shadow-md shadow-blue-600/10 inline-flex items-center justify-center gap-2"
               >
                 Get In Touch
+                <ArrowRight size={16} />
               </button>
               <a
                 href={GITHUB}
@@ -86,6 +94,7 @@ export default function Presentation() {
 
           <div className="relative lg:col-span-5 w-full max-w-md mx-auto">
             <div className="relative bg-white rounded-2xl shadow-xl shadow-slate-200/80 p-8 border border-slate-100">
+              <div className="absolute top-0 left-0 right-0 h-1 bg-linear-to-r from-blue-500 to-indigo-500 rounded-t-2xl"></div>
               <div className="absolute inset-0 bg-linear-to-r from-blue-500 to-indigo-500 rounded-2xl blur-3xl opacity-15 -z-10 scale-105 pointer-events-none"></div>
 
               <div className="space-y-6">

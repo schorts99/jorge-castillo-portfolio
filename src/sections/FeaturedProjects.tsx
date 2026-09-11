@@ -74,9 +74,11 @@ export default function FeaturedProjects() {
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight mb-4">
+          <span className="inline-block text-xs font-bold text-blue-600 uppercase tracking-widest mb-3">Projects</span>
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight mb-0">
             Engineering Showcases
           </h2>
+          <div className="flex justify-center mt-3 mb-4"><div className="h-1 w-16 bg-gradient-to-r from-blue-500 to-indigo-400 rounded-full"></div></div>
           <p className="text-lg text-slate-500 max-w-2xl mx-auto font-normal">
             Deep-dives into domain primitives, open-source decoupling
             abstractions, and production-grade applications.
@@ -89,8 +91,8 @@ export default function FeaturedProjects() {
               onClick={() => setActiveTab('all')}
               className={`cursor-pointer px-4 py-2 text-sm font-semibold rounded-lg transition-all duration-200 ${
                 activeTab === 'all'
-                  ? 'bg-white text-slate-900 shadow-sm'
-                  : 'text-slate-600 hover:text-slate-900'
+                  ? 'bg-white text-slate-900 shadow-sm font-bold'
+                  : 'text-slate-500 hover:text-slate-900'
               }`}
             >
               All Projects
@@ -99,8 +101,8 @@ export default function FeaturedProjects() {
               onClick={() => setActiveTab('architecture')}
               className={`cursor-pointer px-4 py-2 text-sm font-semibold rounded-lg transition-all duration-200 flex items-center gap-2 ${
                 activeTab === 'architecture'
-                  ? 'bg-white text-slate-900 shadow-sm'
-                  : 'text-slate-600 hover:text-slate-900'
+                  ? 'bg-white text-slate-900 shadow-sm font-bold'
+                  : 'text-slate-500 hover:text-slate-900'
               }`}
             >
               <Terminal size={14} />
@@ -110,8 +112,8 @@ export default function FeaturedProjects() {
               onClick={() => setActiveTab('applications')}
               className={`cursor-pointer px-4 py-2 text-sm font-semibold rounded-lg transition-all duration-200 flex items-center gap-2 ${
                 activeTab === 'applications'
-                  ? 'bg-white text-slate-900 shadow-sm'
-                  : 'text-slate-600 hover:text-slate-900'
+                  ? 'bg-white text-slate-900 shadow-sm font-bold'
+                  : 'text-slate-500 hover:text-slate-900'
               }`}
             >
               <Layers size={14} />
@@ -127,11 +129,11 @@ export default function FeaturedProjects() {
             return (
               <div
                 key={project.name}
-                className="group bg-white rounded-2xl p-6 md:p-8 border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between"
+                className="group bg-white rounded-2xl p-6 md:p-8 border border-slate-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between"
               >
                 <div>
                   <div className="flex items-center justify-between mb-4">
-                    <span className="text-xs font-semibold text-blue-600 bg-blue-50 px-2.5 py-1 rounded-md tracking-wide">
+                    <span className="text-xs font-semibold text-blue-700 bg-blue-50 border border-blue-100/80 px-2.5 py-1 rounded-md tracking-wide">
                       {project.role}
                     </span>
                     <span
@@ -158,7 +160,7 @@ export default function FeaturedProjects() {
                     )}
                   </div>
 
-                  <p className="text-sm font-medium text-slate-800 mb-4 bg-slate-50 p-3 rounded-xl border border-slate-100/80 leading-relaxed">
+                  <p className="text-sm font-medium text-slate-800 mb-4 bg-gradient-to-br from-slate-50 to-white p-3 rounded-xl border border-slate-100 leading-relaxed">
                     {project.description}
                   </p>
 
@@ -192,7 +194,7 @@ export default function FeaturedProjects() {
           })}
         </div>
 
-        <div className="mt-16 bg-white rounded-2xl border border-slate-200/60 p-8 text-center max-w-3xl mx-auto shadow-sm">
+        <div className="mt-16 bg-gradient-to-br from-white to-blue-50/30 rounded-2xl border border-slate-200/60 p-8 text-center max-w-3xl mx-auto shadow-sm hover:shadow-md transition-shadow duration-300">
           <h4 className="text-base font-bold text-slate-900 mb-1">
             Looking for more architectural patterns?
           </h4>

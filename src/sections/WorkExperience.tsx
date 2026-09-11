@@ -9,16 +9,20 @@ export default function WorkExperience() {
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-20">
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight mb-4">
+          <span className="inline-block text-xs font-bold text-blue-600 uppercase tracking-widest mb-3">Experience</span>
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight mb-0">
             Engineering History
           </h2>
+          <div className="flex justify-center mt-3 mb-4">
+            <div className="h-1 w-16 bg-gradient-to-r from-blue-500 to-indigo-400 rounded-full"></div>
+          </div>
           <p className="text-lg text-slate-500 max-w-2xl mx-auto font-normal">
             A track record of designing decoupling architectures, building
             shared core libraries, and leading technical initiatives.
           </p>
         </div>
 
-        <div className="relative border-l border-slate-200 ml-4 md:ml-60 space-y-16">
+        <div className="relative border-l-2 border-slate-100 ml-4 md:ml-60 space-y-16">
           {WORKS.map((job, index) => (
             <div key={index} className="relative group">
               <div className="absolute hidden md:block w-48 -left-60 top-1 text-right pr-6">
@@ -40,10 +44,12 @@ export default function WorkExperience() {
                 )}
               </div>
 
-              <div className="absolute -left-[9px] top-2 w-4 h-4 bg-white rounded-full border-2 border-slate-300 group-hover:border-blue-600 group-hover:bg-blue-50 transition-all duration-300 z-10" />
+              <div className="absolute -left-[11px] top-2 w-5 h-5 bg-white rounded-full border-2 border-slate-300 group-hover:border-blue-600 group-hover:bg-blue-50 transition-all duration-300 z-10 flex items-center justify-center">
+                <div className="w-2 h-2 rounded-full bg-slate-300 group-hover:bg-blue-500 transition-colors duration-300"></div>
+              </div>
 
               <div className="pl-6 md:pl-8">
-                <div className="bg-slate-50/50 rounded-2xl p-6 md:p-8 border border-slate-100 shadow-sm hover:shadow-md hover:bg-white transition-all duration-300">
+                <div className="bg-slate-50/50 rounded-2xl p-6 md:p-8 border border-slate-100 shadow-sm hover:shadow-lg hover:-translate-y-0.5 hover:bg-white transition-all duration-300">
                   <div className="md:hidden mb-4 pb-4 border-b border-slate-100">
                     <div className="flex items-center justify-between gap-2">
                       <h3 className="text-xl font-bold text-slate-900">
@@ -81,7 +87,7 @@ export default function WorkExperience() {
                     {job.projects.map((project, projectIndex) => (
                       <div
                         key={projectIndex}
-                        className="relative group/project"
+                        className={projectIndex > 0 ? "relative group/project border-t border-slate-100 pt-8" : "relative group/project"}
                       >
                         <div className="flex items-baseline gap-3 mb-3">
                           <div className="p-1 bg-slate-200/60 rounded text-slate-500 hidden sm:block">

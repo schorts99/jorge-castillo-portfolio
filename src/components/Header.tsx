@@ -22,12 +22,12 @@ export default function Header() {
   };
 
   return (
-    <header className="fixed top-0 left-0 right-0 bg-white/90 backdrop-blur-md z-50 border-b border-slate-200/60 selection:bg-blue-500 selection:text-white">
+    <header className="fixed top-0 left-0 right-0 bg-white/90 backdrop-blur-md z-50 border-b border-slate-200/60 shadow-sm selection:bg-blue-500 selection:text-white">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
           <div className="flex items-center gap-2">
             <span className="text-base font-extrabold text-slate-900 tracking-tight">
-              Jorge Castillo
+              Jorge Castillo<span className="text-blue-600">.</span>
             </span>
             {/* <span className="hidden sm:inline-block text-[10px] font-bold uppercase tracking-wider text-slate-400 bg-slate-50 border border-slate-100 px-1.5 py-0.5 rounded">
               Architect
@@ -60,7 +60,7 @@ function DesktopNavigation({ scrollToSection }: NavigationProps) {
       {links.map((link) => (
         <button
           key={link}
-          className="text-xs font-semibold text-slate-600 hover:text-slate-900 capitalize tracking-wide transition-colors cursor-pointer"
+          className="text-xs font-semibold text-slate-600 hover:text-blue-600 capitalize tracking-wide transition-colors cursor-pointer"
           onClick={() => scrollToSection(link)}
         >
           {link}
@@ -140,7 +140,7 @@ function MobileNavigation({ scrollToSection }: NavigationProps) {
           <button 
             key={link}
             onClick={() => scrollToSection(link)}
-            className="text-sm font-medium text-slate-600 hover:text-slate-900 capitalize text-left py-0.5"
+            className="text-sm font-medium text-slate-600 hover:text-blue-600 capitalize text-left py-0.5"
           >
             {link}
           </button>
