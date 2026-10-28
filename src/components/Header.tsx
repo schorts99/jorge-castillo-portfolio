@@ -1,12 +1,12 @@
-import { useState, useEffect, useRef } from 'react'
-import { Menu, X, Github, Linkedin, Mail } from 'lucide-react'
+import { useEffect, useRef, useState } from 'react'
+import { Github, Linkedin, Mail, Menu, X } from 'lucide-react'
 
-import { EMAIL, LINKEDIN, GITHUB, MEDIUM, SUBSTACK } from '../data/contact'
+import { EMAIL, GITHUB, LINKEDIN, MEDIUM, SUBSTACK } from '../data/contact'
 import substack from '../assets/images/substack.png'
 import medium from '../assets/images/medium.png'
 
 interface NavigationProps {
-  scrollToSection: (sectionID: string) => void;
+  scrollToSection: (sectionID: string) => void
 }
 
 export default function Header() {
@@ -20,7 +20,7 @@ export default function Header() {
       element.scrollIntoView({ behavior: 'smooth' })
       setIsMenuOpen(false)
     }
-  };
+  }
 
   // Close on scroll
   useEffect(() => {
@@ -46,7 +46,10 @@ export default function Header() {
   }, [isMenuOpen])
 
   return (
-    <header ref={headerRef} className="fixed top-0 left-0 right-0 bg-white/90 backdrop-blur-md z-50 border-b border-slate-200/60 shadow-sm selection:bg-blue-500 selection:text-white">
+    <header
+      ref={headerRef}
+      className="fixed top-0 left-0 right-0 bg-white/85 backdrop-blur-xl z-50 border-b border-slate-200/70 shadow-[0_8px_30px_-24px_rgba(15,23,42,0.35)] selection:bg-blue-500 selection:text-white"
+    >
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
           <div className="flex items-center gap-2">
@@ -62,23 +65,28 @@ export default function Header() {
           <DesktopContactIcons />
 
           <button
-            className="md:hidden text-slate-600 hover:text-slate-900 p-1"
+            className="md:hidden text-slate-600 hover:text-slate-900 p-2 rounded-lg hover:bg-slate-100 transition-colors"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-label="Toggle navigation menu"
+            aria-expanded={isMenuOpen}
+            aria-controls="mobile-navigation"
           >
             {isMenuOpen ? <X size={20} /> : <Menu size={20} />}
           </button>
         </div>
 
-        {isMenuOpen && <MobileNavigation scrollToSection={scrollToSection} />}
+        <MobileNavigation
+          scrollToSection={scrollToSection}
+          isOpen={isMenuOpen}
+        />
       </div>
     </header>
   )
 }
 
 function DesktopNavigation({ scrollToSection }: NavigationProps) {
-  const links = ['about', 'skills', 'experience', 'projects', 'contact'];
-  
+  const links = ['about', 'skills', 'experience', 'projects', 'contact']
+
   return (
     <nav className="hidden md:flex items-center space-x-6">
       {links.map((link) => (
@@ -91,7 +99,7 @@ function DesktopNavigation({ scrollToSection }: NavigationProps) {
         </button>
       ))}
     </nav>
-  );
+  )
 }
 
 function DesktopContactIcons() {
@@ -151,20 +159,27 @@ function DesktopContactIcons() {
         <Github size={16} />
       </a>
     </div>
-  );
+  )
 }
 
-function MobileNavigation({ scrollToSection }: NavigationProps) {
-  const links = ['about', 'skills', 'experience', 'projects', 'contact'];
+function MobileNavigation({
+  scrollToSection,
+  isOpen,
+}: NavigationProps & { isOpen: boolean }) {
+  const links = ['about', 'skills', 'experience', 'projects', 'contact']
 
   return (
-    <div className="md:hidden py-4 border-t border-slate-100 animation-slide-down">
+    <div
+      id="mobile-navigation"
+      hidden={!isOpen}
+      className="md:hidden py-4 border-t border-slate-100 animation-slide-down"
+    >
       <nav className="flex flex-col space-y-3.5">
         {links.map((link) => (
-          <button 
+          <button
             key={link}
             onClick={() => scrollToSection(link)}
-            className="text-sm font-medium text-slate-600 hover:text-blue-600 capitalize text-left py-0.5"
+            className="text-sm font-medium text-slate-600 hover:text-blue-600 capitalize text-left py-2"
           >
             {link}
           </button>
@@ -227,5 +242,5 @@ function MobileNavigation({ scrollToSection }: NavigationProps) {
         </div>
       </nav>
     </div>
-  );
+  )
 }

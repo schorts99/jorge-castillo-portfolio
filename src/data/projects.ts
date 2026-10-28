@@ -5,7 +5,7 @@ export const PROJECTS = [
     role: 'Creator',
     period: '2025 – Present',
     type: 'WEB',
-    website: 'https://github.com/schorts99/react-clean-architecture',
+    repository: 'https://github.com/schorts99/react-clean-architecture',
     description:
       'Modular Clean Architecture + Domain-Driven Design reference implementation for React and TypeScript that keeps domain, application, infrastructure, and presentation independently replaceable.',
     highlights: [
@@ -32,7 +32,7 @@ export const PROJECTS = [
     role: 'Creator',
     period: 'Aug 2026 – Present',
     type: 'CLI',
-    website: 'https://github.com/schorts99/firestore-migrator',
+    repository: 'https://github.com/schorts99/firestore-migrator',
     description:
       'Declarative migration tool for Cloud Firestore that enables defining field additions, removals, and transforms in simple migration files.',
     highlights: [
@@ -77,7 +77,7 @@ export const PROJECTS = [
     technologies: ['PHP', 'Google Cloud Firestore', 'DDD', 'Composer'],
   },
   {
-    featured: true,
+    featured: false,
     name: 'Simply CLI',
     role: 'Creator',
     period: 'Aug 2026 – Present',
@@ -130,7 +130,7 @@ export const PROJECTS = [
     role: 'Senior Fullstack Engineer',
     period: 'Jun 2025 – Present',
     type: 'WEB',
-    website: 'https://simply-pos.vercel.app',
+    website: 'https://simply-pos.com',
     description:
       'Scalable, cloud-native multi-tenant POS and restaurant management platform built with Hexagonal Architecture.',
     highlights: [
@@ -153,10 +153,60 @@ export const PROJECTS = [
   },
   {
     featured: true,
+    name: 'Simply Logs',
+    role: 'Creator',
+    type: 'DESKTOP',
+    website: 'https://simply-logs.netlify.app',
+    description:
+      'A local-first desktop app for reviewing Vercel and Netlify runtime logs, deployment status, and public URL health checks.',
+    highlights: [
+      'Review recent deployment and runtime log history from a single workspace.',
+      'Follow live log output and check the health of public deployment URLs.',
+    ],
+    technologies: ['Vercel', 'Netlify', 'Runtime Logs', 'Health Checks'],
+  },
+  {
+    featured: true,
+    name: 'Simply Track',
+    role: 'Creator',
+    type: 'WEB',
+    website: 'https://simply-track-one.vercel.app',
+    repository: 'https://github.com/schorts99/simply-track',
+    description:
+      'A responsive, local-first personal finance PWA for tracking spending, budgets, savings goals, and financial forecasts.',
+    highlights: [
+      'Manage transactions, category budgets, savings goals, and what-if scenarios in an installable app.',
+      'Keep financial data in an encrypted local vault, with optional encrypted Google Drive sync.',
+      'Use the app offline with English and Spanish support, plus light and dark themes.',
+    ],
+    technologies: ['Next.js', 'React', 'PWA', 'SQLite', 'Google Drive'],
+  },
+  {
+    featured: true,
+    name: 'Simply Pet',
+    role: 'Creator',
+    type: 'WEB',
+    website: 'https://simply-pet.onrender.com',
+    description:
+      'A shelter and foster care platform for coordinating pet profiles, shelter teams, and foster relationships.',
+    highlights: [
+      'Built a Rails application with role-aware shelter memberships and independent foster profiles.',
+      'Added Google sign-in for provisioned users and image uploads backed by Google Cloud Storage.',
+    ],
+    technologies: [
+      'Ruby on Rails',
+      'MongoDB',
+      'Google OAuth',
+      'Google Cloud Storage',
+    ],
+  },
+  {
+    featured: true,
     name: 'Developer Environment Setup',
     role: 'Creator',
     type: 'TOOL',
     period: 'Jan 2026 – Aug 2026',
+    repository: 'https://github.com/schorts99/Setup-Dev-Env',
     description:
       'Streamlined, modular setup system for macOS and Unix environments that automates installation and configuration of a complete modern developer toolchain.',
     highlights: [
@@ -711,4 +761,4 @@ export const PROJECTS = [
   },
 ]
 
-export const FEATURED_PROJECTS = PROJECTS.filter((project) => project.featured);
+export const FEATURED_PROJECTS = PROJECTS.filter((project) => project.featured)

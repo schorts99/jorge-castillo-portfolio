@@ -14,7 +14,7 @@ export const Route = createRootRoute({
       },
       {
         name: 'viewport',
-        content: 'width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover',
+        content: 'width=device-width, initial-scale=1, viewport-fit=cover',
       },
       {
         title: 'Jorge Castillo - Sr. Full-Stack Engineer',
@@ -46,11 +46,11 @@ function RootDocument({ children }: { children: React.ReactNode }) {
       <head>
         <HeadContent />
       </head>
-      <body className='scroll-smooth'>
-        <GoogleAnalytics measurementId={import.meta.env.VITE_GOOGLE_ANALYTICS_MEASUREMENT_ID} />
-        <MainLayout>
-          {children}
-        </MainLayout>
+      <body className="scroll-smooth">
+        <GoogleAnalytics
+          measurementId={import.meta.env.VITE_GOOGLE_ANALYTICS_MEASUREMENT_ID}
+        />
+        <MainLayout>{children}</MainLayout>
         {process.env.NODE_ENV === 'development' && (
           <TanstackDevtools
             config={{

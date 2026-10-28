@@ -1,10 +1,10 @@
 import { useState } from 'react'
 import {
+  ArrowRight,
   ExternalLink,
+  Github,
   Layers,
   Terminal,
-  ArrowRight,
-  Github,
 } from 'lucide-react'
 import { FEATURED_PROJECTS } from '@/data/projects'
 
@@ -56,15 +56,11 @@ export default function FeaturedProjects() {
       )
     }
 
-    if (activeTab === 'applications') {
-      return (
-        project.type === 'WEB' ||
-        project.type === 'MOBILE' ||
-        project.type === 'DESKTOP'
-      )
-    }
-
-    return true
+    return (
+      project.type === 'WEB' ||
+      project.type === 'MOBILE' ||
+      project.type === 'DESKTOP'
+    )
   })
 
   return (
@@ -74,11 +70,15 @@ export default function FeaturedProjects() {
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <span className="inline-block text-xs font-bold text-blue-600 uppercase tracking-widest mb-3">Projects</span>
+          <span className="inline-block text-xs font-bold text-blue-600 uppercase tracking-widest mb-3">
+            Projects
+          </span>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight mb-0">
             Engineering Showcases
           </h2>
-          <div className="flex justify-center mt-3 mb-4"><div className="h-1 w-16 bg-gradient-to-r from-blue-500 to-indigo-400 rounded-full"></div></div>
+          <div className="flex justify-center mt-3 mb-4">
+            <div className="h-1 w-16 bg-gradient-to-r from-blue-500 to-indigo-400 rounded-full"></div>
+          </div>
           <p className="text-lg text-slate-500 max-w-2xl mx-auto font-normal">
             Deep-dives into domain primitives, open-source decoupling
             abstractions, and production-grade applications.
@@ -156,6 +156,17 @@ export default function FeaturedProjects() {
                         aria-label={`Visit ${project.name}`}
                       >
                         <ExternalLink size={14} />
+                      </a>
+                    )}
+                    {'repository' in project && project.repository && (
+                      <a
+                        href={project.repository}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-slate-400 hover:text-slate-900 transition-colors p-1"
+                        aria-label={`View ${project.name} source code on GitHub`}
+                      >
+                        <Github size={15} />
                       </a>
                     )}
                   </div>
