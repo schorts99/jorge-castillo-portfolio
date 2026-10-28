@@ -25,6 +25,14 @@ the SVG, export it as a 1200 x 630 PNG to the same public path. Social metadata 
 configured in `src/routes/__root.tsx`; the Person schema retains the profile
 portrait rather than the sharing cover.
 
+The X profile header is `public/x-cover.png` (1500 x 500), with editable source
+at `src/assets/images/x-cover.svg`. Upload this PNG as the header image on X;
+it is separate from the website's link-preview cover.
+
+The LinkedIn profile banner is `public/linkedin-cover.png` (1584 x 396), with
+editable source at `src/assets/images/linkedin-cover.svg`. Upload this PNG as
+your LinkedIn background photo. The left side is reserved for the profile photo.
+
 ## Testing
 
 This project uses [Vitest](https://vitest.dev/) for testing. You can run the tests with:

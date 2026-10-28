@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="500" viewBox="0 0 1500 500" fill="none">
+  <defs>
+    <linearGradient id="background" x1="0" y1="0" x2="1500" y2="500" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#111B38"/>
+      <stop offset="1" stop-color="#1C1741"/>
+    </linearGradient>
+    <linearGradient id="screen" x1="150" y1="90" x2="435" y2="300" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#283860"/>
+      <stop offset="1" stop-color="#202447"/>
+    </linearGradient>
+    <pattern id="dots" width="28" height="28" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1" fill="#A5B4FC" fill-opacity=".12"/>
+    </pattern>
+  </defs>
+  <path fill="url(#background)" d="M0 0h1500v500H0z"/>
+  <path fill="url(#dots)" d="M0 0h1500v500H0z"/>
+  <circle cx="1480" cy="470" r="255" fill="#8B5CF6" fill-opacity=".09"/>
+  <circle cx="1480" cy="470" r="205" stroke="#A78BFA" stroke-opacity=".14"/>
+  <circle cx="1480" cy="470" r="175" stroke="#A78BFA" stroke-opacity=".14"/>
+  <path d="M-25 375C120 315 180 470 365 415" stroke="#60A5FA" stroke-opacity=".16" stroke-width="2" stroke-dasharray="7 9"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <path d="m88 75 5 13 14 4-14 5-5 13-4-13-14-5 14-4Z" fill="#FDE68A"/>
+    <path d="m460 302 4 11 12 4-12 4-4 12-4-12-11-4 11-4Z" fill="#C4B5FD"/>
+    <path d="m1341 83 5 13 14 5-14 4-5 14-4-14-14-4 14-5Z" fill="#5EEAD4"/>
+    <path d="m1397 326 4 10 10 4-10 3-4 11-3-11-11-3 11-4Z" fill="#F9A8D4"/>
+    <path d="m477 71 14 7m-22 11 6 13" stroke="#F9A8D4" stroke-width="3"/>
+    <path d="m1186 414 13-5m-8 20 9 6" stroke="#FDE68A" stroke-width="3"/>
+  </g>
+  <g transform="rotate(-7 293 195)">
+    <rect x="154" y="106" width="290" height="202" rx="24" fill="#070C1D" fill-opacity=".5"/>
+    <rect x="143" y="93" width="290" height="202" rx="24" fill="url(#screen)" stroke="#8195C5" stroke-width="2"/>
+    <path d="M144 137H431" stroke="#8195C5" stroke-opacity=".5"/>
+    <circle cx="165" cy="115" r="5" fill="#FDA4AF"/>
+    <circle cx="184" cy="115" r="5" fill="#FDE68A"/>
+    <circle cx="203" cy="115" r="5" fill="#5EEAD4"/>
+    <g stroke-linecap="round" stroke-linejoin="round" stroke-width="7">
+      <path d="m215 177-20 21 20 21m140-42 20 21-20 21" stroke="#93C5FD"/>
+      <path d="m298 169-20 56" stroke="#C4B5FD"/>
+      <path d="M266 247q20 19 40 0" stroke="#5EEAD4" stroke-width="5"/>
+    </g>
+    <circle cx="240" cy="230" r="7" fill="#F9A8D4" fill-opacity=".5"/>
+    <circle cx="330" cy="230" r="7" fill="#F9A8D4" fill-opacity=".5"/>
+  </g>
+  <g transform="rotate(9 410 120)" font-family="Helvetica, Arial, sans-serif">
+    <rect x="338" y="69" width="153" height="42" rx="11" fill="#FDE68A"/>
+    <text x="414" y="96" text-anchor="middle" fill="#30264A" font-size="17" font-weight="700">it works locally.</text>
+  </g>
+  <g transform="rotate(10 409 270)">
+    <path d="M382 246h43v38a17 17 0 0 1-17 17h-9a17 17 0 0 1-17-17Z" fill="#F9A8D4" stroke="#111B38" stroke-width="3"/>
+    <path d="M425 253h8a11 11 0 0 1 0 22h-8" stroke="#F9A8D4" stroke-width="6"/>
+    <path d="M393 235c-9-11 8-14 0-25m15 25c-9-11 8-14 0-25" stroke="#DDD6FE" stroke-width="3" stroke-linecap="round"/>
+  </g>
+  <g font-family="Helvetica, Arial, sans-serif">
+    <text x="548" y="135" fill="#FFFFFF" font-size="49" font-weight="700" letter-spacing="-1.7">Jorge Castillo<tspan fill="#5EEAD4">_</tspan></text>
+    <text x="551" y="175" fill="#A5B4FC" font-size="20" font-weight="700">Senior Full-Stack Engineer</text>
+    <text x="546" y="259" fill="#F8FAFC" font-size="51" font-weight="700" letter-spacing="-1.5">Serious systems.</text>
+    <text x="546" y="319" fill="#FDE68A" font-size="51" font-weight="700" letter-spacing="-1.5">Playful mind.</text>
+    <path d="M551 332c108 8 219 8 310-2" stroke="#FDE68A" stroke-width="3" stroke-linecap="round" stroke-opacity=".7"/>
+    <text x="551" y="387" fill="#CBD5E1" font-size="18">Clean architecture. Curious experiments. Coffee.</text>
+    <text x="551" y="427" fill="#5EEAD4" font-family="Menlo, Monaco, monospace" font-size="15">schorts.netlify.app</text>
+  </g>
+  <g transform="translate(1213 213) rotate(10)" stroke="#A5B4FC" stroke-linecap="round" stroke-linejoin="round">
+    <path d="m0 28 43-23 44 23-44 24Z" fill="#2C315A" stroke-width="2"/>
+    <path d="m0 45 43 23 44-23m-87 17 43 23 44-23" stroke-width="2"/>
+    <path d="M43 85v26" stroke-dasharray="4 5" stroke-width="2"/>
+    <circle cx="43" cy="121" r="7" fill="#5EEAD4" stroke="none"/>
+  </g>
+</svg>

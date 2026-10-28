@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1584" height="396" viewBox="0 0 1584 396" fill="none">
+  <defs>
+    <linearGradient id="background" x1="0" y1="0" x2="1584" y2="396" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0F172A"/>
+      <stop offset=".6" stop-color="#142443"/>
+      <stop offset="1" stop-color="#1E3157"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="416" y1="0" x2="1468" y2="0" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#60A5FA"/>
+      <stop offset="1" stop-color="#5EEAD4"/>
+    </linearGradient>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" stroke="#93C5FD" stroke-opacity=".055"/>
+    </pattern>
+  </defs>
+  <path fill="url(#background)" d="M0 0h1584v396H0z"/>
+  <path fill="url(#grid)" d="M0 0h1584v396H0z"/>
+  <circle cx="70" cy="370" r="220" stroke="#60A5FA" stroke-opacity=".12"/>
+  <circle cx="70" cy="370" r="260" stroke="#60A5FA" stroke-opacity=".08"/>
+  <circle cx="1555" cy="10" r="235" fill="#60A5FA" fill-opacity=".035"/>
+  <path d="M0 0h1584v5H0z" fill="url(#accent)"/>
+  <g font-family="Helvetica, Arial, sans-serif">
+    <text x="416" y="106" fill="#F8FAFC" font-size="46" font-weight="700" letter-spacing="-1.4">Jorge Castillo<tspan fill="#5EEAD4">.</tspan></text>
+    <text x="418" y="145" fill="#93C5FD" font-size="22" font-weight="700">Senior Full-Stack Engineer</text>
+    <text x="416" y="214" fill="#FFFFFF" font-size="32" font-weight="700" letter-spacing="-.6">Resilient systems. Thoughtful architecture.</text>
+    <text x="418" y="253" fill="#CBD5E1" font-size="21">From domain to deployment, with curiosity built in.</text>
+    <g font-size="14" font-weight="700" fill="#DBEAFE">
+      <rect x="418" y="282" width="161" height="32" rx="8" fill="#93C5FD" fill-opacity=".07" stroke="#93C5FD" stroke-opacity=".22"/>
+      <text x="434" y="303">Clean Architecture</text>
+      <rect x="589" y="282" width="173" height="32" rx="8" fill="#93C5FD" fill-opacity=".07" stroke="#93C5FD" stroke-opacity=".22"/>
+      <text x="605" y="303">Distributed Systems</text>
+      <rect x="772" y="282" width="176" height="32" rx="8" fill="#93C5FD" fill-opacity=".07" stroke="#93C5FD" stroke-opacity=".22"/>
+      <text x="788" y="303">TypeScript + React</text>
+    </g>
+    <text x="418" y="354" fill="#5EEAD4" font-family="Menlo, Monaco, monospace" font-size="14">schorts.netlify.app</text>
+  </g>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <path d="M1278 163v-25m0 146v25m-61-86h-25m146 0h25" stroke="#60A5FA" stroke-opacity=".4" stroke-width="2" stroke-dasharray="3 6"/>
+    <rect x="1227" y="172" width="120" height="120" rx="22" fill="#050D20" fill-opacity=".25"/>
+    <rect x="1218" y="163" width="120" height="120" rx="22" fill="#223759" stroke="#93C5FD" stroke-opacity=".55" stroke-width="2"/>
+    <path d="m1251 195-13 13 13 13m54-26 13 13-13 13" stroke="#93C5FD" stroke-width="4"/>
+    <path d="m1284 190-11 38" stroke="#C4B5FD" stroke-width="4"/>
+    <path d="M1265 245q13 12 26 0" stroke="#5EEAD4" stroke-width="3"/>
+    <path d="M1278 124 1364 75m-2 148h57m-141 101 63 29" stroke="#60A5FA" stroke-opacity=".3" stroke-width="2"/>
+    <rect x="1356" y="56" width="38" height="38" rx="10" fill="#223759" stroke="#93C5FD" stroke-opacity=".55"/>
+    <path d="m1367 75 5 5 10-11" stroke="#5EEAD4" stroke-width="2"/>
+    <rect x="1419" y="204" width="38" height="38" rx="10" fill="#223759" stroke="#93C5FD" stroke-opacity=".55"/>
+    <path d="m1428 219 10-5 10 5-10 5Zm0 7 10 5 10-5" stroke="#C4B5FD" stroke-width="1.5"/>
+    <circle cx="1353" cy="358" r="13" fill="#223759" stroke="#93C5FD" stroke-opacity=".55"/>
+    <circle cx="1353" cy="358" r="4" fill="#5EEAD4"/>
+    <path d="m1154 104 3 8 9 3-9 3-3 9-3-9-8-3 8-3Z" fill="#FDE68A"/>
+    <path d="m1447 132 2 6 7 2-7 2-2 7-2-7-6-2 6-2Z" fill="#C4B5FD"/>
+  </g>
+</svg>
