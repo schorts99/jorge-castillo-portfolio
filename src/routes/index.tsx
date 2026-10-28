@@ -5,6 +5,7 @@ import About from '@/sections/About'
 import Skills from '@/sections/Skills'
 import WorkExperience from '@/sections/WorkExperience'
 import FeaturedProjects from '@/sections/FeaturedProjects'
+import SimplyProducts from '@/sections/SimplyProducts'
 import Contact from '@/sections/Contact'
 
 export const Route = createFileRoute('/')({
@@ -18,6 +19,7 @@ function App() {
       <About />
       <Skills />
       <WorkExperience />
+      <SimplyProducts />
       <FeaturedProjects />
       <Contact />
     </>

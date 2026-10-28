@@ -125,7 +125,7 @@ export const PROJECTS = [
     technologies: ['TypeScript', 'DDD', 'CQRS', 'Event Sourcing', 'NPM'],
   },
   {
-    featured: true,
+    featured: false,
     name: 'Simply POS',
     role: 'Senior Fullstack Engineer',
     period: 'Jun 2025 – Present',
@@ -152,7 +152,7 @@ export const PROJECTS = [
     ],
   },
   {
-    featured: true,
+    featured: false,
     name: 'Simply Logs',
     role: 'Creator',
     type: 'DESKTOP',
@@ -166,7 +166,7 @@ export const PROJECTS = [
     technologies: ['Vercel', 'Netlify', 'Runtime Logs', 'Health Checks'],
   },
   {
-    featured: true,
+    featured: false,
     name: 'Simply Track',
     role: 'Creator',
     type: 'WEB',
@@ -182,7 +182,7 @@ export const PROJECTS = [
     technologies: ['Next.js', 'React', 'PWA', 'SQLite', 'Google Drive'],
   },
   {
-    featured: true,
+    featured: false,
     name: 'Simply Pet',
     role: 'Creator',
     type: 'WEB',
