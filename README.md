@@ -17,6 +17,14 @@ To build this application for production:
 npm run build
 ```
 
+## Social sharing cover
+
+The Open Graph and Twitter preview image is `public/social-cover.png` (1200 x
+630). Its editable source is `src/assets/images/social-cover.svg`. After editing
+the SVG, export it as a 1200 x 630 PNG to the same public path. Social metadata is
+configured in `src/routes/__root.tsx`; the Person schema retains the profile
+portrait rather than the sharing cover.
+
 ## Testing
 
 This project uses [Vitest](https://vitest.dev/) for testing. You can run the tests with:

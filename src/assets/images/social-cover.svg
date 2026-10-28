@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" fill="none">
+  <defs>
+    <linearGradient id="background" x1="0" y1="0" x2="1200" y2="630" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFFFFF"/>
+      <stop offset="1" stop-color="#EFF6FF"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="72" y1="0" x2="1128" y2="0" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#1D4ED8"/>
+      <stop offset="1" stop-color="#818CF8"/>
+    </linearGradient>
+    <linearGradient id="panel" x1="865" y1="183" x2="1105" y2="447" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0F172A"/>
+      <stop offset="1" stop-color="#1E3A8A"/>
+    </linearGradient>
+  </defs>
+  <path fill="url(#background)" d="M0 0h1200v630H0z"/>
+  <circle cx="1104" cy="90" r="290" fill="#DBEAFE" fill-opacity=".55"/>
+  <circle cx="1120" cy="80" r="210" stroke="#BFDBFE"/>
+  <circle cx="1120" cy="80" r="250" stroke="#BFDBFE" stroke-opacity=".6"/>
+  <path fill="url(#accent)" d="M0 0h1200v8H0z"/>
+  <rect x="32" y="32" width="1136" height="566" rx="28" stroke="#CBD5E1" stroke-opacity=".65"/>
+  <g font-family="Helvetica, Arial, sans-serif">
+    <rect x="72" y="82" width="252" height="34" rx="17" fill="#EFF6FF" stroke="#BFDBFE"/>
+    <circle cx="91" cy="99" r="4" fill="#2563EB"/>
+    <text x="105" y="104" fill="#1D4ED8" font-size="12" font-weight="700" letter-spacing="2">ENGINEERING PORTFOLIO</text>
+    <text x="68" y="236" fill="#0F172A" font-size="76" font-weight="700" letter-spacing="-3">Jorge Castillo<tspan fill="#2563EB">.</tspan></text>
+    <text x="72" y="297" fill="#1D4ED8" font-size="32" font-weight="700" letter-spacing="-.6">Senior Full-Stack Engineer</text>
+    <text x="72" y="363" fill="#475569" font-size="23">Building resilient software,</text>
+    <text x="72" y="397" fill="#475569" font-size="23">from domain to deployment.</text>
+    <g font-size="15" font-weight="700" fill="#334155">
+      <rect x="72" y="438" width="119" height="36" rx="9" fill="#FFFFFF" stroke="#CBD5E1"/>
+      <text x="91" y="461">TypeScript</text>
+      <rect x="201" y="438" width="84" height="36" rx="9" fill="#FFFFFF" stroke="#CBD5E1"/>
+      <text x="222" y="461">React</text>
+      <rect x="295" y="438" width="94" height="36" rx="9" fill="#FFFFFF" stroke="#CBD5E1"/>
+      <text x="313" y="461">Node.js</text>
+      <rect x="399" y="438" width="187" height="36" rx="9" fill="#FFFFFF" stroke="#CBD5E1"/>
+      <text x="417" y="461">Distributed Systems</text>
+    </g>
+    <path d="M72 515H1128" stroke="#CBD5E1"/>
+    <text x="72" y="553" fill="#0F172A" font-size="17" font-weight="700">schorts.netlify.app</text>
+    <text x="1128" y="553" text-anchor="end" fill="#64748B" font-size="15">Oaxaca, Mexico</text>
+    <rect x="840" y="167" width="264" height="280" rx="28" fill="#BFDBFE" fill-opacity=".6"/>
+    <rect x="828" y="155" width="264" height="280" rx="28" fill="url(#panel)"/>
+    <circle cx="855" cy="181" r="4" fill="#60A5FA"/>
+    <circle cx="871" cy="181" r="4" fill="#818CF8"/>
+    <circle cx="887" cy="181" r="4" fill="#CBD5E1"/>
+    <path d="M852 204H1068" stroke="#334155"/>
+    <g stroke="#93C5FD" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="m904 250-30 30 30 30m112-60 30 30-30 30"/>
+      <path d="m973 238-26 84" stroke="#C7D2FE"/>
+    </g>
+    <text x="960" y="367" text-anchor="middle" fill="#DBEAFE" font-size="11" font-weight="700" letter-spacing="3">ARCHITECTURE FIRST</text>
+    <rect x="900" y="390" width="120" height="3" rx="1.5" fill="#60A5FA"/>
+  </g>
+</svg>
