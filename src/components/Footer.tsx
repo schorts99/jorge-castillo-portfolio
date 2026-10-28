@@ -1,10 +1,14 @@
-import { Github, Linkedin, Mail, Heart } from 'lucide-react'
+import { Github, Heart, Linkedin, Mail } from 'lucide-react'
 
 import { EMAIL, GITHUB, LINKEDIN, MEDIUM, SUBSTACK } from '../data/contact'
 import substack from '../assets/images/substack.png'
 import medium from '../assets/images/medium.png'
 
-export default function Footer() {
+export default function Footer({
+  onCookieSettings,
+}: {
+  onCookieSettings: () => void
+}) {
   const scrollToSection = (sectionID: string) => {
     const element = document.getElementById(sectionID)
 
@@ -118,7 +122,16 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-slate-800/80 mt-12 pt-8 text-center flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500 font-medium">
-          <p>© {new Date().getFullYear()} Jorge Castillo. All rights reserved.</p>
+          <div className="flex flex-col sm:flex-row items-center gap-3">
+            <p>© {new Date().getFullYear()} Jorge Castillo. All rights reserved.</p>
+            <button
+              className="hover:text-white transition-colors"
+              type="button"
+              onClick={onCookieSettings}
+            >
+              Cookie settings
+            </button>
+          </div>
           <p className="flex items-center gap-1.5 bg-slate-950 px-3 py-1.5 border border-slate-800 rounded-lg">
             Engineered with <Heart className="text-rose-500 fill-rose-500 animate-pulse" size={12} /> for resilient systems
           </p>

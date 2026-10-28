@@ -1,7 +1,6 @@
 import { HeadContent, Scripts, createRootRoute } from '@tanstack/react-router'
 import { TanStackRouterDevtoolsPanel } from '@tanstack/react-router-devtools'
 import { TanstackDevtools } from '@tanstack/react-devtools'
-import { GoogleAnalytics } from 'tanstack-router-ga4'
 
 import appCss from '../styles.css?url'
 import profileImage from '../assets/images/schorts.webp'
@@ -162,9 +161,6 @@ function RootDocument({ children }: { children: React.ReactNode }) {
         <HeadContent />
       </head>
       <body className="scroll-smooth">
-        <GoogleAnalytics
-          measurementId={import.meta.env.VITE_GOOGLE_ANALYTICS_MEASUREMENT_ID}
-        />
         <MainLayout>{children}</MainLayout>
         {process.env.NODE_ENV === 'development' && (
           <TanstackDevtools
