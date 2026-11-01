@@ -201,6 +201,29 @@ export const PROJECTS = [
     ],
   },
   {
+    featured: false,
+    name: 'Simply Habits',
+    role: 'Creator',
+    type: 'WEB',
+    website: 'https://simply-habits.vercel.app',
+    repository: 'https://github.com/schorts99/simply-habits',
+    description:
+      'A gentle, offline-first habit tracker PWA with custom habits, time-of-day rituals, streak tracking, and 12-week insights.',
+    highlights: [
+      'Track daily targets, time-of-day rituals, and scheduled weekdays with one-tap check-ins and streaks.',
+      'Private vault stored locally on-device for offline tracking, with optional Google sign-in and encrypted Firestore sync.',
+      'Built with Next.js, React, Tailwind CSS, Web Push reminders, and English/Spanish localization.',
+    ],
+    technologies: [
+      'Next.js',
+      'React',
+      'Tailwind CSS',
+      'PWA',
+      'Web Push',
+      'Firebase',
+    ],
+  },
+  {
     featured: true,
     name: 'Developer Environment Setup',
     role: 'Creator',

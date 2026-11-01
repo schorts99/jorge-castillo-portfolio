@@ -20,7 +20,7 @@ const PRODUCTS = [
   {
     name: 'Simply POS',
     category: 'Restaurant operations',
-    url: 'http://simply-pos.com',
+    url: 'https://simply-pos.com',
     icon: '/products/simply-pos.png',
     description:
       'A point-of-sale platform connecting orders, kitchen, inventory, staff, and reporting.',
@@ -32,6 +32,14 @@ const PRODUCTS = [
     icon: '/products/simply-pet.png',
     description:
       'A resource for responsible adoption and the shelters, rescues, and foster homes supporting it.',
+  },
+  {
+    name: 'Simply Habits',
+    category: 'Personal wellbeing',
+    url: 'https://simply-habits.vercel.app',
+    icon: '/products/simply-habits.svg',
+    description:
+      'A gentle, offline-first space to build lasting habits, track daily goals, celebrate streaks, and reflect on your progress.',
   },
 ]
 
@@ -58,40 +66,44 @@ export default function SimplyProducts() {
           </p>
         </div>
 
-        <div className="grid sm:grid-cols-2 gap-5">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {PRODUCTS.map((product) => {
             return (
               <article
                 key={product.name}
-                className="bg-white rounded-2xl p-6 md:p-8 border border-slate-100 shadow-sm hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300"
+                className="bg-white rounded-2xl p-6 md:p-8 border border-slate-100 shadow-sm hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300 flex flex-col justify-between"
               >
-                <div className="flex items-start gap-4">
-                  <img
-                    src={product.icon}
-                    alt={`${product.name} icon`}
-                    className="w-16 h-16 rounded-xl object-contain shrink-0"
-                  />
-                  <div>
-                    <p className="text-xs font-semibold uppercase tracking-wider text-slate-400 mb-1">
-                      {product.category}
-                    </p>
-                    <h3 className="text-xl font-extrabold text-slate-900 tracking-tight">
-                      {product.name}
-                    </h3>
+                <div>
+                  <div className="flex items-start gap-4">
+                    <img
+                      src={product.icon}
+                      alt={`${product.name} icon`}
+                      className="w-16 h-16 rounded-xl object-contain shrink-0"
+                    />
+                    <div>
+                      <p className="text-xs font-semibold uppercase tracking-wider text-slate-400 mb-1">
+                        {product.category}
+                      </p>
+                      <h3 className="text-xl font-extrabold text-slate-900 tracking-tight">
+                        {product.name}
+                      </h3>
+                    </div>
                   </div>
+                  <p className="text-sm leading-relaxed text-slate-600 mt-5">
+                    {product.description}
+                  </p>
                 </div>
-                <p className="text-sm leading-relaxed text-slate-600 mt-5">
-                  {product.description}
-                </p>
-                <a
-                  href={product.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 mt-5 text-sm font-semibold text-blue-600 hover:text-blue-700 transition-colors"
-                >
-                  Visit {product.name}
-                  <ExternalLink size={14} />
-                </a>
+                <div className="mt-6 pt-2">
+                  <a
+                    href={product.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 text-sm font-semibold text-blue-600 hover:text-blue-700 transition-colors"
+                  >
+                    Visit {product.name}
+                    <ExternalLink size={14} />
+                  </a>
+                </div>
               </article>
             )
           })}
