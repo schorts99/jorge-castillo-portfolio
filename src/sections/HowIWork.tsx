@@ -1,3 +1,5 @@
+import jorgeArchitecture from '../assets/images/illustrations/jorge-architecture.webp'
+
 export default function HowIWork() {
   const steps = [
     {
@@ -29,20 +31,34 @@ export default function HowIWork() {
       className="bg-slate-50 py-20 sm:py-24"
     >
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-        <div className="mb-12 max-w-2xl">
-          <p className="mb-3 text-xs font-bold uppercase tracking-[0.16em] text-blue-700">
-            How I work
-          </p>
-          <h2
-            id="how-i-work-title"
-            className="text-3xl font-bold tracking-tight text-slate-950 sm:text-4xl"
-          >
-            A clear path from problem to production.
-          </h2>
-          <p className="mt-4 text-base leading-7 text-slate-600">
-            I keep the process collaborative and practical, with enough
-            structure to make sound decisions and keep delivery moving.
-          </p>
+        <div className="mb-12 grid items-center gap-8 lg:grid-cols-[1fr_0.55fr]">
+          <div className="max-w-2xl">
+            <p className="mb-3 text-xs font-bold uppercase tracking-[0.16em] text-blue-700">
+              How I work
+            </p>
+            <h2
+              id="how-i-work-title"
+              className="text-3xl font-bold tracking-tight text-slate-950 sm:text-4xl"
+            >
+              A clear path from problem to production.
+            </h2>
+            <p className="mt-4 text-base leading-7 text-slate-600">
+              I keep the process collaborative and practical, with enough
+              structure to make sound decisions and keep delivery moving.
+            </p>
+          </div>
+          <figure className="relative mx-auto hidden w-full max-w-xs rounded-3xl bg-gradient-to-br from-blue-100/80 via-white to-slate-100 p-3 lg:block">
+            <img
+              className="mx-auto max-h-64 w-full object-contain"
+              src={jorgeArchitecture}
+              draggable="false"
+              loading="lazy"
+              alt="Jorge presenting a software architecture diagram"
+            />
+            <figcaption className="px-3 pb-2 text-center text-xs font-medium text-slate-600">
+              Design systems around people and change.
+            </figcaption>
+          </figure>
         </div>
 
         <ol className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">

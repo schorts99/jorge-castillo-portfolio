@@ -9,7 +9,7 @@ import {
 
 import { EMAIL, GITHUB, LINKEDIN } from '../data/contact'
 import { SUMMARY } from '../data/summary'
-import schorts from '../assets/images/schorts.webp'
+import jorgeCoding from '../assets/images/illustrations/jorge-coding.webp'
 
 export default function Presentation() {
   return (
@@ -101,69 +101,65 @@ export default function Presentation() {
 
           <div className="relative mx-auto w-full max-w-md">
             <div
-              className="pointer-events-none absolute -inset-4 rounded-[2rem] bg-blue-400/15 blur-2xl"
+              className="pointer-events-none absolute inset-x-8 top-8 h-64 rounded-full bg-blue-400/20 blur-3xl"
               aria-hidden="true"
             ></div>
-            <div className="relative rounded-[1.75rem] border border-white/15 bg-white/[0.08] p-6 shadow-2xl shadow-black/20 backdrop-blur-sm sm:p-8">
-              <div className="flex items-center gap-5">
-                <div className="relative shrink-0">
-                  <img
-                    className="h-24 w-24 rounded-2xl border border-white/20 object-cover shadow-sm sm:h-28 sm:w-28"
-                    src={schorts}
-                    draggable="false"
-                    alt="Portrait of Jorge Castillo"
-                  />
-                </div>
-                <div>
-                  <h3 className="text-xl font-bold tracking-tight text-white sm:text-2xl">
-                    Jorge Castillo
-                  </h3>
-                  <p className="mt-1 text-sm font-medium text-slate-300">
-                    Senior Full-Stack Engineer
-                  </p>
-                  <p className="mt-2 text-xs leading-relaxed text-slate-400">
-                    From domain modeling to dependable production systems.
-                  </p>
-                </div>
-              </div>
-
-              <div className="mt-7 border-t border-white/15 pt-6">
-                <p className="text-xs font-semibold uppercase tracking-[0.16em] text-slate-400">
-                  Focus
+            <div className="relative rounded-[2rem] border border-white/15 bg-gradient-to-br from-white/[0.12] to-white/[0.03] p-3 shadow-2xl shadow-black/20 backdrop-blur-sm sm:p-4">
+              <img
+                className="relative mx-auto w-full object-contain drop-shadow-2xl"
+                src={jorgeCoding}
+                draggable="false"
+                alt="Illustration of Jorge building software at his laptop"
+              />
+              <div className="rounded-2xl border border-white/10 bg-slate-950/75 p-6 sm:p-7">
+                <h3 className="text-xl font-bold tracking-tight text-white sm:text-2xl">
+                  Jorge Castillo
+                </h3>
+                <p className="mt-1 text-sm font-medium text-slate-300">
+                  Senior Full-Stack Engineer
                 </p>
-                <p className="mt-3 text-sm leading-7 text-slate-200">
-                  TypeScript · React · Node.js
-                  <br />
-                  Domain-driven design · Distributed systems
+                <p className="mt-2 text-xs leading-relaxed text-slate-400">
+                  From domain modeling to dependable production systems.
                 </p>
-              </div>
 
-              <div className="mt-6 flex items-center justify-between gap-2 border-t border-white/15 pt-5">
-                <a
-                  href={GITHUB}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Visit Jorge on GitHub (opens in a new tab)"
-                  className="inline-flex min-h-11 min-w-11 items-center justify-center rounded-xl text-slate-300 transition-colors hover:bg-white/10 hover:text-white"
-                >
-                  <Github size={19} aria-hidden="true" />
-                </a>
-                <a
-                  href={LINKEDIN}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Visit Jorge on LinkedIn (opens in a new tab)"
-                  className="inline-flex min-h-11 min-w-11 items-center justify-center rounded-xl text-slate-300 transition-colors hover:bg-white/10 hover:text-white"
-                >
-                  <Linkedin size={19} aria-hidden="true" />
-                </a>
-                <a
-                  href={`mailto:${EMAIL}`}
-                  aria-label="Email Jorge"
-                  className="inline-flex min-h-11 min-w-11 items-center justify-center rounded-xl text-slate-300 transition-colors hover:bg-white/10 hover:text-white"
-                >
-                  <Mail size={19} aria-hidden="true" />
-                </a>
+                <div className="mt-6 border-t border-white/15 pt-5">
+                  <p className="text-xs font-semibold uppercase tracking-[0.16em] text-slate-400">
+                    Focus
+                  </p>
+                  <p className="mt-3 text-sm leading-7 text-slate-200">
+                    TypeScript · React · Node.js
+                    <br />
+                    Domain-driven design · Distributed systems
+                  </p>
+                </div>
+
+                <div className="mt-5 flex items-center justify-between gap-2 border-t border-white/15 pt-4">
+                  <a
+                    href={GITHUB}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Visit Jorge on GitHub (opens in a new tab)"
+                    className="inline-flex min-h-11 min-w-11 items-center justify-center rounded-xl text-slate-300 transition-colors hover:bg-white/10 hover:text-white"
+                  >
+                    <Github size={19} aria-hidden="true" />
+                  </a>
+                  <a
+                    href={LINKEDIN}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Visit Jorge on LinkedIn (opens in a new tab)"
+                    className="inline-flex min-h-11 min-w-11 items-center justify-center rounded-xl text-slate-300 transition-colors hover:bg-white/10 hover:text-white"
+                  >
+                    <Linkedin size={19} aria-hidden="true" />
+                  </a>
+                  <a
+                    href={`mailto:${EMAIL}`}
+                    aria-label="Email Jorge"
+                    className="inline-flex min-h-11 min-w-11 items-center justify-center rounded-xl text-slate-300 transition-colors hover:bg-white/10 hover:text-white"
+                  >
+                    <Mail size={19} aria-hidden="true" />
+                  </a>
+                </div>
               </div>
             </div>
           </div>

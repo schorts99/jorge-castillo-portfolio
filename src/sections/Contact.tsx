@@ -11,6 +11,7 @@ import {
 
 import substack from '../assets/images/substack.png'
 import medium from '../assets/images/medium.png'
+import jorgeShipping from '../assets/images/illustrations/jorge-shipping.webp'
 import type { ChangeEvent, FormEvent } from 'react'
 import {
   EMAIL,
@@ -73,15 +74,26 @@ export default function Contact() {
 
         <div className="grid items-start gap-10 lg:grid-cols-12 lg:gap-16">
           <div className="space-y-7 lg:col-span-5">
-            <div>
-              <h3 className="mb-3 text-lg font-bold tracking-tight text-slate-950">
-                Let’s start with a conversation.
-              </h3>
-              <p className="text-sm leading-6 text-slate-600">
-                Whether you need help shaping a system, improving an existing
-                product, or bringing an idea to life, I’d like to hear what
-                you’re working on.
-              </p>
+            <div className="grid grid-cols-[minmax(0,1fr)_7rem] items-center gap-4">
+              <div>
+                <h3 className="mb-3 text-lg font-bold tracking-tight text-slate-950">
+                  Let’s start with a conversation.
+                </h3>
+                <p className="text-sm leading-6 text-slate-600">
+                  Whether you need help shaping a system, improving an existing
+                  product, or bringing an idea to life, I’d like to hear what
+                  you’re working on.
+                </p>
+              </div>
+              <figure className="rounded-2xl bg-gradient-to-br from-blue-50 to-slate-100 p-1.5">
+                <img
+                  className="w-full object-contain"
+                  src={jorgeShipping}
+                  draggable="false"
+                  loading="lazy"
+                  alt="Jorge sharing a finished digital product from his desk"
+                />
+              </figure>
             </div>
 
             <div className="space-y-3">
