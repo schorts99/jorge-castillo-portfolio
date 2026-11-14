@@ -11,7 +11,7 @@ export default function About() {
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <div className="mb-12 max-w-2xl">
           <p className="mb-3 text-xs font-bold uppercase tracking-[0.16em] text-blue-700">
-            A little about how I work
+            About me
           </p>
           <h2
             id="about-title"

@@ -11,6 +11,7 @@ export default function Footer({
 }) {
   const links = [
     { id: 'about', label: 'About' },
+    { id: 'how-i-work', label: 'How I work' },
     { id: 'projects', label: 'Selected work' },
     { id: 'case-studies', label: 'Case studies' },
     { id: 'simply-products', label: 'Products' },

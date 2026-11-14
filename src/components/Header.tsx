@@ -92,6 +92,7 @@ export default function Header() {
 function DesktopNavigation() {
   const links = [
     { id: 'about', label: 'About' },
+    { id: 'how-i-work', label: 'Approach' },
     { id: 'projects', label: 'Work' },
     { id: 'case-studies', label: 'Case studies' },
     { id: 'simply-products', label: 'Products' },
@@ -189,6 +190,7 @@ function MobileNavigation({
 }) {
   const links = [
     { id: 'about', label: 'About' },
+    { id: 'how-i-work', label: 'How I work' },
     { id: 'projects', label: 'Selected work' },
     { id: 'case-studies', label: 'Case studies' },
     { id: 'simply-products', label: 'Products' },
