@@ -1,5 +1,20 @@
 export const WORKS = [
   {
+    company: 'BairesDev',
+    position: 'Full-Stack Software Engineer',
+    period: 'Sep 2026 – Present',
+    projects: [
+      {
+        name: 'Stitch Fix',
+        highlights: [
+          'Contributed to sorting and pricing capabilities in Shopex, as well as features for saving and listing outfits.',
+          'Contributed to freshness-tag functionality in Foundational Styling, helping stylists disregard outdated preferences.',
+          'Created architectural documentation visualizing asynchronous flows and their business implications.',
+        ],
+      },
+    ],
+  },
+  {
     company: 'Rankmi',
     position: 'Software Developer',
     period: 'Nov 2025 – Mar 2026',
