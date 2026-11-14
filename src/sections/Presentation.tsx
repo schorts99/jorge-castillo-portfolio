@@ -1,4 +1,11 @@
-import { ArrowRight, Github, Linkedin, Mail, MapPin } from 'lucide-react'
+import {
+  ArrowRight,
+  FileDown,
+  Github,
+  Linkedin,
+  Mail,
+  MapPin,
+} from 'lucide-react'
 
 import { EMAIL, GITHUB, LINKEDIN } from '../data/contact'
 import { SUMMARY } from '../data/summary'
@@ -57,6 +64,14 @@ export default function Presentation() {
               >
                 <Mail size={17} />
                 Get in touch
+              </a>
+              <a
+                href="/resume.pdf"
+                download
+                className="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl px-5 py-3.5 font-semibold text-slate-200 transition-colors hover:bg-white/10 hover:text-white"
+              >
+                <FileDown size={17} aria-hidden="true" />
+                Download résumé
               </a>
             </div>
 
