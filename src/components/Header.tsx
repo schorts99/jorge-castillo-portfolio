@@ -5,22 +5,10 @@ import { EMAIL, GITHUB, LINKEDIN, MEDIUM, SUBSTACK } from '../data/contact'
 import substack from '../assets/images/substack.png'
 import medium from '../assets/images/medium.png'
 
-interface NavigationProps {
-  scrollToSection: (sectionID: string) => void
-}
-
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const headerRef = useRef<HTMLElement>(null)
-
-  const scrollToSection = (sectionID: string) => {
-    const element = document.getElementById(sectionID)
-
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' })
-      setIsMenuOpen(false)
-    }
-  }
+  const menuButtonRef = useRef<HTMLButtonElement>(null)
 
   // Close on scroll
   useEffect(() => {
@@ -29,6 +17,20 @@ export default function Header() {
     const handleScroll = () => setIsMenuOpen(false)
     window.addEventListener('scroll', handleScroll, { passive: true })
     return () => window.removeEventListener('scroll', handleScroll)
+  }, [isMenuOpen])
+
+  useEffect(() => {
+    if (!isMenuOpen) return
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        setIsMenuOpen(false)
+        menuButtonRef.current?.focus()
+      }
+    }
+
+    document.addEventListener('keydown', handleKeyDown)
+    return () => document.removeEventListener('keydown', handleKeyDown)
   }, [isMenuOpen])
 
   // Close on outside click
@@ -52,22 +54,25 @@ export default function Header() {
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
-          <div className="flex items-center gap-2">
-            <span className="text-base font-extrabold text-slate-900 tracking-tight">
-              Jorge Castillo<span className="text-blue-600">.</span>
-            </span>
-            {/* <span className="hidden sm:inline-block text-[10px] font-bold uppercase tracking-wider text-slate-400 bg-slate-50 border border-slate-100 px-1.5 py-0.5 rounded">
-              Architect
-            </span> */}
-          </div>
+          <a
+            href="#top"
+            className="rounded-sm text-base font-bold tracking-tight text-slate-950"
+            aria-label="Jorge Castillo, home"
+          >
+            Jorge Castillo<span className="text-blue-700">.</span>
+          </a>
 
-          <DesktopNavigation scrollToSection={scrollToSection} />
+          <DesktopNavigation />
           <DesktopContactIcons />
 
           <button
+            ref={menuButtonRef}
             className="md:hidden text-slate-600 hover:text-slate-900 p-2 rounded-lg hover:bg-slate-100 transition-colors"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            aria-label="Toggle navigation menu"
+            type="button"
+            aria-label={
+              isMenuOpen ? 'Close navigation menu' : 'Open navigation menu'
+            }
             aria-expanded={isMenuOpen}
             aria-controls="mobile-navigation"
           >
@@ -76,27 +81,36 @@ export default function Header() {
         </div>
 
         <MobileNavigation
-          scrollToSection={scrollToSection}
           isOpen={isMenuOpen}
+          onNavigate={() => setIsMenuOpen(false)}
         />
       </div>
     </header>
   )
 }
 
-function DesktopNavigation({ scrollToSection }: NavigationProps) {
-  const links = ['about', 'skills', 'experience', 'projects', 'contact']
+function DesktopNavigation() {
+  const links = [
+    { id: 'about', label: 'About' },
+    { id: 'projects', label: 'Work' },
+    { id: 'simply-products', label: 'Products' },
+    { id: 'skills', label: 'Skills' },
+    { id: 'experience', label: 'Experience' },
+  ]
 
   return (
-    <nav className="hidden md:flex items-center space-x-6">
+    <nav
+      aria-label="Main navigation"
+      className="hidden md:flex items-center gap-5"
+    >
       {links.map((link) => (
-        <button
-          key={link}
-          className="text-xs font-semibold text-slate-600 hover:text-blue-600 capitalize tracking-wide transition-colors cursor-pointer"
-          onClick={() => scrollToSection(link)}
+        <a
+          key={link.id}
+          href={`#${link.id}`}
+          className="inline-flex min-h-11 items-center text-xs font-semibold text-slate-600 transition-colors hover:text-blue-700"
         >
-          {link}
-        </button>
+          {link.label}
+        </a>
       ))}
     </nav>
   )
@@ -104,32 +118,35 @@ function DesktopNavigation({ scrollToSection }: NavigationProps) {
 
 function DesktopContactIcons() {
   return (
-    <div className="hidden md:flex items-center space-x-3.5 border-l border-slate-200 pl-5">
+    <div
+      aria-label="Social links"
+      className="hidden items-center gap-1 border-l border-slate-200 pl-3 md:flex"
+    >
       <a
         href={`mailto:${EMAIL}`}
-        className="text-slate-400 hover:text-slate-900 transition-colors"
-        title="Email Direct"
+        className="inline-flex min-h-10 min-w-10 items-center justify-center rounded-lg text-slate-500 transition-colors hover:bg-slate-100 hover:text-slate-950"
+        aria-label="Email Jorge"
       >
-        <Mail size={16} />
+        <Mail size={16} aria-hidden="true" />
       </a>
       <a
         href={LINKEDIN}
         target="_blank"
         rel="noopener noreferrer"
-        className="text-slate-400 hover:text-slate-900 transition-colors"
-        title="LinkedIn Profile"
+        className="inline-flex min-h-10 min-w-10 items-center justify-center rounded-lg text-slate-500 transition-colors hover:bg-slate-100 hover:text-slate-950"
+        aria-label="Jorge on LinkedIn (opens in a new tab)"
       >
-        <Linkedin size={16} />
+        <Linkedin size={16} aria-hidden="true" />
       </a>
       <a
         href={SUBSTACK}
         target="_blank"
         rel="noopener noreferrer"
-        className="flex items-center group"
-        title="Substack Architecture Articles"
+        className="group inline-flex min-h-10 min-w-10 items-center justify-center rounded-lg transition-colors hover:bg-slate-100"
+        aria-label="Jorge on Substack (opens in a new tab)"
       >
         <img
-          className="h-4 w-4 object-contain grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 transition-all"
+          className="h-4 w-4 object-contain opacity-70 transition-opacity group-hover:opacity-100"
           src={substack}
           alt=""
           draggable="false"
@@ -139,11 +156,11 @@ function DesktopContactIcons() {
         href={MEDIUM}
         target="_blank"
         rel="noopener noreferrer"
-        className="flex items-center group"
-        title="Medium Documentation"
+        className="group inline-flex min-h-10 min-w-10 items-center justify-center rounded-lg transition-colors hover:bg-slate-100"
+        aria-label="Jorge on Medium (opens in a new tab)"
       >
         <img
-          className="h-4 w-4 object-contain grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 transition-all"
+          className="h-4 w-4 object-contain opacity-70 transition-opacity group-hover:opacity-100"
           src={medium}
           alt=""
           draggable="false"
@@ -153,64 +170,75 @@ function DesktopContactIcons() {
         href={GITHUB}
         target="_blank"
         rel="noopener noreferrer"
-        className="text-slate-400 hover:text-slate-900 transition-colors"
-        title="GitHub Infrastructure Repos"
+        className="inline-flex min-h-10 min-w-10 items-center justify-center rounded-lg text-slate-500 transition-colors hover:bg-slate-100 hover:text-slate-950"
+        aria-label="Jorge on GitHub (opens in a new tab)"
       >
-        <Github size={16} />
+        <Github size={16} aria-hidden="true" />
       </a>
     </div>
   )
 }
 
 function MobileNavigation({
-  scrollToSection,
+  onNavigate,
   isOpen,
-}: NavigationProps & { isOpen: boolean }) {
-  const links = ['about', 'skills', 'experience', 'projects', 'contact']
+}: {
+  onNavigate: () => void
+  isOpen: boolean
+}) {
+  const links = [
+    { id: 'about', label: 'About' },
+    { id: 'projects', label: 'Selected work' },
+    { id: 'simply-products', label: 'Products' },
+    { id: 'skills', label: 'Skills' },
+    { id: 'experience', label: 'Experience' },
+    { id: 'contact', label: 'Contact' },
+  ]
 
   return (
     <div
       id="mobile-navigation"
       hidden={!isOpen}
-      className="md:hidden py-4 border-t border-slate-100 animation-slide-down"
+      className="border-t border-slate-100 py-4 md:hidden"
     >
-      <nav className="flex flex-col space-y-3.5">
+      <nav aria-label="Mobile navigation" className="flex flex-col">
         {links.map((link) => (
-          <button
-            key={link}
-            onClick={() => scrollToSection(link)}
-            className="text-sm font-medium text-slate-600 hover:text-blue-600 capitalize text-left py-2"
+          <a
+            key={link.id}
+            href={`#${link.id}`}
+            onClick={onNavigate}
+            className="inline-flex min-h-11 items-center py-2 text-sm font-medium text-slate-700 transition-colors hover:text-blue-700"
           >
-            {link}
-          </button>
+            {link.label}
+          </a>
         ))}
 
-        <div className="flex items-center space-x-4 pt-4 border-t border-slate-100">
+        <div className="flex items-center gap-2 border-t border-slate-100 pt-4">
           <a
             href={`mailto:${EMAIL}`}
-            className="text-slate-400 hover:text-slate-900 transition-colors"
-            title="Email"
+            className="inline-flex min-h-11 min-w-11 items-center justify-center rounded-lg text-slate-500 transition-colors hover:bg-slate-100 hover:text-slate-950"
+            aria-label="Email Jorge"
           >
-            <Mail size={18} />
+            <Mail size={18} aria-hidden="true" />
           </a>
           <a
             href={LINKEDIN}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-slate-400 hover:text-slate-900 transition-colors"
-            title="LinkedIn"
+            className="inline-flex min-h-11 min-w-11 items-center justify-center rounded-lg text-slate-500 transition-colors hover:bg-slate-100 hover:text-slate-950"
+            aria-label="Jorge on LinkedIn (opens in a new tab)"
           >
-            <Linkedin size={18} />
+            <Linkedin size={18} aria-hidden="true" />
           </a>
           <a
             href={SUBSTACK}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center"
-            title="Substack"
+            className="inline-flex min-h-11 min-w-11 items-center justify-center rounded-lg transition-colors hover:bg-slate-100"
+            aria-label="Jorge on Substack (opens in a new tab)"
           >
             <img
-              className="h-4 w-4 object-contain grayscale opacity-70"
+              className="h-4 w-4 object-contain opacity-70"
               src={substack}
               alt=""
               draggable="false"
@@ -220,11 +248,11 @@ function MobileNavigation({
             href={MEDIUM}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center"
-            title="Medium"
+            className="inline-flex min-h-11 min-w-11 items-center justify-center rounded-lg transition-colors hover:bg-slate-100"
+            aria-label="Jorge on Medium (opens in a new tab)"
           >
             <img
-              className="h-4 w-4 object-contain grayscale opacity-70"
+              className="h-4 w-4 object-contain opacity-70"
               src={medium}
               alt=""
               draggable="false"
@@ -234,10 +262,10 @@ function MobileNavigation({
             href={GITHUB}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-slate-400 hover:text-slate-900 transition-colors"
-            title="GitHub"
+            className="inline-flex min-h-11 min-w-11 items-center justify-center rounded-lg text-slate-500 transition-colors hover:bg-slate-100 hover:text-slate-950"
+            aria-label="Jorge on GitHub (opens in a new tab)"
           >
-            <Github size={18} />
+            <Github size={18} aria-hidden="true" />
           </a>
         </div>
       </nav>

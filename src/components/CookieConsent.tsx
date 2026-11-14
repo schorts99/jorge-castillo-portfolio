@@ -11,7 +11,8 @@ export default function CookieConsent({
 }: CookieConsentProps) {
   return (
     <section
-      aria-label="Cookie consent"
+      aria-labelledby="cookie-consent-title"
+      role="region"
       className="fixed inset-x-4 bottom-4 z-[60] mx-auto max-w-3xl rounded-2xl border border-slate-200 bg-white p-5 shadow-2xl shadow-slate-950/20 sm:inset-x-6 sm:bottom-6 sm:p-6"
     >
       <div className="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
@@ -22,7 +23,10 @@ export default function CookieConsent({
             size={22}
           />
           <div>
-            <h2 className="font-semibold text-slate-900">
+            <h2
+              id="cookie-consent-title"
+              className="font-semibold text-slate-900"
+            >
               Your privacy matters
             </h2>
             <p className="mt-1 max-w-xl text-sm leading-relaxed text-slate-600">
@@ -34,14 +38,14 @@ export default function CookieConsent({
         </div>
         <div className="flex shrink-0 flex-col gap-2 sm:flex-row">
           <button
-            className="rounded-lg border border-slate-300 px-4 py-2.5 text-sm font-medium text-slate-700 transition-colors hover:bg-slate-50"
+            className="min-h-11 rounded-lg border border-slate-300 px-4 py-2.5 text-sm font-medium text-slate-700 transition-colors hover:bg-slate-50"
             type="button"
             onClick={onReject}
           >
             Reject optional
           </button>
           <button
-            className="rounded-lg bg-blue-600 px-4 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-blue-700"
+            className="min-h-11 rounded-lg bg-blue-700 px-4 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-blue-800"
             type="button"
             onClick={onAccept}
           >

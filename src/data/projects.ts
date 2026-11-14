@@ -7,11 +7,11 @@ export const PROJECTS = [
     type: 'WEB',
     repository: 'https://github.com/schorts99/react-clean-architecture',
     description:
-      'Modular Clean Architecture + Domain-Driven Design reference implementation for React and TypeScript that keeps domain, application, infrastructure, and presentation independently replaceable.',
+      'A React and TypeScript reference app that keeps business logic independent from the UI, data storage, and framework details.',
     highlights: [
-      'Built a full reference application demonstrating strict dependency inversion, CQRS (commands/queries + buses), application-owned ports, and replaceable infrastructure adapters (IndexedDB).',
-      'Implemented domain entities and value objects, DTOs, application-level caching with tag-based invalidation, browser/server composition roots, and Docker support while enforcing clear architectural boundaries.',
-      'Delivered a production-oriented learning and starter project that shows how to evolve frontend systems without coupling business rules to React, persistence, or transport details.',
+      'Separates domain and application logic from React, transport, and IndexedDB through explicit ports and adapters.',
+      'Includes CQRS, domain entities and value objects, cache invalidation, and browser/server composition roots.',
+      'Provides an end-to-end starter for applying these boundaries in a real React application.',
     ],
     technologies: [
       'TypeScript',
@@ -34,11 +34,11 @@ export const PROJECTS = [
     type: 'CLI',
     repository: 'https://github.com/schorts99/firestore-migrator',
     description:
-      'Declarative migration tool for Cloud Firestore that enables defining field additions, removals, and transforms in simple migration files.',
+      'A CLI for evolving Cloud Firestore data through small, version-controlled migration files.',
     highlights: [
-      'Built a complete CLI workflow supporting migration generation, dry-run previews, status tracking, and safe rollbacks.',
-      'Implemented flexible operations for adding fields (static defaults or computed values), removing fields, and transforming existing data, with batched writes and migration tracking.',
-      'Delivered a reusable, production-ready package that brings structured, version-controlled schema evolution to Firestore projects.',
+      'Generate migrations, preview changes, check status, and roll back when needed.',
+      'Add, remove, or transform fields with batched writes and tracked migration history.',
+      'Bring structured schema changes to Firestore projects without manual one-off scripts.',
     ],
     technologies: ['TypeScript', 'Node.js', 'Cloud Firestore', 'CLI', 'NPM'],
   },
@@ -116,11 +116,11 @@ export const PROJECTS = [
     period: 'Sep 2025 – Present',
     website: 'https://www.npmjs.com/package/@schorts/shared-kernel',
     description:
-      'Modular, type-safe foundation for building expressive and maintainable applications with core abstractions for domain modeling, CQRS, authentication, persistence, networking, and more.',
+      'An open-source TypeScript foundation of domain and application primitives for products that need clear boundaries.',
     highlights: [
-      'Delivered rich Domain-Driven Design primitives including Aggregates, Entities, Value Objects, Domain Events, Result types, and a fluent Criteria query builder.',
-      'Implemented CQRS (Command/Query buses and handlers), Sagas for long-running processes, Event Bus with retries and dead-letter support, plus interfaces for Auth, RBAC/ABAC, DAO, Unit of Work, Offline Store, HTTP, JSON:API, Pub-Sub, State Management, Guided Tours, i18n, and structured logging/error tracking.',
-      'Created a comprehensive open-source package that enforces type safety, domain expressiveness, and clean architecture principles across frontend, backend, and serverless environments.',
+      'Provides entities, aggregates, value objects, domain events, result types, and criteria queries.',
+      'Adds command and query buses, sagas, a retryable event bus, and contracts for persistence, auth, messaging, and observability.',
+      'Designed for reuse across frontend, backend, and serverless applications.',
     ],
     technologies: ['TypeScript', 'DDD', 'CQRS', 'Event Sourcing', 'NPM'],
   },
@@ -231,11 +231,11 @@ export const PROJECTS = [
     period: 'Jan 2026 – Aug 2026',
     repository: 'https://github.com/schorts99/Setup-Dev-Env',
     description:
-      'Streamlined, modular setup system for macOS and Unix environments that automates installation and configuration of a complete modern developer toolchain.',
+      'A modular macOS and Unix setup for installing and configuring a ready-to-use developer toolchain.',
     highlights: [
-      'Created a two-stage process (setup + configuration) that installs core tools including Homebrew, Mise, NeoVim with NvChad, multiple AI coding agents, and language runtimes for Node.js and Python.',
-      'Implemented modular, idempotent configuration scripts covering LSP support, formatting, indentation, and framework-specific settings for JavaScript, TypeScript, NestJS, Vue, Svelte, Shell, and Markdown.',
-      'Delivered a batteries-included terminal experience that provides a consistent, high-productivity development environment with minimal manual setup.',
+      'Installs Homebrew, Mise, Neovim with NvChad, language runtimes, and other developer tools in two stages.',
+      'Repeatable configuration covers language servers, formatting, and common JavaScript, TypeScript, and backend frameworks.',
+      'Creates a consistent starting point for a new macOS or Unix development environment.',
     ],
     technologies: ['Bash', 'NeoVim', 'Homebrew', 'Mise', 'AI Agents'],
   },
@@ -247,11 +247,11 @@ export const PROJECTS = [
     type: 'PACKAGE',
     website: 'https://www.npmjs.com/package/@schorts/indexed-db-dao',
     description:
-      'Type-safe, domain-driven abstraction over IndexedDB persistence integrated with shared-kernel constructs.',
+      'A type-safe IndexedDB adapter for domain-oriented apps, with flexible queries and transactional Unit of Work support.',
     highlights: [
-      'Enabled expressive, consistent, and testable offline data access with full CRUD support and powerful Criteria-based querying (filtering, ordering, limits, and offsets).',
-      'Implemented Unit of Work support for grouping multiple operations into reliable transactions.',
-      'Delivered a reusable, architecture-aligned package that brings clean domain-driven design patterns to browser-based offline storage.',
+      'Supports CRUD and criteria-based queries for browser-side, offline data.',
+      'Groups multiple writes into transactions through a Unit of Work.',
+      'Keeps storage details separate from the rest of the application.',
     ],
     technologies: ['TypeScript', 'IndexedDB', 'DDD', 'NPM'],
   },
@@ -279,11 +279,11 @@ export const PROJECTS = [
     type: 'PACKAGE',
     website: 'https://www.npmjs.com/package/@schorts/firestore-admin-dao',
     description:
-      'Type-safe, domain-driven abstraction over Firestore persistence using the Firebase Admin SDK.',
+      'A type-safe Firestore persistence adapter for Node.js applications using the Firebase Admin SDK.',
     highlights: [
-      'Enabled expressive and consistent server-side data access with full CRUD support and Criteria-based querying (filtering, ordering, and limits).',
-      'Provided a clean mapping layer between domain entities and Firestore documents through toPrimitives / fromPrimitives patterns and entity registration.',
-      'Delivered a reusable package that brings Domain-Driven Design principles and strong type safety to backend Firestore operations.',
+      'Supports CRUD operations and criteria-based queries on server-side collections.',
+      'Maps between domain entities and Firestore documents through registered entity serializers.',
+      'Keeps Firestore-specific persistence behind a reusable application-facing contract.',
     ],
     technologies: [
       'TypeScript',

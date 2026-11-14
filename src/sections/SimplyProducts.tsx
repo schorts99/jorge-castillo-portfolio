@@ -47,49 +47,52 @@ export default function SimplyProducts() {
   return (
     <section
       id="simply-products"
-      className="py-20 bg-slate-50/60 selection:bg-blue-500 selection:text-white"
+      aria-labelledby="products-title"
+      className="bg-white py-20 sm:py-24"
     >
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
-          <span className="inline-block text-xs font-bold text-blue-600 uppercase tracking-widest mb-3">
-            Independent Product Family
+      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        <div className="mb-10 max-w-2xl">
+          <span className="mb-3 inline-block text-xs font-bold uppercase tracking-[0.16em] text-blue-700">
+            Independent products
           </span>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+          <h2
+            id="products-title"
+            className="text-3xl font-bold tracking-tight text-slate-950 sm:text-4xl"
+          >
             Simply Products
           </h2>
-          <div className="flex justify-center mt-3 mb-4">
-            <div className="h-1 w-16 bg-gradient-to-r from-blue-500 to-indigo-400 rounded-full" />
-          </div>
-          <p className="text-lg text-slate-500 max-w-2xl mx-auto">
-            A collection of focused products, each designed to do one job well.
-            Built independently, with clear and calm experiences.
+          <p className="mt-4 text-base leading-7 text-slate-600">
+            A growing family of small, focused products. Each one is designed
+            around a specific everyday need, with a calm interface and useful
+            details.
           </p>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {PRODUCTS.map((product) => {
             return (
               <article
                 key={product.name}
-                className="bg-white rounded-2xl p-6 md:p-8 border border-slate-100 shadow-sm hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300 flex flex-col justify-between"
+                className="flex flex-col justify-between rounded-2xl border border-slate-200/80 bg-white p-6 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:border-blue-200 hover:shadow-lg"
               >
                 <div>
                   <div className="flex items-start gap-4">
                     <img
                       src={product.icon}
-                      alt={`${product.name} icon`}
-                      className="w-16 h-16 rounded-xl object-contain shrink-0"
+                      alt=""
+                      loading="lazy"
+                      className="h-14 w-14 shrink-0 rounded-xl object-contain"
                     />
                     <div>
-                      <p className="text-xs font-semibold uppercase tracking-wider text-slate-400 mb-1">
+                      <p className="mb-1 text-xs font-semibold uppercase tracking-wider text-slate-500">
                         {product.category}
                       </p>
-                      <h3 className="text-xl font-extrabold text-slate-900 tracking-tight">
+                      <h3 className="text-xl font-bold tracking-tight text-slate-950">
                         {product.name}
                       </h3>
                     </div>
                   </div>
-                  <p className="text-sm leading-relaxed text-slate-600 mt-5">
+                  <p className="mt-5 text-sm leading-6 text-slate-600">
                     {product.description}
                   </p>
                 </div>
@@ -98,10 +101,10 @@ export default function SimplyProducts() {
                     href={product.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 text-sm font-semibold text-blue-600 hover:text-blue-700 transition-colors"
+                    className="inline-flex min-h-11 items-center gap-2 text-sm font-semibold text-blue-700 transition-colors hover:text-blue-900"
                   >
                     Visit {product.name}
-                    <ExternalLink size={14} />
+                    <ExternalLink size={14} aria-hidden="true" />
                   </a>
                 </div>
               </article>
@@ -109,14 +112,11 @@ export default function SimplyProducts() {
           })}
         </div>
 
-        <div className="mt-8 rounded-2xl border border-slate-200/60 bg-white p-6 md:p-8 text-center shadow-sm">
-          <p className="text-xs font-bold text-blue-600 uppercase tracking-widest mb-2">
-            How they are built
-          </p>
-          <p className="text-sm sm:text-base text-slate-600 max-w-3xl mx-auto leading-relaxed">
-            The product-family site uses Next.js, React, TypeScript, and
-            Tailwind CSS, organized into vertical feature slices with clear
-            domain, application, infrastructure, and presentation boundaries.
+        <div className="mt-6 rounded-2xl bg-slate-950 p-6 text-white sm:p-8">
+          <p className="text-sm leading-6 text-slate-300">
+            Built independently, these products are a chance to take an idea
+            from a clear problem statement through design, engineering, and
+            release.
           </p>
         </div>
       </div>

@@ -1,37 +1,38 @@
-import { Layers, Zap, ShieldAlert, GitBranch } from 'lucide-react'
+import { GitBranch, Layers, ShieldAlert, Zap } from 'lucide-react'
 
-export const SUMMARY = 'Senior Full-Stack Engineer specializing in building decoupled, resilient, and highly maintainable distributed systems. With over 9 years of experience leading engineering initiatives, my focus is on replacing monolithic complexity with clean architectural boundaries. I treat architecture not just as code organization, but as a mechanism to scale team velocity and guarantee structural safety under heavy production loads.'
+export const SUMMARY =
+  'I turn complex product requirements into dependable software—with clear architecture, thoughtful domain modeling, and care for the people who use and maintain it.'
 
 export const HIGHLIGHTS = [
   {
     icon: Layers,
-    title: 'Architectural Integrity',
+    title: 'Architecture with purpose',
     description:
-      'Deep expertise in Clean Architecture, Domain-Driven Design (DDD), Hexagonal (Ports & Adapters), CQRS, and strict dependency inversion to keep domain logic independent of frameworks and infrastructure.',
+      'I use domain-driven design, clear boundaries, and dependency inversion to keep business rules understandable and systems easier to change.',
   },
   {
     icon: Zap,
-    title: 'Event-Driven Streams',
+    title: 'Reliable systems',
     description:
-      'Specialized in asynchronous pipelines, high-concurrency systems, real-time notifications, and resilient event buses with retries and dead-letter handling.',
+      'From asynchronous workflows to real-time features, I design for failure, observability, and predictable behavior in production.',
   },
   {
     icon: GitBranch,
-    title: 'Engineering Leadership',
+    title: 'Collaborative delivery',
     description:
-      'Former Frontend Lead and Architect. Passionate about establishing technical culture through Design Docs, rigorous RFCs, and collaborative code reviews.',
+      'I make complex work easier to align on through useful documentation, thoughtful reviews, and close collaboration across disciplines.',
   },
   {
     icon: ShieldAlert,
-    title: 'Performance & Safety',
+    title: 'Performance and safety',
     description:
-      'Focused on eliminating bottlenecks, optimizing relational and NoSQL data access, safe schema evolution, and preventing race conditions under heavy production loads.',
+      'I pay attention to data access, safe schema changes, and concurrency so products remain responsive and dependable as they grow.',
   },
 ]
 
 export const SKILLS = [
   {
-    category: 'Core Stack Mastery',
+    category: 'Languages & product',
     technologies: [
       'TypeScript',
       'NestJS',
@@ -44,7 +45,7 @@ export const SKILLS = [
     ],
   },
   {
-    category: 'Architecture & Data',
+    category: 'Architecture & data',
     technologies: [
       'Clean Architecture',
       'Domain-Driven Design (DDD)',
@@ -59,7 +60,7 @@ export const SKILLS = [
     ],
   },
   {
-    category: 'DevOps & Tooling',
+    category: 'Cloud & delivery',
     technologies: [
       'AWS (Lambda/S3/Cognito)',
       'GCP / Firebase',

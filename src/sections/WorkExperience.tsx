@@ -1,30 +1,36 @@
-import { ExternalLink, Calendar, Briefcase, Layers } from 'lucide-react'
-import { WORKS } from "@/data/work-experience";
+import { Briefcase, Calendar, ExternalLink, Layers } from 'lucide-react'
+import { WORKS } from '@/data/work-experience'
 
 export default function WorkExperience() {
   return (
     <section
       id="experience"
-      className="py-20 bg-white selection:bg-blue-500 selection:text-white"
+      aria-labelledby="experience-title"
+      className="bg-slate-50 py-20 sm:py-24"
     >
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-20">
-          <span className="inline-block text-xs font-bold text-blue-600 uppercase tracking-widest mb-3">Experience</span>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight mb-0">
-            Engineering History
+      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        <div className="mb-12 max-w-2xl">
+          <span className="mb-3 inline-block text-xs font-bold uppercase tracking-[0.16em] text-blue-700">
+            Experience
+          </span>
+          <h2
+            id="experience-title"
+            className="text-3xl font-bold tracking-tight text-slate-950 sm:text-4xl"
+          >
+            Teams, products, and problems.
           </h2>
-          <div className="flex justify-center mt-3 mb-4">
-            <div className="h-1 w-16 bg-gradient-to-r from-blue-500 to-indigo-400 rounded-full"></div>
-          </div>
-          <p className="text-lg text-slate-500 max-w-2xl mx-auto font-normal">
-            A track record of designing decoupling architectures, building
-            shared core libraries, and leading technical initiatives.
+          <p className="mt-4 text-base leading-7 text-slate-600">
+            My experience spans product teams, consulting, and independent
+            projects—from leading frontend work to building full-stack systems.
           </p>
         </div>
 
         <div className="relative border-l-2 border-slate-100 ml-4 md:ml-60 space-y-16">
-          {WORKS.map((job, index) => (
-            <div key={index} className="relative group">
+          {WORKS.map((job) => (
+            <div
+              key={`${job.company}-${job.period}`}
+              className="group relative"
+            >
               <div className="absolute hidden md:block w-48 -left-60 top-1 text-right pr-6">
                 <div className="font-bold text-slate-900 text-lg group-hover:text-blue-600 transition-colors duration-200">
                   {job.company}
@@ -37,6 +43,7 @@ export default function WorkExperience() {
                     href={job.website}
                     target="_blank"
                     rel="noopener noreferrer"
+                    aria-label={`Visit ${job.company} website (opens in a new tab)`}
                     className="inline-flex items-center gap-1 text-xs font-medium text-blue-500 hover:text-blue-600 mt-2 transition-colors"
                   >
                     Visit site <ExternalLink size={12} />
@@ -60,6 +67,7 @@ export default function WorkExperience() {
                           href={job.website}
                           target="_blank"
                           rel="noopener noreferrer"
+                          aria-label={`Visit ${job.company} website (opens in a new tab)`}
                           className="text-blue-500"
                         >
                           <ExternalLink size={16} />
@@ -87,7 +95,11 @@ export default function WorkExperience() {
                     {job.projects.map((project, projectIndex) => (
                       <div
                         key={projectIndex}
-                        className={projectIndex > 0 ? "relative group/project border-t border-slate-100 pt-8" : "relative group/project"}
+                        className={
+                          projectIndex > 0
+                            ? 'relative group/project border-t border-slate-100 pt-8'
+                            : 'relative group/project'
+                        }
                       >
                         <div className="flex items-baseline gap-3 mb-3">
                           <div className="p-1 bg-slate-200/60 rounded text-slate-500 hidden sm:block">
@@ -96,7 +108,7 @@ export default function WorkExperience() {
                           <h4 className="font-bold text-slate-900 tracking-tight">
                             {project.name}
                           </h4>
-                          {project.period && (
+                          {'period' in project && project.period && (
                             <span className="text-xs text-slate-400 font-medium bg-white px-2 py-0.5 rounded border border-slate-100">
                               {project.period}
                             </span>

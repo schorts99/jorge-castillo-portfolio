@@ -1,17 +1,34 @@
-import { useState, FormEvent, ChangeEvent } from 'react'
-import { Mail, Phone, Github, Linkedin, MapPin, Send, ArrowUpRight } from 'lucide-react'
+import { useState } from 'react'
+import {
+  ArrowUpRight,
+  Github,
+  Linkedin,
+  Mail,
+  MapPin,
+  Phone,
+  Send,
+} from 'lucide-react'
 
-import { EMAIL, PHONE, RAW_PHONE, LINKEDIN, GITHUB, MEDIUM, SUBSTACK } from '@/data/contact'
 import substack from '../assets/images/substack.png'
 import medium from '../assets/images/medium.png'
+import type { ChangeEvent, FormEvent } from 'react'
+import {
+  EMAIL,
+  GITHUB,
+  LINKEDIN,
+  MEDIUM,
+  PHONE,
+  RAW_PHONE,
+  SUBSTACK,
+} from '@/data/contact'
 
 export default function Contact() {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     subject: '',
-    message: ''
-  });
+    message: '',
+  })
 
   const handleSubmit = (formEvent: FormEvent) => {
     formEvent.preventDefault()
@@ -19,63 +36,67 @@ export default function Contact() {
     window.location.href = `mailto:${EMAIL}?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(
       `Hi Jorge,\n\nMy name is ${formData.name}.\n\n${formData.message}\n\nBest regards,\n${formData.name}\n${formData.email}`,
     )}`
-  };
+  }
 
-  const handleInputChange = (changeEvent: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleInputChange = (
+    changeEvent: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+  ) => {
     setFormData({
       ...formData,
-      [changeEvent.target.name]: changeEvent.target.value
+      [changeEvent.target.name]: changeEvent.target.value,
     })
   }
 
   return (
     <section
       id="contact"
-      className="py-20 bg-white selection:bg-blue-500 selection:text-white"
+      aria-labelledby="contact-title"
+      className="bg-white py-20 sm:py-24"
     >
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <span className="inline-block text-xs font-bold text-blue-600 uppercase tracking-widest mb-3">Get In Touch</span>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight mb-0">
-            Let's Build Something Solid
+      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        <div className="mb-12 max-w-2xl">
+          <span className="mb-3 inline-block text-xs font-bold uppercase tracking-[0.16em] text-blue-700">
+            Contact
+          </span>
+          <h2
+            id="contact-title"
+            className="text-3xl font-bold tracking-tight text-slate-950 sm:text-4xl"
+          >
+            Have a good problem to solve?
           </h2>
-          <div className="flex justify-center mt-3 mb-4"><div className="h-1 w-16 bg-gradient-to-r from-blue-500 to-indigo-400 rounded-full"></div></div>
-          <p className="text-lg text-slate-500 max-w-2xl mx-auto font-normal">
-            Whether you need an architecture review, help shaping a
-            domain-driven system, or support with a complex engineering
-            initiative, I’d be happy to discuss your goals and explore how I can
-            help.
+          <p className="mt-4 text-base leading-7 text-slate-600">
+            I’m happy to talk about a product, a technical challenge, or an
+            opportunity to work together. Send a note and tell me what you’re
+            building.
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-12 gap-12 items-start">
-          <div className="lg:col-span-5 space-y-8">
+        <div className="grid items-start gap-10 lg:grid-cols-12 lg:gap-16">
+          <div className="space-y-7 lg:col-span-5">
             <div>
-              <h3 className="text-xl font-bold text-slate-900 mb-4 tracking-tight">
-                Architecture & Engineering Consulting
+              <h3 className="mb-3 text-lg font-bold tracking-tight text-slate-950">
+                Let’s start with a conversation.
               </h3>
-              <p className="text-slate-600 text-sm leading-relaxed">
-                I help engineering teams design and evolve maintainable software
-                systems—from architecture and domain modeling to developer
-                experience and technical strategy. Get in touch to discuss a
-                project, consulting engagement, advisory role, or engineering
-                opportunity.
+              <p className="text-sm leading-6 text-slate-600">
+                Whether you need help shaping a system, improving an existing
+                product, or bringing an idea to life, I’d like to hear what
+                you’re working on.
               </p>
             </div>
 
-            <div className="space-y-4">
+            <div className="space-y-3">
               <a
                 href={`mailto:${EMAIL}`}
-                className="flex items-center gap-4 p-4 bg-slate-50 border border-slate-100 rounded-xl hover:bg-slate-100/80 hover:border-slate-200 hover:-translate-y-0.5 transition-all duration-200 group"
+                className="group flex min-h-20 items-center gap-4 rounded-xl border border-slate-200/80 bg-white p-4 transition-all duration-200 hover:-translate-y-0.5 hover:border-blue-200 hover:shadow-md"
               >
-                <div className="w-10 h-10 bg-blue-50 text-blue-600 rounded-lg flex items-center justify-center group-hover:bg-blue-600 group-hover:text-white transition-colors flex-shrink-0">
-                  <Mail size={18} />
+                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-blue-50 text-blue-700 transition-colors group-hover:bg-blue-600 group-hover:text-white">
+                  <Mail size={18} aria-hidden="true" />
                 </div>
                 <div className="overflow-hidden">
-                  <div className="text-xs font-bold text-slate-400 uppercase tracking-wider">
+                  <div className="text-xs font-bold uppercase tracking-wider text-slate-500">
                     Email
                   </div>
-                  <div className="text-slate-700 text-sm font-medium truncate">
+                  <div className="truncate text-sm font-medium text-slate-800">
                     {EMAIL}
                   </div>
                 </div>
@@ -83,70 +104,70 @@ export default function Contact() {
 
               <a
                 href={`tel:${RAW_PHONE}`}
-                className="flex items-center gap-4 p-4 bg-slate-50 border border-slate-100 rounded-xl hover:bg-slate-100/80 hover:border-slate-200 hover:-translate-y-0.5 transition-all duration-200 group"
+                className="group flex min-h-20 items-center gap-4 rounded-xl border border-slate-200/80 bg-white p-4 transition-all duration-200 hover:-translate-y-0.5 hover:border-emerald-200 hover:shadow-md"
               >
-                <div className="w-10 h-10 bg-emerald-50 text-emerald-600 rounded-lg flex items-center justify-center group-hover:bg-emerald-600 group-hover:text-white transition-colors  flex-shrink-0">
-                  <Phone size={18} />
+                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-emerald-50 text-emerald-700 transition-colors group-hover:bg-emerald-600 group-hover:text-white">
+                  <Phone size={18} aria-hidden="true" />
                 </div>
                 <div>
-                  <div className="text-xs font-bold text-slate-400 uppercase tracking-wider">
+                  <div className="text-xs font-bold uppercase tracking-wider text-slate-500">
                     Phone
                   </div>
-                  <div className="text-slate-700 text-sm font-medium">
+                  <div className="text-sm font-medium text-slate-800">
                     {PHONE}
                   </div>
                 </div>
               </a>
 
-              <div className="flex items-center gap-4 p-4 bg-slate-50 border border-slate-100 rounded-xl">
-                <div className="w-10 h-10 bg-purple-50 text-purple-600 rounded-lg flex items-center justify-center flex-shrink-0">
-                  <MapPin size={18} />
+              <div className="flex min-h-20 items-center gap-4 rounded-xl border border-slate-200/80 bg-white p-4">
+                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-purple-50 text-purple-700">
+                  <MapPin size={18} aria-hidden="true" />
                 </div>
                 <div>
-                  <div className="text-xs font-bold text-slate-400 uppercase tracking-wider">
+                  <div className="text-xs font-bold uppercase tracking-wider text-slate-500">
                     Based In
                   </div>
-                  <div className="text-slate-700 text-sm font-medium">
+                  <div className="text-sm font-medium text-slate-800">
                     Oaxaca, Mexico
                   </div>
                 </div>
               </div>
             </div>
 
-            <div className="pt-6 border-t border-slate-100">
-              <h4 className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-4">
-                Find Me Online
+            <div className="border-t border-slate-200 pt-5">
+              <h4 className="mb-3 text-xs font-bold uppercase tracking-wider text-slate-500">
+                Elsewhere
               </h4>
               <div className="flex flex-wrap gap-2.5">
                 <a
                   href={LINKEDIN}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-2.5 bg-slate-50 hover:bg-blue-50 border border-slate-200/60 text-slate-600 hover:text-blue-600 rounded-xl transition-all duration-200"
-                  title="LinkedIn Profile"
+                  className="inline-flex min-h-11 min-w-11 items-center justify-center rounded-xl border border-slate-200/80 text-slate-600 transition-colors hover:bg-blue-50 hover:text-blue-700"
+                  aria-label="Jorge on LinkedIn (opens in a new tab)"
                 >
-                  <Linkedin size={18} />
+                  <Linkedin size={18} aria-hidden="true" />
                 </a>
 
                 <a
                   href={GITHUB}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-2.5 bg-slate-50 hover:bg-slate-900 border border-slate-200/60 text-slate-600 hover:text-white rounded-xl transition-all duration-200"
-                  title="GitHub Source Control"
+                  className="inline-flex min-h-11 min-w-11 items-center justify-center rounded-xl border border-slate-200/80 text-slate-600 transition-colors hover:bg-slate-950 hover:text-white"
+                  aria-label="Jorge on GitHub (opens in a new tab)"
                 >
-                  <Github size={18} />
+                  <Github size={18} aria-hidden="true" />
                 </a>
 
                 <a
                   href={SUBSTACK}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2 px-3 py-1.5 bg-slate-50 hover:bg-orange-50/50 border border-slate-200/60 rounded-xl transition-all duration-200 group"
-                  title="Substack Newsletter"
+                  className="group inline-flex min-h-11 items-center gap-2 rounded-xl border border-slate-200/80 px-3 py-1.5 transition-colors hover:bg-orange-50"
+                  aria-label="Jorge on Substack (opens in a new tab)"
                 >
                   <img
-                    className="h-4 w-4 object-contain grayscale group-hover:grayscale-0 transition-all"
+                    className="h-4 w-4 object-contain"
                     src={substack}
                     alt=""
                   />
@@ -155,7 +176,8 @@ export default function Contact() {
                   </span>
                   <ArrowUpRight
                     size={12}
-                    className="text-slate-400 group-hover:text-slate-600"
+                    className="text-slate-500"
+                    aria-hidden="true"
                   />
                 </a>
 
@@ -163,32 +185,33 @@ export default function Contact() {
                   href={MEDIUM}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2 px-3 py-1.5 bg-slate-50 hover:bg-slate-100 border border-slate-200/60 rounded-xl transition-all duration-200 group"
-                  title="Medium Articles"
+                  className="group inline-flex min-h-11 items-center gap-2 rounded-xl border border-slate-200/80 px-3 py-1.5 transition-colors hover:bg-slate-100"
+                  aria-label="Jorge on Medium (opens in a new tab)"
                 >
-                  <img
-                    className="h-4 w-4 object-contain grayscale group-hover:grayscale-0 transition-all"
-                    src={medium}
-                    alt=""
-                  />
+                  <img className="h-4 w-4 object-contain" src={medium} alt="" />
                   <span className="text-xs font-semibold text-slate-600 group-hover:text-slate-900">
                     Medium
                   </span>
                   <ArrowUpRight
                     size={12}
-                    className="text-slate-400 group-hover:text-slate-600"
+                    className="text-slate-500"
+                    aria-hidden="true"
                   />
                 </a>
               </div>
             </div>
           </div>
 
-          <div className="lg:col-span-7 bg-white border border-slate-200/60 shadow-sm rounded-2xl p-6 md:p-8">
-            <h3 className="text-lg font-bold text-slate-900 mb-6 tracking-tight">
-              Start a Conversation
+          <div className="rounded-2xl border border-slate-200/80 bg-white p-6 shadow-sm sm:p-8 lg:col-span-7">
+            <h3 className="mb-2 text-lg font-bold tracking-tight text-slate-950">
+              Write me a note
             </h3>
+            <p className="mb-6 text-sm leading-6 text-slate-600">
+              This opens your email app with a draft—your message isn’t sent
+              from this website.
+            </p>
             <form onSubmit={handleSubmit} className="space-y-5">
-              <div className="grid md:grid-cols-2 gap-4">
+              <div className="grid gap-4 sm:grid-cols-2">
                 <div>
                   <label
                     htmlFor="name"
@@ -200,11 +223,12 @@ export default function Contact() {
                     type="text"
                     id="name"
                     name="name"
+                    autoComplete="name"
                     required
                     value={formData.name}
                     onChange={handleInputChange}
-                    className="w-full text-sm px-4 py-3 bg-white border border-slate-200 rounded-xl focus:outline-none focus:border-blue-500 focus:ring-4 focus:ring-blue-500/10 transition-all text-slate-800"
-                    placeholder="Jane Doe"
+                    className="w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-sm text-slate-900 transition focus:border-blue-600 focus:outline-none focus:ring-4 focus:ring-blue-600/10"
+                    placeholder="Your name"
                   />
                 </div>
                 <div>
@@ -212,16 +236,17 @@ export default function Contact() {
                     htmlFor="email"
                     className="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-2"
                   >
-                    Email
+                    Your email
                   </label>
                   <input
                     type="email"
                     id="email"
                     name="email"
+                    autoComplete="email"
                     required
                     value={formData.email}
                     onChange={handleInputChange}
-                    className="w-full text-sm px-4 py-3 bg-white border border-slate-200 rounded-xl focus:outline-none focus:border-blue-500 focus:ring-4 focus:ring-blue-500/10 transition-all text-slate-800"
+                    className="w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-sm text-slate-900 transition focus:border-blue-600 focus:outline-none focus:ring-4 focus:ring-blue-600/10"
                     placeholder="you@company.com"
                   />
                 </div>
@@ -241,8 +266,8 @@ export default function Contact() {
                   required
                   value={formData.subject}
                   onChange={handleInputChange}
-                  className="w-full text-sm px-4 py-3 bg-white border border-slate-200 rounded-xl focus:outline-none focus:border-blue-500 focus:ring-4 focus:ring-blue-500/10 transition-all text-slate-800"
-                  placeholder="How can I help?"
+                  className="w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-sm text-slate-900 transition focus:border-blue-600 focus:outline-none focus:ring-4 focus:ring-blue-600/10"
+                  placeholder="A few words about your message"
                 />
               </div>
 
@@ -260,17 +285,17 @@ export default function Contact() {
                   rows={5}
                   value={formData.message}
                   onChange={handleInputChange}
-                  className="w-full text-sm px-4 py-3 bg-white border border-slate-200 rounded-xl focus:outline-none focus:border-blue-500 focus:ring-4 focus:ring-blue-500/10 transition-all text-slate-800 resize-none"
-                  placeholder="Tell me a little about your project, challenge, or opportunity..."
+                  className="w-full resize-y rounded-xl border border-slate-300 bg-white px-4 py-3 text-sm text-slate-900 transition focus:border-blue-600 focus:outline-none focus:ring-4 focus:ring-blue-600/10"
+                  placeholder="What are you working on?"
                 ></textarea>
               </div>
 
               <button
                 type="submit"
-                className="w-full bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-xl transition-all duration-200 font-semibold text-sm flex items-center justify-center gap-2 shadow-sm cursor-pointer"
+                className="inline-flex min-h-12 w-full cursor-pointer items-center justify-center gap-2 rounded-xl bg-blue-700 px-6 py-3 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-blue-800"
               >
-                <Send size={14} />
-                Send Message
+                <Send size={15} aria-hidden="true" />
+                Open email draft
               </button>
             </form>
           </div>

@@ -1,4 +1,4 @@
-import { Github, Heart, Linkedin, Mail } from 'lucide-react'
+import { Github, Linkedin, Mail } from 'lucide-react'
 
 import { EMAIL, GITHUB, LINKEDIN, MEDIUM, SUBSTACK } from '../data/contact'
 import substack from '../assets/images/substack.png'
@@ -9,15 +9,14 @@ export default function Footer({
 }: {
   onCookieSettings: () => void
 }) {
-  const scrollToSection = (sectionID: string) => {
-    const element = document.getElementById(sectionID)
-
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' })
-    }
-  };
-
-  const links = ['about', 'skills', 'experience', 'projects', 'contact'];
+  const links = [
+    { id: 'about', label: 'About' },
+    { id: 'projects', label: 'Selected work' },
+    { id: 'simply-products', label: 'Products' },
+    { id: 'skills', label: 'Skills' },
+    { id: 'experience', label: 'Experience' },
+    { id: 'contact', label: 'Contact' },
+  ]
 
   return (
     <footer className="bg-slate-900 text-white py-16 border-t border-slate-800 selection:bg-blue-500 selection:text-white">
@@ -28,33 +27,36 @@ export default function Footer({
               <h3 className="text-lg font-bold tracking-tight text-white">
                 Jorge Castillo
               </h3>
-              <span className="text-[9px] font-bold uppercase tracking-wider text-slate-400 bg-slate-800 border border-slate-700 px-1.5 py-0.5 rounded">
-                Sr. Full-Stack Engineer
+              <span className="rounded border border-slate-700 bg-slate-800 px-2 py-1 text-[10px] font-semibold text-slate-300">
+                Senior Full-Stack Engineer
               </span>
             </div>
             <p className="text-sm text-slate-400 leading-relaxed max-w-sm">
-              Focused on designing decouple architectures, building expressive core primitives, and implementing domain-driven design structures.
+              I build useful products and resilient software, with clear
+              architecture from the domain to production.
             </p>
           </div>
 
-          <div className="md:col-span-3 md:col-start-7 space-y-4">
+          <nav
+            aria-label="Footer navigation"
+            className="md:col-span-3 md:col-start-7 space-y-4"
+          >
             <h4 className="text-xs font-bold text-slate-400 uppercase tracking-wider">
               Navigation
             </h4>
             <ul className="space-y-2 text-sm text-slate-400">
               {links.map((link) => (
-                <li key={link}>
-                  <button
-                    className="cursor-pointer hover:text-white capitalize transition-colors text-left"
-                    type="button"
-                    onClick={() => scrollToSection(link)}
+                <li key={link.id}>
+                  <a
+                    className="inline-flex min-h-8 items-center text-left transition-colors hover:text-white"
+                    href={`#${link.id}`}
                   >
-                    {link}
-                  </button>
+                    {link.label}
+                  </a>
                 </li>
               ))}
             </ul>
-          </div>
+          </nav>
 
           <div className="md:col-span-3 space-y-4">
             <h4 className="text-xs font-bold text-slate-400 uppercase tracking-wider">
@@ -65,20 +67,20 @@ export default function Footer({
                 href={LINKEDIN}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 bg-slate-800 border border-slate-700/50 rounded-xl text-slate-300 hover:text-white hover:bg-slate-700 transition-colors"
-                title="LinkedIn Profile"
+                className="inline-flex min-h-11 min-w-11 items-center justify-center rounded-xl border border-slate-700/70 bg-slate-800 text-slate-300 transition-colors hover:bg-slate-700 hover:text-white"
+                aria-label="Jorge on LinkedIn (opens in a new tab)"
               >
-                <Linkedin size={16} />
+                <Linkedin size={16} aria-hidden="true" />
               </a>
               <a
                 href={SUBSTACK}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center p-2 bg-slate-800 border border-slate-700/50 rounded-xl hover:bg-slate-700 transition-colors group"
-                title="Substack Newsletter"
+                className="group inline-flex min-h-11 min-w-11 items-center justify-center rounded-xl border border-slate-700/70 bg-slate-800 transition-colors hover:bg-slate-700"
+                aria-label="Jorge on Substack (opens in a new tab)"
               >
                 <img
-                  className="h-4 w-4 object-contain invert brightness-0 opacity-70 group-hover:opacity-100 transition-opacity"
+                  className="h-4 w-4 object-contain opacity-70 transition-opacity group-hover:opacity-100"
                   src={substack}
                   alt=""
                   draggable="false"
@@ -88,11 +90,11 @@ export default function Footer({
                 href={MEDIUM}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center p-2 bg-slate-800 border border-slate-700/50 rounded-xl hover:bg-slate-700 transition-colors group"
-                title="Medium Publication"
+                className="group inline-flex min-h-11 min-w-11 items-center justify-center rounded-xl border border-slate-700/70 bg-slate-800 transition-colors hover:bg-slate-700"
+                aria-label="Jorge on Medium (opens in a new tab)"
               >
                 <img
-                  className="h-4 w-4 object-contain invert brightness-0 opacity-70 group-hover:opacity-100 transition-opacity"
+                  className="h-4 w-4 object-contain opacity-70 transition-opacity group-hover:opacity-100"
                   src={medium}
                   alt=""
                   draggable="false"
@@ -102,17 +104,17 @@ export default function Footer({
                 href={GITHUB}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 bg-slate-800 border border-slate-700/50 rounded-xl text-slate-300 hover:text-white hover:bg-slate-700 transition-colors"
-                title="GitHub Repositories"
+                className="inline-flex min-h-11 min-w-11 items-center justify-center rounded-xl border border-slate-700/70 bg-slate-800 text-slate-300 transition-colors hover:bg-slate-700 hover:text-white"
+                aria-label="Jorge on GitHub (opens in a new tab)"
               >
-                <Github size={16} />
+                <Github size={16} aria-hidden="true" />
               </a>
               <a
                 href={`mailto:${EMAIL}`}
-                className="p-2 bg-slate-800 border border-slate-700/50 rounded-xl text-slate-300 hover:text-white hover:bg-slate-700 transition-colors"
-                title="Email Communication"
+                className="inline-flex min-h-11 min-w-11 items-center justify-center rounded-xl border border-slate-700/70 bg-slate-800 text-slate-300 transition-colors hover:bg-slate-700 hover:text-white"
+                aria-label="Email Jorge"
               >
-                <Mail size={16} />
+                <Mail size={16} aria-hidden="true" />
               </a>
             </div>
             <div className="text-xs text-slate-500 font-medium tracking-wide truncate">
@@ -123,7 +125,7 @@ export default function Footer({
 
         <div className="border-t border-slate-800/80 mt-12 pt-8 text-center flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500 font-medium">
           <div className="flex flex-col sm:flex-row items-center gap-3">
-            <p>© {new Date().getFullYear()} Jorge Castillo. All rights reserved.</p>
+            <p>© {new Date().getFullYear()} Jorge Castillo</p>
             <button
               className="hover:text-white transition-colors"
               type="button"
@@ -132,8 +134,8 @@ export default function Footer({
               Cookie settings
             </button>
           </div>
-          <p className="flex items-center gap-1.5 bg-slate-950 px-3 py-1.5 border border-slate-800 rounded-lg">
-            Engineered with <Heart className="text-rose-500 fill-rose-500 animate-pulse" size={12} /> for resilient systems
+          <p className="rounded-lg border border-slate-800 bg-slate-950 px-3 py-1.5">
+            Built with care in Oaxaca, Mexico
           </p>
         </div>
       </div>

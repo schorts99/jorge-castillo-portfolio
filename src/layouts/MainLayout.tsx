@@ -2,8 +2,8 @@ import { useEffect, useState } from 'react'
 import { GoogleAnalytics, useGoogleAnalytics } from 'tanstack-router-ga4'
 import type { ReactNode } from 'react'
 
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
+import Header from '@/components/Header'
+import Footer from '@/components/Footer'
 import CookieConsent from '@/components/CookieConsent'
 
 const CONSENT_STORAGE_KEY = 'cookie-consent'
@@ -41,9 +41,15 @@ export default function MainLayout({ children }: { children: ReactNode }) {
 
   return (
     <div className="min-h-screen bg-white">
+      <a
+        href="#main-content"
+        className="sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[70] focus:not-sr-only focus:rounded-lg focus:bg-white focus:px-4 focus:py-3 focus:font-semibold focus:text-slate-950 focus:shadow-lg"
+      >
+        Skip to content
+      </a>
       <Header />
 
-      <main>
+      <main id="main-content" tabIndex={-1}>
         {children}
       </main>
 
@@ -63,5 +69,5 @@ export default function MainLayout({ children }: { children: ReactNode }) {
         />
       )}
     </div>
-  );
+  )
 }

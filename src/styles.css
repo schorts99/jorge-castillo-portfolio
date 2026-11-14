@@ -2,23 +2,26 @@
 
 :root {
   color-scheme: light;
-  scroll-padding-top: 5.5rem;
+  scroll-padding-top: 6rem;
+  font-synthesis: none;
 }
 
 html {
   overflow: auto;
   scroll-behavior: smooth;
+  background: #fff;
 }
 
 body {
   overflow: clip;
   color: #0f172a;
+  background: #fff;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
 
 section[id] {
-  scroll-margin-top: 5.5rem;
+  scroll-margin-top: 6rem;
 }
 
 button,
@@ -26,9 +29,19 @@ a {
   -webkit-tap-highlight-color: transparent;
 }
 
+button:not(:disabled),
+a {
+  touch-action: manipulation;
+}
+
 :focus-visible {
-  outline: 3px solid #2563eb;
+  outline: 3px solid #1d4ed8;
   outline-offset: 3px;
+}
+
+::selection {
+  color: #fff;
+  background: #1d4ed8;
 }
 
 @media (prefers-reduced-motion: reduce) {
