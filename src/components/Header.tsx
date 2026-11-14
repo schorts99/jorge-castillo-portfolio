@@ -93,6 +93,7 @@ function DesktopNavigation() {
   const links = [
     { id: 'about', label: 'About' },
     { id: 'projects', label: 'Work' },
+    { id: 'case-studies', label: 'Case studies' },
     { id: 'simply-products', label: 'Products' },
     { id: 'skills', label: 'Skills' },
     { id: 'experience', label: 'Experience' },
@@ -189,6 +190,7 @@ function MobileNavigation({
   const links = [
     { id: 'about', label: 'About' },
     { id: 'projects', label: 'Selected work' },
+    { id: 'case-studies', label: 'Case studies' },
     { id: 'simply-products', label: 'Products' },
     { id: 'skills', label: 'Skills' },
     { id: 'experience', label: 'Experience' },
